@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html {
+  height: 1000px;
+}
+
+// common.scss 올릴 거
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  .nav {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+
+    .navWrap {
+      clear: both;
+      width: 100%;
+      max-width: 1842px;
+      min-width: 1264px;
+      padding: 0 10px;
+      margin: 0 auto;
+      background-color: white;
+
+      .MLBlogo {
+        > h1 {
+          float: left;
+          padding-right: 20px;
+          font-family: 'Staatliches', cursive;
+          font-style: italic;
+          font-weight: 900;
+          font-size: 40px;
+        }
+      }
+
+      .menuLists {
+        .list {
+          float: left;
+          > li {
+            float: left;
+            > a {
+              display: block;
+              margin: 16.5px 20px;
+              line-height: 25px;
+              font-family: 'DM Sans', sans-serif;
+              font-size: 17px;
+              font-weight: 700;
+              border-bottom: 2px solid black;
+            }
+          }
+        }
+
+        .promote {
+          float: left;
+          position: relative;
+          margin-left: 45px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 22px;
+            left: -25px;
+            width: 2px;
+            height: 15px;
+            background: #000;
+          }
+        }
+      }
+      .icons {
+        float: right;
+        margin-top: 16px;
+        button {
+          a {
+            i {
+              margin-left: 10px;
+              font-size: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
