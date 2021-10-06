@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import InnerNav from './InnerNav/InnerNav';
 import './Nav.scss';
 
@@ -8,9 +9,11 @@ class Nav extends Component {
       <div className="header">
         <nav className="nav">
           <div className="navWrap">
-            <a className="MLBlogo">
-              <h1>MLB</h1>
-            </a>
+            <div className="logoWrap">
+              <a className="MLBlogo">
+                <h1>MLB</h1>
+              </a>
+            </div>
             <div className="menuLists">
               <ul className="list">
                 <li>

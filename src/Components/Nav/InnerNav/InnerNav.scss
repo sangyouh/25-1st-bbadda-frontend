@@ -1,22 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
 .navSubWrap {
   display: block;
   position: absolute;
+  padding: 42px 20px;
   left: 0;
   right: 0;
 
   .innerWrap {
+    display: flex;
+    width: 1100px;
+    justify-content: space-between;
+    margin: 0 auto;
+
     .specialProduct {
       .lists {
         li {
           margin-bottom: 15px;
+          a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .productLists {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      .lists {
+        width: 450px;
+
+        > li {
+          width: 140px;
+          float: left;
+          padding-bottom: 30px;
+          margin-bottom: 15px;
+
+          &:nth-child(3n + 1) {
+            clear: left;
+          }
           > a {
             font-family: 'DM Sans', sans-serif;
             font-size: 14px;
             font-weight: 700;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+
+          ul {
+            margin-top: 10px;
+
+            li {
+              font-size: 14px;
+              line-height: 27px;
+            }
           }
         }
       }

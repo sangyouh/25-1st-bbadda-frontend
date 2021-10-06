@@ -3,11 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-html {
-  height: 1000px;
-}
-
-// common.scss 올릴 거
+// common.scss 올릴 거 (팀원과 상의 후 반영하고 지울예정)
 * {
   box-sizing: border-box;
 }
@@ -45,14 +41,18 @@ a {
       margin: 0 auto;
       background-color: white;
 
-      .MLBlogo {
-        > h1 {
-          float: left;
-          padding-right: 20px;
-          font-family: 'Staatliches', cursive;
-          font-style: italic;
-          font-weight: 900;
-          font-size: 40px;
+      .logoWrap {
+        .MLBlogo {
+          text-align: center;
+          > h1 {
+            float: left;
+            margin: 5px 20px 0;
+            width: 100px;
+            font-family: 'Staatliches', cursive;
+            font-style: italic;
+            font-weight: 900;
+            font-size: 45px;
+          }
         }
       }
 
@@ -61,6 +61,7 @@ a {
           float: left;
           > li {
             float: left;
+
             > a {
               display: block;
               margin: 16.5px 20px;
@@ -68,7 +69,11 @@ a {
               font-family: 'DM Sans', sans-serif;
               font-size: 17px;
               font-weight: 700;
-              border-bottom: 2px solid black;
+              border-bottom: 2px solid transparent;
+
+              &:hover {
+                border-bottom: 2px solid black;
+              }
             }
           }
         }

@@ -66,12 +66,6 @@ class InnerNav extends React.Component {
                   <li>
                     <a>야구점퍼</a>
                   </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>자켓/점퍼</a>
-                  </li>
                 </ul>
               </li>
 
@@ -99,11 +93,20 @@ class InnerNav extends React.Component {
                   <li>
                     <a>자켓/점퍼</a>
                   </li>
+                  <li>
+                    <a>바람막이</a>
+                  </li>
+                  <li>
+                    <a>야구점퍼</a>
+                  </li>
                 </ul>
               </li>
             </ul>
           </div>
-          <div className="banner"></div>
+          <div className="banner">
+            {/* 테스트 후 사진 대체할 것. */}
+            <img src="./images/Nav/400x268.png" />
+          </div>
         </div>
       </div>
     );
