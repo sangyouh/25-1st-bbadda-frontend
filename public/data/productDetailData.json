@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "productCategoty": "CAP",
+    "productName": "나이론 언스트럭쳐 볼캡 뉴욕 양키스",
+    "productCode": "000001",
+    "productPrice": 43000,
+    "productColor": [
+      { "color01": "/images/productDetail/cap01.jepg" },
+      { "color02": "/images/productDetail/cap02.jepg" }
+    ],
+    "productSize": [
+      { "size01": "SS" },
+      { "size02": "S" },
+      { "size03": "M" },
+      { "size04": "L" },
+      { "size05": "X" },
+      { "size06": "XL" }
+    ],
+    "productDetailImgs": [
+      { "img01": "/images/productDetail/cap01.jepg" },
+      { "img02": "/images/productDetail/cap02.jepg" },
+      { "img03": "/images/productDetail/cap03.jepg" },
+      { "img04": "/images/productDetail/cap04.jepg" },
+      { "img05": "/images/productDetail/cap05.jepg" },
+      { "img06": "/images/productDetail/cap06.jepg" }
+    ],
+    "productExp": { "content": "[UNISEX] 나일론 언스트럭쳐 볼캡 뉴욕양키스" }
+  }
+]

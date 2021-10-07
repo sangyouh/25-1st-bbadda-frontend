@@ -1,0 +1,133 @@
+.productDetail {
+  width: 1260px;
+  margin: 0 auto;
+  .blind {
+    font-size: 0;
+  }
+}
+
+.productVeiw {
+  height: 940px;
+  display: flex;
+
+  .productImgSlideWrap {
+    flex: 6;
+  }
+}
+
+/*옵션 선택!*/
+.productOptionWrap {
+  flex: 4;
+  padding: 30px 0 30px 30px;
+
+  a {
+    display: inline-block;
+  }
+}
+
+.selectOptions {
+  padding: 20px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+
+  .optionBox {
+    display: flex;
+    &:first-child {
+      margin-top: 0;
+    }
+    .optionTtl {
+      display: inline-block;
+      width: 25%;
+      padding-top: 3px;
+    }
+  }
+}
+
+.btnBuy {
+  padding: 20px 0;
+  border-bottom: none;
+
+  .alarm {
+    float: right;
+    height: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #000;
+
+    &.buyNow {
+      background: #000;
+      color: #fff;
+    }
+    &.buyNow {
+    }
+  }
+}
+
+.interactions {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+
+  .gradeReview {
+  }
+  .social {
+    display: flex;
+    justify-content: space-between;
+    width: 13%;
+
+    .share {
+    }
+    .like {
+    }
+  }
+}
+
+.productExp {
+  padding-top: 20px;
+}
+
+.productDetailInfo {
+  padding-bottom: 150px;
+  margin: 100px 0;
+
+  .detailMeue {
+    display: flex;
+    li {
+      width: 33.33%;
+      a {
+        display: block;
+        padding: 30px 0 28px;
+        border-top: 3px solid #000;
+        border-bottom: 1px solid #ddd;
+        color: #999;
+        text-align: center;
+        font-size: 17px;
+
+        &.current {
+          color: #000;
+          border-bottom: 1px solid #000;
+        }
+      }
+    }
+  }
+
+  section {
+    min-height: 200px;
+    margin-bottom: 40px;
+    h3 {
+      padding-top: 20px;
+      font-size: 20px;
+    }
+  }
+}

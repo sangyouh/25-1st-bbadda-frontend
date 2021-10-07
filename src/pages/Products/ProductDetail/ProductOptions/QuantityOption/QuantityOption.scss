@@ -1,0 +1,26 @@
+.quantityOption {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+
+  .countQuantity {
+    display: flex;
+    align-items: center;
+
+    button {
+      border: 1px solid #ddd;
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    input[type='text'] {
+      width: 81px;
+      height: 28px;
+      padding: 0;
+      border: none;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+  }
+}
