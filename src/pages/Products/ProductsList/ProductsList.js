@@ -38,19 +38,17 @@ export class ProductsList extends Component {
   };
   render() {
     const { products } = this.state;
+    const { sortPriceHighest, sortPriceLowest } = this;
 
     return (
       <div className="productsList">
         <div className="container">
           <DropdownMenu />
           <div>
-            <button className="filterButton" onClick={this.sortPriceHighest}>
+            <button className="filterButton" onClick={sortPriceHighest}>
               높은가격순
             </button>
-            <button
-              className="filterButtonBorder"
-              onClick={this.sortPriceLowest}
-            >
+            <button className="filterButtonBorder" onClick={sortPriceLowest}>
               낮은가격순
             </button>
           </div>

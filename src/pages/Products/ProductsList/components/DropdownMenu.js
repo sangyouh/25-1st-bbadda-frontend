@@ -10,28 +10,13 @@ export class DropdownMenu extends Component {
     };
     this.isClicked = this.isClicked.bind(this);
     this.isClicked2 = this.isClicked2.bind(this);
-
-    // this.closeBar = this.closeBar.bind(this);
   }
-
-  // closeBar() {
-  //   this.setState({ isClicked: false }, () => {
-  //     document.removeEventListener('click', this.closeBar);
-  //   });
-  // }
 
   isClicked(e) {
     e.preventDefault();
-    this.setState({ isClicked: true }, () => {
-      document.addEventListener('click', this.closeBar);
-    });
+    this.setState({ isClicked: true });
   }
 
-  // closeBar() {
-  //   this.setState({ isClicked: false }, () => {
-  //     document.removeEventListener('click', this.closeBar);
-  //   });
-  // }
   isClicked2(e) {
     e.preventDefault();
     this.setState({

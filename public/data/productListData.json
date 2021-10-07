@@ -1,32 +1,37 @@
-[
-  {
-    "id": 1,
-    "prodName": "BALL CAP",
-    "prodPrice": 25000
-  },
-  {
-    "id": 2,
-    "prodName": "NEWYORK YANKEES",
-    "prodPrice": 57000
-  },
-  {
-    "id": 3,
-    "prodName": "BOSTON REDSOX",
-    "prodPrice": 10000
-  },
-  {
-    "id": 4,
-    "prodName": "LA DODGERS",
-    "prodPrice": 40000
-  },
-  {
-    "id": 5,
-    "prodName": "I DONT KNOW",
-    "prodPrice": 39000
-  },
-  {
-    "id": 6,
-    "prodName": "YOU DONT KNOW",
-    "prodPrice": 15000
-  }
-]
+{
+  "name": "APPAREL",
+  "content": [
+    {
+      "name": "그래피티 타이포 전판 프린트 숏패딩",
+      "price": 309000
+    },
+    {
+      "name": "개리피티 타이포 전판 프린트 숏패딩",
+      "price": 309000
+    },
+    {
+      "name": "모노그램 덤블 후리스 점퍼 보스턴 레드삭스",
+      "price": 269000
+    },
+    {
+      "name": "모노그램 덤블 후리스 점퍼 뉴욕 양키스",
+      "price": 269000
+    },
+    {
+      "name": "MLB x Disney 도널드 덕 백 프린트 오버핏 티셔츠 뉴욕양키스",
+      "price": 69000
+    },
+    {
+      "name": "MLB x Disney 도널드 덕 백 프린트 오버핏 티셔츠 뉴욕양키스",
+      "price": 69000
+    },
+    {
+      "name": "픽셀 백 빅로고 메가 오버핏 맨투맨 LA 다저스",
+      "price": 89000
+    },
+    {
+      "name": "픽셀 백 빅로고 메가 오버핏 맨투맨 보스턴 레드삭스",
+      "price": 89000
+    }
+  ]
+}
