@@ -1,0 +1,18 @@
+.loginBox {
+  width: 400px;
+  margin: 78px auto 0;
+  ul {
+    display: flex;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 62px;
+      border-bottom: 1px solid #ddd;
+      a {
+      }
+    }
+  }
+}

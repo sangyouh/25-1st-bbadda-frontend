@@ -1,0 +1,58 @@
+.memberBenefit {
+  display: flex;
+  margin: 20px 0 30px 0;
+  justify-content: space-between;
+  li {
+    // width: 100%; 왜 이렇게 안했을까?
+    // 일단 똑같이 따라해봄  이러면 원본처럼 가장 오른쪽 끝이 좀 튀어나옴
+    flex: 1 0 33.3%;
+    padding: 30px;
+    margin: 0 2.5px;
+    background-color: #f8f8f8;
+    div {
+      padding-top: 51px;
+      background-repeat: no-repeat;
+      span {
+        font-size: 13px;
+        line-height: 18px;
+        &::before {
+          content: '';
+          display: block;
+          width: 25px;
+          height: 5px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .mileage {
+    div {
+      background-image: url(./couponImg/mileage1.png);
+      span {
+        &::before {
+          background-color: #28abe3;
+        }
+      }
+    }
+  }
+  .coupon {
+    div {
+      background-image: url(./couponImg/coupon.png);
+      span {
+        &::before {
+          background-color: #ff4c65;
+        }
+      }
+    }
+  }
+  .percent {
+    div {
+      background-image: url(./couponImg/percent.png);
+      span {
+        &::before {
+          background-color: #8bad39;
+        }
+      }
+    }
+  }
+}

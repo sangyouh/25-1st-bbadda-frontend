@@ -1,0 +1,110 @@
+@mixin inputs {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.joinForm {
+  section {
+    margin-top: 26px;
+    .header {
+      .joinInfo {
+        font-size: 16px;
+      }
+      .requiredInfo {
+        font-size: 14;
+        margin-left: 10px;
+        color: #666666;
+      }
+      .infoForm {
+        width: 100%;
+        margin-top: 20px;
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #ddd;
+        table {
+          width: 100%;
+          colgroup {
+            width: 200px;
+          }
+          tbody {
+            .basicInfo {
+              th {
+                padding: 18px 20px 10px 20px;
+              }
+              td {
+                ul {
+                  .firstInput {
+                    border: none;
+                  }
+                  li {
+                    padding: 10px 0;
+                    border-top: 1px solid #dddddd;
+                    input {
+                      @include inputs;
+                    }
+                    .name {
+                      width: 160px;
+                    }
+                    .inputSpan {
+                      margin-right: 15px;
+                      .year {
+                        width: 80px;
+                        padding: 0 10px;
+                      }
+                      .month {
+                        width: 80px;
+                        margin-left: 10px;
+                        padding: 0 10px;
+                      }
+                      .date {
+                        width: 80px;
+                        margin-left: 10px;
+                        padding: 0 10px;
+                      }
+                    }
+                    .buttonSpan {
+                      .button1 {
+                        width: 20px;
+                        height: 20px;
+                        padding: 0px;
+                        margin: 0px;
+                        border-radius: 50%;
+                      }
+                      .button2 {
+                        width: 20px;
+                        height: 20px;
+                        padding: 0px;
+                        margin: 0 0 0 30px;
+                        border-radius: 50%;
+                      }
+                      .male {
+                        margin-left: 5px;
+                        font-size: 13px;
+                      }
+                      .female {
+                        margin-left: 5px;
+                        font-size: 13px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  padding: 18px 20px 10px 20px;
+}
