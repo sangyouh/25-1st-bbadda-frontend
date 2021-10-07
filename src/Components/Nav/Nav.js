@@ -1,6 +1,7 @@
+/*eslint-disable*/
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import InnerNav from './InnerNav/InnerNav';
+import NAV_DATA from './navData';
 import './Nav.scss';
 
 class Nav extends Component {
@@ -16,25 +17,19 @@ class Nav extends Component {
             </div>
             <div className="menuLists">
               <ul className="list">
-                <li>
-                  <a>APPAREL</a>
-                  <InnerNav />
-                </li>
-                <li>
-                  <a>CAP</a>
-                </li>
-                <li>
-                  <a>SHOES</a>
-                </li>
-                <li>
-                  <a>BAG</a>
-                </li>
-                <li>
-                  <a>ACC</a>
-                </li>
-                <li>
-                  <a>KIDS</a>
-                </li>
+                {NAV_DATA.map(item => {
+                  const { id, name, link, cate, depth, banner } = item;
+                  return (
+                    <InnerNav
+                      key={id}
+                      name={name}
+                      link={link}
+                      cate={cate}
+                      depth={depth}
+                      banner={banner}
+                    />
+                  );
+                })}
               </ul>
               <ul className="list promote">
                 <li>
@@ -48,17 +43,17 @@ class Nav extends Component {
             <div className="icons">
               <button>
                 <a>
-                  <i class="fas fa-search" />
+                  <i className="fas fa-search" />
                 </a>
               </button>
               <button>
                 <a>
-                  <i class="fas fa-shopping-bag" />
+                  <i className="fas fa-shopping-bag" />
                 </a>
               </button>
               <button>
                 <a>
-                  <i class="far fa-user" />
+                  <i className="far fa-user" />
                 </a>
               </button>
             </div>

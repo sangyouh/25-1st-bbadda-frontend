@@ -1,5 +1,5 @@
 .navSubWrap {
-  display: block;
+  display: none;
   position: absolute;
   padding: 42px 20px;
   left: 0;
@@ -63,4 +63,7 @@
       }
     }
   }
+}
+.active {
+  display: block;
 }

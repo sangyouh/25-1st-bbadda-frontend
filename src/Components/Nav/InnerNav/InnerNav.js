@@ -1,114 +1,67 @@
+/*eslint-disable*/
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './InnerNav.scss';
 
 class InnerNav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isMenuHover: false,
+    };
+  }
+  toggleHover = () => {
+    this.setState({
+      isMenuHover: !this.state.isMenuHover,
+    });
+  };
+
   render() {
+    const { isMenuHover } = this.state;
+    const { name, link, cate, depth, banner } = this.props;
     return (
-      <div className="navSubWrap">
-        <div className="innerWrap">
-          <div className="specialProduct">
-            <ul className="lists">
-              <li>
-                <a>MLB 셋업</a>
-              </li>
-              <li>
-                <a>MBL 후리스</a>
-              </li>
-              <li>
-                <a>MLB x DISNEY</a>
-              </li>
-            </ul>
-          </div>
-          <div className="productLists">
-            <ul className="lists">
-              <li>
-                <a>아우터</a>
-                <ul>
-                  <li>
-                    <a>숏패딩</a>
-                  </li>
-                  <li>
-                    <a>후리스</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>자켓/점퍼</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <a>아우터</a>
-                <ul>
-                  <li>
-                    <a>숏패딩</a>
-                  </li>
-                  <li>
-                    <a>후리스</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <a>아우터</a>
-                <ul>
-                  <li>
-                    <a>숏패딩</a>
-                  </li>
-                  <li>
-                    <a>후리스</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>자켓/점퍼</a>
-                  </li>
-                  <li>
-                    <a>바람막이</a>
-                  </li>
-                  <li>
-                    <a>야구점퍼</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div className="banner">
-            {/* 테스트 후 사진 대체할 것. */}
-            <img src="./images/Nav/400x268.png" />
+      <li onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+        <Link to={link}>{name}</Link>
+        <div className={`navSubWrap  ${isMenuHover ? 'active' : ''}`}>
+          <div className="innerWrap">
+            <div className="specialProduct">
+              <ul className="lists">
+                {cate.map(item => {
+                  return (
+                    <li key={item.id}>
+                      <Link to={item.link}>{item.name}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="productLists">
+              <ul className="lists">
+                {depth.map(item => {
+                  return (
+                    <li key={item.id}>
+                      <Link to={item.link}>{item.name}</Link>
+                      <ul>
+                        {item.items.map(list => {
+                          return (
+                            <li key={list.id}>
+                              <Link to={list.link}>{list.name}</Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div className="banner">
+              {/* 테스트 후 사진 대체할 것. */}
+              <img alt={banner[0].name} src={banner[0].bannerLink} />
+            </div>
           </div>
         </div>
-      </div>
+      </li>
     );
   }
 }
