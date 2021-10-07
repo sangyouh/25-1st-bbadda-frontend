@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "prodName": "BALL CAP",
+    "prodPrice": 25000
+  },
+  {
+    "id": 2,
+    "prodName": "NEWYORK YANKEES",
+    "prodPrice": 57000
+  },
+  {
+    "id": 3,
+    "prodName": "BOSTON REDSOX",
+    "prodPrice": 10000
+  },
+  {
+    "id": 4,
+    "prodName": "LA DODGERS",
+    "prodPrice": 40000
+  },
+  {
+    "id": 5,
+    "prodName": "I DONT KNOW",
+    "prodPrice": 39000
+  },
+  {
+    "id": 6,
+    "prodName": "YOU DONT KNOW",
+    "prodPrice": 15000
+  }
+]
