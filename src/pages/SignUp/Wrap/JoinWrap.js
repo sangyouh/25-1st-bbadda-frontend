@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import JoinButton from './JoinButton';
-import JoinForm from './JoinForm';
+import JoinButton from './Form/Button/JoinButton';
+import JoinForm from './Form/JoinForm';
 import './JoinWrap.scss';
 
 class JoinWrap extends Component {
@@ -50,6 +50,7 @@ class JoinWrap extends Component {
     const info = { id, pw, name, email, phoneNum, gender, foreign };
     const birthday = year + '-' + month + '-' + date;
     console.log('input', this.state);
+
     return (
       <div className="joinWrap">
         <div className="topInfo">F&F 통합회원 가입</div>

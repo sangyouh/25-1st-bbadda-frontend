@@ -3,14 +3,15 @@ import './Location.scss';
 
 class Location extends Component {
   render() {
+    const { page } = this.props;
     return (
       <div className="location">
-        <h2>로그인</h2>
+        <h2>{page}</h2>
         <p>
           <span>
             <a href="/main">Home</a>
           </span>
-          <strong>로그인</strong>
+          <strong>{page}</strong>
         </p>
       </div>
     );
