@@ -7,7 +7,7 @@ import './Nav.scss';
 class Nav extends Component {
   render() {
     return (
-      <div className="header">
+      <header className="header">
         <nav className="nav">
           <div className="navWrap">
             <div className="logoWrap">
@@ -41,25 +41,38 @@ class Nav extends Component {
               </ul>
             </div>
             <div className="icons">
-              <button>
+              <button className="iconBox">
                 <a>
                   <i className="fas fa-search" />
                 </a>
               </button>
-              <button>
+              <button className="iconBox">
                 <a>
                   <i className="fas fa-shopping-bag" />
                 </a>
               </button>
-              <button>
+              <button className="iconBox">
                 <a>
                   <i className="far fa-user" />
                 </a>
+                <div className="loginMenu">
+                  <ul>
+                    <li>
+                      <a>로그인</a>
+                    </li>
+                    <li>
+                      <a>회원가입</a>
+                    </li>
+                    <li>
+                      <a>마이페이지</a>
+                    </li>
+                  </ul>
+                </div>
               </button>
             </div>
           </div>
         </nav>
-      </div>
+      </header>
     );
   }
 }

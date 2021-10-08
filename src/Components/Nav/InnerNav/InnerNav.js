@@ -56,7 +56,6 @@ class InnerNav extends React.Component {
               </ul>
             </div>
             <div className="banner">
-              {/* 테스트 후 사진 대체할 것. */}
               <img alt={banner[0].name} src={banner[0].bannerLink} />
             </div>
           </div>
