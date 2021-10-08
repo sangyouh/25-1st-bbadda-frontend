@@ -20,13 +20,9 @@ class JoinButton extends Component {
         date_of_birth: birthday,
       }),
     });
-    // history.pushState('/login');
   };
   render() {
     const { info, birthday } = this.props;
-    console.log('info', info);
-    console.log('birthday', birthday);
-    console.log('submitInfo', (info.birthday = { birthday }));
     return (
       <div className="joinBtn">
         <a href="#" className="nativeLoginTag" onClick={this.handleSubmit}>

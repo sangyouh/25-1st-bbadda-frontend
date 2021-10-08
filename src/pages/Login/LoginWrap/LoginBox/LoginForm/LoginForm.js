@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MemberForm from './MemberForm';
+import MemberForm from './MemberForm/MemberForm';
 import NonMemberForm from './NonMemberForm';
 import './LoginForm.scss';
 

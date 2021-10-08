@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Location from '../Login/Location/Location';
+import Location from '../Login/Location/../../../Components/Location/Location';
 import './Order.scss';
 
 class Order extends Component {

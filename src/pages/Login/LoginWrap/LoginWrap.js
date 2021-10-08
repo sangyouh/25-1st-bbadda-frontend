@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LoginBox from './LoginBox';
-import MemberBenefit from './MemberBenefit';
+import LoginBox from './LoginBox/LoginBox';
+import MemberBenefit from './MemberBenefit/MemberBenefit';
 import './LoginWrap.scss';
 
 class LoginWrap extends Component {

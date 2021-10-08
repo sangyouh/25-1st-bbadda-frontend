@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import LoginForm from './LoginForm';
+import LoginForm from './LoginForm/LoginForm';
 import './LoginBox.scss';
 
 class LoginBox extends Component {
   constructor() {
     super();
     this.state = {
-      isClick: false,
+      isClick: false, // 아직 미구현
     };
   }
 

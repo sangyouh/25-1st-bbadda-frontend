@@ -1,0 +1,45 @@
+li {
+  .name {
+    width: 160px;
+    margin-right: 15px;
+    display: inline-block;
+  }
+
+  .year {
+    width: 80px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+  .month {
+    width: 80px;
+    margin-left: 10px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+  .date {
+    width: 80px;
+    margin-left: 10px;
+    padding: 0 10px;
+    margin-right: 15px;
+    display: inline-block;
+  }
+
+  .button1 {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 50%;
+  }
+  .button2 {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    margin: 0 0 0 30px;
+    border-radius: 50%;
+  }
+  .radioLabel {
+    margin-left: 5px;
+    font-size: 13px;
+  }
+}

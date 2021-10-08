@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import JoinList from './JoinList';
-import JoinRadioList from './JoinRadioList';
+import JoinList from './List/JoinList';
+import JOIN_LIST from '../../../../data/JoinListData';
+
 import './JoinForm.scss';
 class JoinForm extends Component {
   constructor() {
@@ -24,13 +25,21 @@ class JoinForm extends Component {
   render() {
     const { onChange, onClick } = this.props;
     const { inputList } = this.state;
-    const list = inputList.map(input =>
-      input.type !== 'radio' ? (
-        <JoinList input={input} onChange={onChange} />
-      ) : (
-        <JoinRadioList input={input} onClick={onClick} />
-      )
-    );
+    // const list = inputList.map(li =>
+    //   li.native ? (
+    //     <JoinNameList onChange={onChange} onClick={onClick} />
+    //   ) : li.year ? (
+    //     <JoinBrithList onChange={onChange} onClick={onClick} />
+    //   ) : (
+    //     <JoinList input={li} onChange={onChange} />
+    //   )
+    // );
+
+    // <InputList data={data.first} />
+    // <InputList data={data.sec} />
+    // <InputList />
+    // <InputList />
+
     return (
       <form className="joinForm">
         <section>
@@ -45,7 +54,17 @@ class JoinForm extends Component {
                     <th>기본정보</th>
                     <td>
                       <ul>
-                        {list}
+                        <JoinList data={JOIN_LIST.first} onChange={onChange} />
+                        <JoinList
+                          data={JOIN_LIST.sec}
+                          onChange={onChange}
+                          onClick={onClick}
+                        />
+                        <JoinList
+                          data={JOIN_LIST.third}
+                          onChange={onChange}
+                          onClick={onClick}
+                        />
                         {/* <li className="firstInput">
                           <input
                             placeholder="아이디 (6~15자 영문 소문자.숫자)"
@@ -53,7 +72,7 @@ class JoinForm extends Component {
                             name="id"
                           ></input>
                         </li>
-                        <li>
+                        <li className="">
                           <input
                             placeholder="비밀번호 ( 8~12자 영문, 숫자, 특수문자 중 최소 2가지 조합"
                             onChange={onChange}
@@ -66,8 +85,8 @@ class JoinForm extends Component {
                             onChange={onChange}
                             name="checkPw"
                           />
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           <input
                             className="name"
                             placeholder="이름(실명입력)"
@@ -92,8 +111,8 @@ class JoinForm extends Component {
                             // checked={'foreign' === true}
                           />
                           <label className="radioLabel">외국인</label>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           <input
                             className="year"
                             placeholder="생년(4자)"
@@ -131,8 +150,8 @@ class JoinForm extends Component {
                             // checked={'foreign' === false}
                           />
                           <label className="radioLabel">여자</label>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                           <input
                             placeholder="E-mail"
                             onChange={onChange}
@@ -146,6 +165,7 @@ class JoinForm extends Component {
                             name="phoneNum"
                           />
                         </li> */}
+                        <JoinList data={JOIN_LIST.fou} onChange={onChange} />
                       </ul>
                     </td>
                   </tr>

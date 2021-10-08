@@ -3,7 +3,7 @@
   margin: 20px 0 30px 0;
   justify-content: space-between;
   li {
-    // width: 100%; 왜 이렇게 안했을까?
+    // mlb사이트에선 width: 100%; 왜 이런식으로 안했을까?
     // 일단 똑같이 따라해봄  이러면 원본처럼 가장 오른쪽 끝이 좀 튀어나옴
     flex: 1 0 33.3%;
     padding: 30px;
@@ -27,7 +27,7 @@
   }
   .mileage {
     div {
-      background-image: url(./couponImg/mileage1.png);
+      background-image: url(./couponImg/mileage.png);
       span {
         &::before {
           background-color: #28abe3;
