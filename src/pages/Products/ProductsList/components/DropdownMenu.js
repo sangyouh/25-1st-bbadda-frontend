@@ -33,29 +33,37 @@ export class DropdownMenu extends Component {
           <i class="far fa-caret-square-down"></i>
         </button>
         {isClicked ? (
-          <ul className="menu">
-            <li>
+          <ul className="menu1">
+            <li className="dropdownList">
               <button className="borderlessButton"> 전체보기</button>{' '}
             </li>
-            <li>
+            <li className="dropdownList">
               {' '}
               <button className="borderlessButton"> CATEGORY ONE</button>{' '}
             </li>
-            <li>
+            <li className="dropdownList">
               {' '}
               <button className="borderlessButton"> CATEGORY TWO</button>{' '}
             </li>
           </ul>
         ) : null}
-        <span>CATEGORY ONE</span>
+        <span className="categoryList">CATEGORY ONE</span>
         <button onClick={this.isClicked2}>
           <i class="far fa-caret-square-down"></i>
         </button>
         {isClicked2 ? (
-          <ul className="menu">
-            <li> 전체보기 </li>
-            <li> CATEGORY ONE </li>
-            <li> CATEGORY TWO </li>
+          <ul className="menu2">
+            <li className="dropdownList">
+              <button className="borderlessButton"> 전체보기</button>{' '}
+            </li>
+            <li className="dropdownList">
+              {' '}
+              <button className="borderlessButton"> CATEGORY UNO</button>{' '}
+            </li>
+            <li className="dropdownList">
+              {' '}
+              <button className="borderlessButton"> CATEGORY DOS</button>{' '}
+            </li>
           </ul>
         ) : null}
       </div>

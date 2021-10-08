@@ -3,24 +3,23 @@
   justify-content: center;
   .container {
     width: 1480px;
-    // width: 80%;
   }
+
   .filterButton {
     background-color: white;
     border: 0;
     font-size: 25px;
   }
+
   .filterButtonBorder {
     background-color: white;
     border: 0;
     font-size: 25px;
     border-left: 2px solid;
   }
+
   .buttonBorder {
     border-right: 1px solid;
-  }
-
-  .productsListContainer {
   }
 
   .prods {
@@ -29,8 +28,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 100px;
   }
+
   img {
     width: 400px;
     height: 400px;
+  }
+
+  button:hover {
+    border-bottom: 1px solid;
   }
 }

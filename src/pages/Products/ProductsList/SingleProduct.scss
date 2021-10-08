@@ -1,7 +1,5 @@
 .SingleProduct {
   .product-container {
-    //display: flex;
-    //flex-direction: column;
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
@@ -15,11 +13,6 @@
     p {
       text-align: center;
       font-size: 20px;
-    }
-
-    &:hover {
-    }
-    img {
     }
   }
 }
