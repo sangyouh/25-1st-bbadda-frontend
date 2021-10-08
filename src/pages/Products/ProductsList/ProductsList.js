@@ -11,34 +11,7 @@ export class ProductsList extends Component {
       products: { name: '', content: [{}] },
     };
   }
-  // 백앤드 통신용 fetch
-  // componentDidMount() {
-  //   fetch('http://10.58.6.202:8000/menus/menu?id=1')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         products: data,
-  //       });
-  //     });
-  // }
-  // sortPriceHighest = () => {
-  //   fetch('http://10.58.6.202:8000/menus/menu?id=1')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       data.content.sort((first, second) => second.price - first.price);
-  //       this.setState({ products: data });
-  //     });
-  // };
-  // sortPriceLowest = () => {
-  //   fetch('http://10.58.6.202:8000/menus/menu?id=1')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       data.content.sort((first, second) => first.price - second.price);
-  //       this.setState({ products: data });
-  //     });
-  // };
 
-  // Mock Data fetch
   componentDidMount() {
     fetch('./data/productListData.json')
       .then(res => res.json())
@@ -70,7 +43,7 @@ export class ProductsList extends Component {
     const { sortPriceHighest, sortPriceLowest } = this;
 
     return (
-      <div className="productsList">
+      <div className="ProductsList">
         <Nav />
         <div className="container">
           <DropdownMenu />
@@ -84,14 +57,15 @@ export class ProductsList extends Component {
           </div>
           <div className="productsListContainer">
             <div className="prods">
-              {products.content.map((item, index) => {
+              {products.content.map(item => {
+                const { id, name, price, img } = item;
                 return (
                   <SingleProduct
-                    key={index}
-                    id={item.id}
-                    prodName={item.name}
-                    prodPrice={item.price}
-                    imgURL={item.img}
+                    key={id}
+                    id={id}
+                    productName={name}
+                    productPrice={price}
+                    imgURL={img}
                   />
                 );
               })}

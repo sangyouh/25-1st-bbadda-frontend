@@ -1,12 +1,12 @@
 .dropdownMenu {
-  text-align: center;
-  border-bottom: 2px solid;
+  display: flex;
+  justify-content: center;
   padding-bottom: 20px;
   margin-bottom: 50px;
   padding-top: 50px;
   margin-top: 60px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid;
 
   .categoryList {
     margin-right: 10px;
@@ -18,14 +18,14 @@
     background-color: white;
   }
 
-  .menu1 {
+  .menuLeft {
     position: absolute;
-    background-color: white;
     margin-top: 30px;
     margin-right: 80px;
+    background-color: white;
   }
 
-  .menu2 {
+  .menuRight {
     position: absolute;
     margin-left: 250px;
     margin-top: 30px;
@@ -38,10 +38,11 @@
   }
 
   .linkBlur {
+    opacity: 40%;
     font-weight: bold;
     color: black;
-    opacity: 40%;
   }
+
   .linkBlur:hover {
     opacity: 100%;
   }

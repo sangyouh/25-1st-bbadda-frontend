@@ -1,59 +1,76 @@
 import React, { Component } from 'react';
-import './DropdownMenu.scss';
 import { Link } from 'react-router-dom';
+import './DropdownMenu.scss';
 
 export class DropdownMenu extends Component {
   constructor() {
     super();
     this.state = {
-      isClicked: false,
-      isClicked2: false,
+      clicked: false,
+      clicked2: false,
     };
-    this.isClicked = this.isClicked.bind(this);
-    this.isClicked2 = this.isClicked2.bind(this);
   }
 
-  isClicked(e) {
+  isClicked = e => {
     e.preventDefault();
-    this.setState({ isClicked: true });
-  }
+    this.setState({ clicked: true, clicked2: true }, () => {
+      document.body.addEventListener('click', this.closeBar);
+    });
+  };
 
-  isClicked2(e) {
+  // document.body => click
+
+  //event bubling =>
+
+  // if(click event menu1 안에 포함되있다면) RETURN => DOM.contain, ref
+  // closeBar
+
+  isClicked2 = e => {
     e.preventDefault();
     this.setState({
-      isClicked2: true,
+      clicked2: true,
     });
-  }
+  };
+
+  // closeBar(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     clicked: false,
+  //   });
+  // }
+
+  closeBar = () => {
+    // if
+    this.setState({ clicked: false, clicked2: false }, () => {
+      document.body.removeEventListener('click', this.closeBar);
+    });
+  };
+
   render() {
-    const { isClicked, isClicked2 } = this.state;
+    const { clicked, clicked2 } = this.state;
 
     return (
-      <div className="dropdownMenu">
+      <div className="dropdownMenu" onClick={this.handleClick}>
         <span className="categoryList">볼캡</span>
         <button onClick={this.isClicked}>
           <i class="far fa-caret-square-down"></i>
         </button>
-        {isClicked ? (
-          <ul className="menu1">
+        {clicked ? (
+          <ul className="menuLeft">
             <li className="dropdownList">
               <Link className="linkBlur" to="#n">
-                {' '}
                 전체보기
-              </Link>{' '}
+              </Link>
             </li>
             <li className="dropdownList">
-              {' '}
               <Link className="linkBlur" to="#n">
-                {' '}
                 CATEGORY ONE
-              </Link>{' '}
+              </Link>
             </li>
             <li className="dropdownList">
-              {' '}
               <Link className="linkBlur" to="#n">
-                {' '}
                 CATEGORY TWO
-              </Link>{' '}
+              </Link>
             </li>
           </ul>
         ) : null}
@@ -61,27 +78,22 @@ export class DropdownMenu extends Component {
         <button onClick={this.isClicked2}>
           <i class="far fa-caret-square-down"></i>
         </button>
-        {isClicked2 ? (
-          <ul className="menu2">
+        {clicked2 ? (
+          <ul className="menuRight">
             <li className="dropdownList">
               <Link className="linkBlur" to="#n">
-                {' '}
                 전체보기
-              </Link>{' '}
+              </Link>
             </li>
             <li className="dropdownList">
-              {' '}
               <Link className="linkBlur" to="#n">
-                {' '}
                 CATEGORY UNO
-              </Link>{' '}
+              </Link>
             </li>
             <li className="dropdownList">
-              {' '}
               <Link className="linkBlur" to="#n">
-                {' '}
                 CATEGORY DOS
-              </Link>{' '}
+              </Link>
             </li>
           </ul>
         ) : null}
