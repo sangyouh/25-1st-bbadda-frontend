@@ -36,4 +36,13 @@
     text-align: left;
     margin-top: 15px;
   }
+
+  .linkBlur {
+    font-weight: bold;
+    color: black;
+    opacity: 40%;
+  }
+  .linkBlur:hover {
+    opacity: 100%;
+  }
 }

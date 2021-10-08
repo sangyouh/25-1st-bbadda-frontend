@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './DropdownMenu.scss';
+import { Link } from 'react-router-dom';
 
 export class DropdownMenu extends Component {
   constructor() {
@@ -35,15 +36,24 @@ export class DropdownMenu extends Component {
         {isClicked ? (
           <ul className="menu1">
             <li className="dropdownList">
-              <button className="borderlessButton"> 전체보기</button>{' '}
+              <Link className="linkBlur" to="#n">
+                {' '}
+                전체보기
+              </Link>{' '}
             </li>
             <li className="dropdownList">
               {' '}
-              <button className="borderlessButton"> CATEGORY ONE</button>{' '}
+              <Link className="linkBlur" to="#n">
+                {' '}
+                CATEGORY ONE
+              </Link>{' '}
             </li>
             <li className="dropdownList">
               {' '}
-              <button className="borderlessButton"> CATEGORY TWO</button>{' '}
+              <Link className="linkBlur" to="#n">
+                {' '}
+                CATEGORY TWO
+              </Link>{' '}
             </li>
           </ul>
         ) : null}
@@ -54,15 +64,24 @@ export class DropdownMenu extends Component {
         {isClicked2 ? (
           <ul className="menu2">
             <li className="dropdownList">
-              <button className="borderlessButton"> 전체보기</button>{' '}
+              <Link className="linkBlur" to="#n">
+                {' '}
+                전체보기
+              </Link>{' '}
             </li>
             <li className="dropdownList">
               {' '}
-              <button className="borderlessButton"> CATEGORY UNO</button>{' '}
+              <Link className="linkBlur" to="#n">
+                {' '}
+                CATEGORY UNO
+              </Link>{' '}
             </li>
             <li className="dropdownList">
               {' '}
-              <button className="borderlessButton"> CATEGORY DOS</button>{' '}
+              <Link className="linkBlur" to="#n">
+                {' '}
+                CATEGORY DOS
+              </Link>{' '}
             </li>
           </ul>
         ) : null}
