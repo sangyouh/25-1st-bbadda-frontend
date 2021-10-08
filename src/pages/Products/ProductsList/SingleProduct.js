@@ -3,10 +3,6 @@ import './SingleProduct.scss';
 import { Link } from 'react-router-dom';
 
 export class SingleProduct extends Component {
-  goToProductDetail = () => {
-    //this.props.history.push('/product/productDetail');
-    this.props.history.push('../ProductDetail/ProductDetail');
-  };
   render() {
     const { prodName, prodPrice, imgURL, id } = this.props;
     return (
