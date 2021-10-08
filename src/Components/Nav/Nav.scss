@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-a {
+@mixin atag {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -63,6 +63,7 @@ a {
             float: left;
 
             > a {
+              @include atag;
               display: block;
               margin: 16.5px 20px;
               line-height: 25px;
