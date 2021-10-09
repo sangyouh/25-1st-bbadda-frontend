@@ -4,18 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-* {
-  box-sizing: border-box;
-}
-
 @mixin atag {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
-////////////////////////////////////////////////////////////////////////
 
-.header {
+.NavHeader {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -26,7 +21,6 @@
     position: relative;
     width: 100%;
     height: 60px;
-    // (추가구현) 스크롤 이벤트 완료 후 -> bg-color: transparent;
     background-color: white;
 
     &:hover {
@@ -45,6 +39,7 @@
           text-align: center;
 
           > h1 {
+            @include atag;
             float: left;
             width: 100px;
             margin: 5px 20px 0;
@@ -106,6 +101,7 @@
           border: none;
 
           a {
+            @include atag;
             i {
               margin-left: 10px;
               font-size: 22px;

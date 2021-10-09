@@ -1,5 +1,5 @@
-/*eslint-disable*/
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import InnerNav from './InnerNav/InnerNav';
 import NAV_DATA from './navData';
 import './Nav.scss';
@@ -7,18 +7,17 @@ import './Nav.scss';
 class Nav extends Component {
   render() {
     return (
-      <header className="header">
+      <header className="NavHeader">
         <nav className="nav">
           <div className="navWrap">
             <div className="logoWrap">
-              <a className="MLBlogo">
+              <Link className="MLBlogo" to="#">
                 <h1>MLB</h1>
-              </a>
+              </Link>
             </div>
             <div className="menuLists">
               <ul className="list">
-                {NAV_DATA.map(item => {
-                  const { id, name, link, cate, depth, banner } = item;
+                {NAV_DATA.map(({ id, name, link, cate, depth, banner }) => {
                   return (
                     <InnerNav
                       key={id}
@@ -33,38 +32,38 @@ class Nav extends Component {
               </ul>
               <ul className="list promote">
                 <li>
-                  <a>PROMOTION</a>
+                  <Link to="#">PROMOTION</Link>
                 </li>
                 <li>
-                  <a>LIBRARY</a>
+                  <Link to="#">LIBRARY</Link>
                 </li>
               </ul>
             </div>
             <div className="icons">
               <button className="iconBox">
-                <a>
+                <Link to="#">
                   <i className="fas fa-search" />
-                </a>
+                </Link>
               </button>
               <button className="iconBox">
-                <a>
+                <Link to="#">
                   <i className="fas fa-shopping-bag" />
-                </a>
+                </Link>
               </button>
               <button className="iconBox">
-                <a>
+                <Link to="#">
                   <i className="far fa-user" />
-                </a>
+                </Link>
                 <div className="loginMenu">
                   <ul>
                     <li>
-                      <a>로그인</a>
+                      <Link to="#">로그인</Link>
                     </li>
                     <li>
-                      <a>회원가입</a>
+                      <Link to="#">회원가입</Link>
                     </li>
                     <li>
-                      <a>마이페이지</a>
+                      <Link to="#">마이페이지</Link>
                     </li>
                   </ul>
                 </div>

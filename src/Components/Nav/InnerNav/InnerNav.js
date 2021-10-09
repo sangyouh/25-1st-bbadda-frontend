@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './InnerNav.scss';
@@ -10,6 +9,7 @@ class InnerNav extends React.Component {
       isMenuHover: false,
     };
   }
+
   toggleHover = () => {
     this.setState({
       isMenuHover: !this.state.isMenuHover,
@@ -19,6 +19,7 @@ class InnerNav extends React.Component {
   render() {
     const { isMenuHover } = this.state;
     const { name, link, cate, depth, banner } = this.props;
+
     return (
       <li onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
         <Link to={link}>{name}</Link>
@@ -26,10 +27,10 @@ class InnerNav extends React.Component {
           <div className="innerWrap">
             <div className="specialProduct">
               <ul className="lists">
-                {cate.map(item => {
+                {cate.map(({ id, link, name }) => {
                   return (
-                    <li key={item.id}>
-                      <Link to={item.link}>{item.name}</Link>
+                    <li key={id}>
+                      <Link to={link}>{name}</Link>
                     </li>
                   );
                 })}
@@ -38,14 +39,15 @@ class InnerNav extends React.Component {
             <div className="productLists">
               <ul className="lists">
                 {depth.map(item => {
+                  const { id, link, name } = item;
                   return (
-                    <li key={item.id}>
-                      <Link to={item.link}>{item.name}</Link>
+                    <li key={id}>
+                      <Link to={link}>{name}</Link>
                       <ul>
-                        {item.items.map(list => {
+                        {item.items.map(({ id, link, name }) => {
                           return (
-                            <li key={list.id}>
-                              <Link to={list.link}>{list.name}</Link>
+                            <li key={id}>
+                              <Link to={link}>{name}</Link>
                             </li>
                           );
                         })}
