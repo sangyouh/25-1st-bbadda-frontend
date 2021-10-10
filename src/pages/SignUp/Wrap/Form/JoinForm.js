@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import Input from '../../../../Components/Input/Input';
 import List from '../../../../Components/List/List';
+import Table from '../../../../Components/Table/Table';
+import TableContent from '../../../../Components/Table/TableContent';
 import JOIN_LIST from '../../../../data/JoinListData';
 
 import './JoinForm.scss';
@@ -14,52 +17,114 @@ class JoinForm extends Component {
 
   render() {
     const { onChange, onClick } = this.props;
-    // const { inputList } = this.state;
-    // const list = inputList.map(li =>
-    //   li.native ? (
-    //     <JoinNameList onChange={onChange} onClick={onClick} />
-    //   ) : li.year ? (
-    //     <JoinBrithList onChange={onChange} onClick={onClick} />
-    //   ) : (
-    //     <JoinList input={li} onChange={onChange} />
-    //   )
-    // );
 
     return (
-      <form className="joinForm">
+      <form className="JoinForm">
         <section>
           <div className="header">
             <span className="joinInfo">가입정보</span>
             <span className="requiredInfo">필수입력 항목</span>
             <div className="infoForm">
-              <table>
-                <colgroup></colgroup>
-                <tbody>
-                  <tr className="basicInfo">
-                    <th>기본정보</th>
-                    <td>
-                      <ul>
-                        <List data={JOIN_LIST.first} onChange={onChange} />
-                        <List
-                          data={JOIN_LIST.sec}
-                          onChange={onChange}
-                          onClick={onClick}
-                        />
-                        <List
-                          data={JOIN_LIST.third}
-                          onChange={onChange}
-                          onClick={onClick}
-                        />
-                        <List data={JOIN_LIST.fou} onChange={onChange} />
-                      </ul>
-                    </td>
-                  </tr>
-                  {/* <tr className="certProcess">
-                    <th>본인인증</th>
-                    <td></td>
-                  </tr> */}
-                </tbody>
-              </table>
+              <Table>
+                <TableContent>
+                  <ul>
+                    <List data={JOIN_LIST.first} onChange={onChange} />
+                    <li>
+                      {JOIN_LIST.sec.map(input =>
+                        input.radio ? (
+                          <label className="radioLabel">
+                            <Input
+                              key={input.id}
+                              className={input.className}
+                              placeholder={input.placeHolder}
+                              type={input.type}
+                              name={input.name}
+                              value={input.value}
+                              // onChange={onChange}
+                              onClick={onClick}
+                            />
+                            {input.radioName}
+                          </label>
+                        ) : (
+                          <Input
+                            id={input.id}
+                            className={input.className}
+                            placeholder={input.placeHolder}
+                            type={input.type}
+                            name={input.name}
+                            onChange={onChange}
+                          />
+                        )
+                      )}
+                      {/* {JOIN_LIST.sec.map(input =>
+                        input.radio ? (
+                          <label className="radioLabel">
+                            <Input
+                              key={input.id}
+                              className={input.className}
+                              placeholder={input.placeHolder}
+                              type={input.type}
+                              name={input.name}
+                              value={input.value}
+                              // onChange={onChange}
+                              onClick={onClick}
+                            />
+                            {input.radioName}
+                          </label>
+                        ) : (
+                          <Input
+                            id={input.id}
+                            className={input.className}
+                            placeholder={input.placeHolder}
+                            type={input.type}
+                            name={input.name}
+                            onChange={onChange}
+                          />
+                        )
+                      )} */}
+                    </li>
+                    <li>
+                      {JOIN_LIST.third.map(input =>
+                        input.radio ? (
+                          <label className="radioLabel">
+                            <Input
+                              key={input.id}
+                              className={input.className}
+                              placeholder={input.placeHolder}
+                              type={input.type}
+                              name={input.name}
+                              value={input.value}
+                              // onChange={onChange}
+                              onClick={onClick}
+                            />
+                            {input.radioName}
+                          </label>
+                        ) : (
+                          <Input
+                            id={input.id}
+                            className={input.className}
+                            placeholder={input.placeHolder}
+                            type={input.type}
+                            name={input.name}
+                            onChange={onChange}
+                          />
+                        )
+                      )}
+                    </li>
+                    {/* <List
+                      data={JOIN_LIST.sec}
+                      onChange={onChange}
+                      onClick={onClick}
+                    /> */}
+                    {/* <List
+                      data={JOIN_LIST.third}
+                      onChange={onChange}
+                      onClick={onClick}
+                    /> */}
+                    <List data={JOIN_LIST.fou} onChange={onChange} />
+                  </ul>
+                </TableContent>
+              </Table>
             </div>
           </div>
         </section>

@@ -1,3 +1,14 @@
+@mixin orderHeader {
+  display: inline-block;
+  position: relative;
+  height: 70px;
+  padding-left: 108px;
+  line-height: 70px;
+  font-size: 20px;
+  font-weight: 400px;
+  color: #fff;
+}
+
 .OrderForm {
   width: 1200px;
   margin: auto;
@@ -6,21 +17,14 @@
 
     background: #000;
     text-align: center;
-    .orderLi {
-      display: inline-block;
-      position: relative;
-      height: 70px;
-      padding-left: 108px;
-      line-height: 70px;
-      font-size: 20px;
-      font-weight: 400px;
-      color: #fff;
-    }
 
     .first {
+      @include orderHeader;
     }
 
     .last {
+      @include orderHeader;
+      opacity: 0.3;
     }
     ::after {
       content: '';

@@ -3,10 +3,11 @@ import './Input.scss';
 
 class Input extends Component {
   render() {
-    const { className, type, name, value, placeholder } = this.props;
+    const { className, type, name, value, placeholder, id } = this.props;
 
     return (
       <input
+        id={id}
         className={className}
         type={type}
         name={name}

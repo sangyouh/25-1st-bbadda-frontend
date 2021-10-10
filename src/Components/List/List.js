@@ -23,8 +23,9 @@ class List extends Component {
           </label>
         </li>
       ) : input.single ? (
-        <li className="single">
+        <li className={input.classNameA}>
           <Input
+            className={input.classNameB}
             key={input.id}
             placeholder={input.placeHolder}
             type={input.type}

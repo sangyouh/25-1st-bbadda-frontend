@@ -2,7 +2,8 @@ const JOIN_LIST = {
   first: [
     {
       id: 1,
-      className: 'firstInput',
+      classNameA: 'firstInput',
+      classNameB: 'basicInput',
       placeHolder: '아이디 (6~15자 영문 소문자.숫자)',
       type: 'text',
       name: 'id',
@@ -10,7 +11,7 @@ const JOIN_LIST = {
     },
     {
       id: 2,
-      className: '',
+      classNameB: 'basicInput',
       placeHolder: '비밀번호 ( 8~12자 영문, 숫자, 특수문자 중 최소 2가지 조합',
       type: 'password',
       name: 'pw',
@@ -18,7 +19,7 @@ const JOIN_LIST = {
     },
     {
       id: 3,
-      className: '',
+      classNameB: 'basicInput',
       placeHolder: '비밀번호 확인',
       type: 'password',
       name: 'checkPw',
@@ -96,7 +97,7 @@ const JOIN_LIST = {
   fou: [
     {
       id: 1,
-      className: 'listInput',
+      classNameB: 'basicInput',
       placeHolder: 'E-mail',
       type: 'email',
       name: 'month',
@@ -104,7 +105,7 @@ const JOIN_LIST = {
     },
     {
       id: 2,
-      className: 'listInput',
+      classNameB: 'basicInput',
       placeHolder: '전화번호',
       type: 'tel',
       name: 'phoneNum',
