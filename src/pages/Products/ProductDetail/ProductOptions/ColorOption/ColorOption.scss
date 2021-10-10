@@ -1,10 +1,10 @@
-.colorOption {
+.ColorOption {
   .colorList {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
-    li {
+    .color {
       margin: 0 0 5px 0;
 
       a {

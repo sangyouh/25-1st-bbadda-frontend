@@ -1,4 +1,4 @@
-.quantityOption {
+.QuantityOption {
   padding-bottom: 20px;
   border-bottom: 1px solid #ddd;
 
@@ -6,14 +6,14 @@
     display: flex;
     align-items: center;
 
-    button {
-      border: 1px solid #ddd;
+    .countBtn {
       width: 30px;
       height: 30px;
+      border: 1px solid #ddd;
       font-size: 20px;
       font-weight: 400;
     }
-    input[type='text'] {
+    .quantity {
       width: 81px;
       height: 28px;
       padding: 0;

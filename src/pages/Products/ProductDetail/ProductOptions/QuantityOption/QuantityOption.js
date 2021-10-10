@@ -4,12 +4,16 @@ import './QuantityOption.scss';
 class QuantityOption extends React.Component {
   render() {
     return (
-      <div className="optionBox quantityOption">
+      <div className="QuantityOption optionBox">
         <span className="optionTtl">수량</span>
         <div className="countQuantity">
-          <button type="button">-</button>
-          <input type="text" />
-          <button type="button">+</button>
+          <button className="countBtn" type="button">
+            -
+          </button>
+          <input className="quantity" type="text" />
+          <button className="countBtn" type="button">
+            +
+          </button>
         </div>
       </div>
     );

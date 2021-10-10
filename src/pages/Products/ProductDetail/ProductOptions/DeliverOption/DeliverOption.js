@@ -4,7 +4,7 @@ import './DeliverOption.scss';
 class DeliverOption extends React.Component {
   render() {
     return (
-      <div className="optionBox deliverOption">
+      <div className="DeliverOption optionBox">
         <span className="optionTtl">배송</span>
         <div className="seletDetail">
           <input type="radio" name="deliversy" />

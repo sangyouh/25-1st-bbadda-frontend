@@ -5,31 +5,11 @@ import './SizeOption.scss';
 class SizeOption extends Component {
   render() {
     return (
-      <div className="optionBox sizeOption">
+      <div className="SizeOption optionBox">
         <span className="optionTtl">사이즈</span>
         <ul className="sizeList">
-          <li>
+          <li className="size">
             <Link to="#n">size1</Link>
-          </li>
-          <li>
-            <Link to="#n">size2</Link>
-          </li>
-          <li>
-            <Link to="#n">size3</Link>
-          </li>
-          <li>
-            <Link to="#n" className="soldOut">
-              size4
-            </Link>
-          </li>
-          <li>
-            <Link to="#n">size5</Link>
-          </li>
-          <li>
-            <Link to="#n">size6</Link>
-          </li>
-          <li>
-            <Link to="#n">size7</Link>
           </li>
         </ul>
         <Link to="#n" className="sizeGuide">
