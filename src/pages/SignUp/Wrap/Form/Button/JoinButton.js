@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from '../../../../../Components/Button/Button';
+import BUTTON_LIST from '../../../../../data/ButtonData';
 import './JoinButton.scss';
 
 class JoinButton extends Component {
@@ -22,13 +24,11 @@ class JoinButton extends Component {
     });
   };
   render() {
-    const { info, birthday } = this.props;
+    const { handleSubmit } = this;
     return (
-      <div className="joinBtn">
-        <a href="#" className="nativeLoginTag" onClick={this.handleSubmit}>
-          회원가입
-        </a>
-      </div>
+      <>
+        <Button data={BUTTON_LIST.signUp} onClick={handleSubmit} />
+      </>
     );
   }
 }

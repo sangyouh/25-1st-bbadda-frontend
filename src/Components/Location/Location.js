@@ -5,13 +5,15 @@ class Location extends Component {
   render() {
     const { page } = this.props;
     return (
-      <div className="location">
-        <h2>{page}</h2>
-        <p>
+      <div className="Location">
+        <h2 className="locationH2">{page}</h2>
+        <p className="locationP">
           <span>
-            <a href="/main">Home</a>
+            <a className="locationA" href="/main">
+              Home
+            </a>
           </span>
-          <strong>{page}</strong>
+          <strong className="locationStrong">{page}</strong>
         </p>
       </div>
     );

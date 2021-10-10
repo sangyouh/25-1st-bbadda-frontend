@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import LoginButton from './LoginButton';
-import LoginInput from './LoginInput';
-import './MemberForm.scss';
 import SignUp from './SignUp';
+import JoinList from '../../../../../../Components/List/List';
+import LOGIN_LIST from '../../../../../../data/LoginInputList';
+import './MemberForm.scss';
 
 class MemberForm extends Component {
   constructor() {
@@ -34,14 +35,18 @@ class MemberForm extends Component {
   // };
 
   render() {
+    const { handleInput } = this;
     const { id, pw } = this.state;
+    console.log('state', this.state);
     return (
       <form className="memberForm">
-        <LoginInput onChange={this.handleInput} />
+        <ul>
+          <JoinList data={LOGIN_LIST.foo} onChange={handleInput} />
+        </ul>
         <p>
-          <label>
-            <input type="checkbox" name="xxx" value="yyy" checked /> 아이디 저장
-          </label>
+          <ul>
+            <JoinList data={LOGIN_LIST.bar} />
+          </ul>
         </p>
         <p>{/* 오류 안내 문장 */}</p>
         <LoginButton id={id} pw={pw} />

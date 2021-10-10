@@ -72,23 +72,24 @@
                     display: inline-block;
                   }
 
-                  .button1 {
-                    width: 20px;
-                    height: 20px;
-                    padding: 0px;
-                    margin: 0px;
-                    border-radius: 50%;
-                  }
-                  .button2 {
-                    width: 20px;
-                    height: 20px;
-                    padding: 0px;
-                    margin: 0 0 0 30px;
-                    border-radius: 50%;
-                  }
                   .radioLabel {
                     margin-left: 5px;
                     font-size: 13px;
+
+                    .button1 {
+                      width: 20px;
+                      height: 20px;
+                      padding: 0px;
+                      margin: 0px 10px 0 0;
+                      border-radius: 50%;
+                    }
+                    .button2 {
+                      width: 20px;
+                      height: 20px;
+                      padding: 0px;
+                      margin: 0 10px 0 30px;
+                      border-radius: 50%;
+                    }
                   }
                 }
               }

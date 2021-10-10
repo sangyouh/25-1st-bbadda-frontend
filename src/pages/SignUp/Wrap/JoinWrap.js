@@ -30,7 +30,7 @@ class JoinWrap extends Component {
 
   handleRadio = e => {
     const { name, value } = e.target;
-    this.setState({ [name]: value === 'true' ? true : false });
+    this.setState({ [name]: value === 'true' });
   };
 
   render() {
@@ -48,8 +48,9 @@ class JoinWrap extends Component {
       date,
     } = this.state;
     const info = { id, pw, name, email, phoneNum, gender, foreign };
-    const birthday = year + '-' + month + '-' + date;
+    const birthday = `${year}-${month}-${date}`;
     console.log('input', this.state);
+    console.log('birthday', birthday);
 
     return (
       <div className="joinWrap">

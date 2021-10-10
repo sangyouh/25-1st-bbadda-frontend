@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from './LoginForm/LoginForm';
+import MemberForm from './LoginForm/MemberForm/MemberForm';
 import './LoginBox.scss';
 
 class LoginBox extends Component {
@@ -10,21 +10,28 @@ class LoginBox extends Component {
     };
   }
 
+  // changeLoginType = () => {
+  //   const
+  //   this.setState({})
+  // }
+
   render() {
     const { isClick } = this.state;
     return (
-      <div className="loginBox">
-        <ul>
-          <li className={isClick && 'on'}>
+      <div className="LoginBox">
+        <ul className="loginBoxUl">
+          <li className="loginBoxLi">
             <a href="javascript:;" onClick>
               회원
             </a>
           </li>
-          <li className={isClick && 'on'}>
+          <li className="loginBoxLi">
             <a href="javascript:;">비회원 (주문조회)</a>
           </li>
         </ul>
-        <LoginForm />
+        <div className="forms">
+          <MemberForm />
+        </div>
       </div>
     );
   }

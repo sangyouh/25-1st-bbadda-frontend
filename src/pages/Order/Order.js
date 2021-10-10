@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Location from '../Login/Location/../../../Components/Location/Location';
+import Location from '../../Components/Location/Location';
+import OrderForm from './OrderForm/OrderForm';
 import './Order.scss';
 
 class Order extends Component {
   render() {
     return (
-      <div className="order">
-        <Location page="주문" />
+      <div className="Order">
+        <Location page={'주문결제'} />
+
+        <OrderForm />
       </div>
     );
   }
