@@ -27,7 +27,7 @@
   }
   .mileage {
     div {
-      background-image: url(./couponImg/mileage.png);
+      background-image: url(../Img/mileage.png);
       span {
         &::before {
           background-color: #28abe3;
@@ -37,7 +37,7 @@
   }
   .coupon {
     div {
-      background-image: url(./couponImg/coupon.png);
+      background-image: url(../Img/coupon.png);
       span {
         &::before {
           background-color: #ff4c65;
@@ -47,7 +47,7 @@
   }
   .percent {
     div {
-      background-image: url(./couponImg/percent.png);
+      background-image: url(../Img/percent.png);
       span {
         &::before {
           background-color: #8bad39;

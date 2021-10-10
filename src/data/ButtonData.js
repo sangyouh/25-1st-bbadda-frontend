@@ -21,6 +21,18 @@ const BUTTON_LIST = {
     classNameB: 'nativeLoginTag',
     content: '회원가입',
   },
+  signInType: {
+    Member: {
+      classNameA: 'loginBoxLi',
+      classNameB: '',
+      content: ' 회원',
+    },
+    NonMember: {
+      classNameA: 'loginBoxLi',
+      classNameB: '',
+      content: '회원가입',
+    },
+  },
 };
 
 export default BUTTON_LIST;

@@ -27,7 +27,11 @@ class JoinButton extends Component {
     const { handleSubmit } = this;
     return (
       <>
-        <Button data={BUTTON_LIST.signUp} onClick={handleSubmit} />
+        <Button
+          href={'/main'}
+          data={BUTTON_LIST.signUp}
+          onClick={handleSubmit}
+        />
       </>
     );
   }

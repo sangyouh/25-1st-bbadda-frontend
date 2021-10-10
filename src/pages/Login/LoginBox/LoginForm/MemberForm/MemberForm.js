@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import LoginButton from './LoginButton';
 import SignUp from './SignUp';
-import JoinList from '../../../../../../Components/List/List';
-import LOGIN_LIST from '../../../../../../data/LoginInputList';
+import List from '../../../../../Components/List/List';
+import LOGIN_LIST from '../../../../../data/LoginInputList';
 import './MemberForm.scss';
 
 class MemberForm extends Component {
@@ -41,11 +41,11 @@ class MemberForm extends Component {
     return (
       <form className="memberForm">
         <ul>
-          <JoinList data={LOGIN_LIST.foo} onChange={handleInput} />
+          <List data={LOGIN_LIST.foo} onChange={handleInput} />
         </ul>
         <p>
           <ul>
-            <JoinList data={LOGIN_LIST.bar} />
+            <List data={LOGIN_LIST.bar} />
           </ul>
         </p>
         <p>{/* 오류 안내 문장 */}</p>

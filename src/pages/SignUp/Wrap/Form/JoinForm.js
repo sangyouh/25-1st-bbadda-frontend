@@ -36,11 +36,9 @@ class JoinForm extends Component {
                             <Input
                               key={input.id}
                               className={input.className}
-                              placeholder={input.placeHolder}
                               type={input.type}
                               name={input.name}
                               value={input.value}
-                              // onChange={onChange}
                               onClick={onClick}
                             />
                             {input.radioName}
@@ -56,32 +54,6 @@ class JoinForm extends Component {
                           />
                         )
                       )}
-                      {/* {JOIN_LIST.sec.map(input =>
-                        input.radio ? (
-                          <label className="radioLabel">
-                            <Input
-                              key={input.id}
-                              className={input.className}
-                              placeholder={input.placeHolder}
-                              type={input.type}
-                              name={input.name}
-                              value={input.value}
-                              // onChange={onChange}
-                              onClick={onClick}
-                            />
-                            {input.radioName}
-                          </label>
-                        ) : (
-                          <Input
-                            id={input.id}
-                            className={input.className}
-                            placeholder={input.placeHolder}
-                            type={input.type}
-                            name={input.name}
-                            onChange={onChange}
-                          />
-                        )
-                      )} */}
                     </li>
                     <li>
                       {JOIN_LIST.third.map(input =>
@@ -90,11 +62,9 @@ class JoinForm extends Component {
                             <Input
                               key={input.id}
                               className={input.className}
-                              placeholder={input.placeHolder}
                               type={input.type}
                               name={input.name}
                               value={input.value}
-                              // onChange={onChange}
                               onClick={onClick}
                             />
                             {input.radioName}
@@ -111,16 +81,6 @@ class JoinForm extends Component {
                         )
                       )}
                     </li>
-                    {/* <List
-                      data={JOIN_LIST.sec}
-                      onChange={onChange}
-                      onClick={onClick}
-                    /> */}
-                    {/* <List
-                      data={JOIN_LIST.third}
-                      onChange={onChange}
-                      onClick={onClick}
-                    /> */}
                     <List data={JOIN_LIST.fou} onChange={onChange} />
                   </ul>
                 </TableContent>

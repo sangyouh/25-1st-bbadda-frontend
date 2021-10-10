@@ -1,7 +1,7 @@
 /*global Kakao*/
 import React, { Component } from 'react';
-import Button from '../../../../../../Components/Button/Button';
-import BUTTON_LIST from '../../../../../../data/ButtonData';
+import Button from '../../../../../Components/Button/Button';
+import BUTTON_LIST from '../../../../../data/ButtonData';
 import './LoginButton.scss';
 class LoginButton extends Component {
   constructor() {
@@ -79,13 +79,24 @@ class LoginButton extends Component {
 
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;
-    const { data } = BUTTON_LIST;
-    console.log('data', BUTTON_LIST);
+
     return (
       <div className="loginButton">
-        <Button data={BUTTON_LIST.signIn.Basic} onClick={handleSubmit} />
-        <Button data={BUTTON_LIST.signIn.Naver} onClick={handleSubmit} />
-        <Button data={BUTTON_LIST.signIn.Kakao} onClick={loginWithKakao} />
+        <Button
+          href={'/main'}
+          data={BUTTON_LIST.signIn.Basic}
+          onClick={handleSubmit}
+        />
+        <Button
+          href={'/main'}
+          data={BUTTON_LIST.signIn.Naver}
+          onClick={handleSubmit}
+        />
+        <Button
+          href={'/main'}
+          data={BUTTON_LIST.signIn.Kakao}
+          onClick={loginWithKakao}
+        />
       </div>
     );
   }
