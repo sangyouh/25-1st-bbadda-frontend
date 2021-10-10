@@ -3,12 +3,13 @@ import SingleProduct from './SingleProduct';
 import DropdownMenu from './components/DropdownMenu';
 import Nav from '../../../Components/Nav/Nav';
 import './ProductsList.scss';
+import Drop from './components/Drop';
 
 export class ProductsList extends Component {
   constructor() {
     super();
     this.state = {
-      products: { name: '', content: [{}] },
+      products: { content: [{}] },
     };
   }
 
@@ -55,6 +56,7 @@ export class ProductsList extends Component {
               낮은가격순
             </button>
           </div>
+
           <div className="productsListContainer">
             <div className="prods">
               {products.content.map(item => {
