@@ -3,13 +3,13 @@ import SingleProduct from './SingleProduct';
 import DropdownMenu from './components/DropdownMenu';
 import Nav from '../../../Components/Nav/Nav';
 import './ProductsList.scss';
-import Drop from './components/Drop';
 
 export class ProductsList extends Component {
   constructor() {
     super();
     this.state = {
       products: { content: [{}] },
+      clickBack: true,
     };
   }
 
@@ -39,6 +39,10 @@ export class ProductsList extends Component {
       });
   };
 
+  close = () => {
+    this.setState({ clickBack: false });
+  };
+
   render() {
     const { products } = this.state;
     const { sortPriceHighest, sortPriceLowest } = this;
@@ -47,12 +51,13 @@ export class ProductsList extends Component {
       <div className="ProductsList">
         <Nav />
         <div className="container">
-          <DropdownMenu />
+          <DropdownMenu categoryName={products.name} />
           <div>
             <button className="filterButton" onClick={sortPriceHighest}>
               높은가격순
             </button>
-            <button className="filterButtonBorder" onClick={sortPriceLowest}>
+            <span className="buttonDivider">|</span>
+            <button className="filterButton" onClick={sortPriceLowest}>
               낮은가격순
             </button>
           </div>
