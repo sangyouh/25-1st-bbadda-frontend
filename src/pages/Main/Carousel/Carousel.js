@@ -19,6 +19,8 @@ export default class Carousel extends React.Component {
   };
 
   render() {
+    console.log(this.state);
+    const { imageCurrentNo } = this.state;
     return (
       <>
         <div className="wapper">
@@ -26,9 +28,7 @@ export default class Carousel extends React.Component {
             className="slide-container"
             style={{
               width: `${IMAGES_DATA.length * 100}vw`,
-              transform: `translate3d(${
-                this.state.imageCurrentNo * -100
-              }vw, 0vw, 0vw)`,
+              transform: `translate3d(${imageCurrentNo * -100}vw, 0vw, 0vw)`,
             }}
           >
             {IMAGES_DATA.map(({ id, url }) => {
@@ -50,34 +50,49 @@ export default class Carousel extends React.Component {
             {IMAGES_DATA.map(({ id }) => {
               return (
                 <li>
-                  <button onClick={() => this.onChangeImage(id)}>{id}</button>
+                  <button
+                    className={`${imageCurrentNo == id ? 'btnActive' : ''}`}
+                    onClick={() => this.onChangeImage(id)}
+                  >
+                    {id}
+                  </button>
                 </li>
               );
             })}
           </ul>
           <div className="slideBtn">
-            <i class="fas fa-chevron-left"></i>
-            <sapn></sapn>
+            <button
+              className="prevBtn"
+              onClick={() => {
+                this.onChangeImage(imageCurrentNo - 1);
+              }}
+            >
+              <span>
+                <i className="fas fa-chevron-left" />
+              </span>
+              <span className="count">
+                <span>{imageCurrentNo + 1}</span>
+                <span style={{ margin: '0 5px' }}>/</span>
+                <span>{IMAGES_DATA.length}</span>
+              </span>
+            </button>
+            <button
+              className="nextBtn"
+              onClick={() => {
+                this.onChangeImage(imageCurrentNo + 1);
+              }}
+            >
+              <span>
+                <i className="fas fa-chevron-right" />
+              </span>
+              <span className="count">
+                <span>{imageCurrentNo + 1}</span>
+                <span style={{ margin: '0 5px' }}>/</span>
+                <span>{IMAGES_DATA.length}</span>
+              </span>
+            </button>
           </div>
         </div>
-        <button
-          type="button"
-          className="slide_btn_prev"
-          onClick={() => {
-            this.onChangeImage(this.state.imageCurrentNo - 1);
-          }}
-        >
-          Prev
-        </button>
-        <button
-          type="button"
-          className="slide_btn_next"
-          onClick={() => {
-            this.onChangeImage(this.state.imageCurrentNo + 1);
-          }}
-        >
-          Next
-        </button>
       </>
     );
   }
