@@ -5,21 +5,34 @@ import './JoinButton.scss';
 
 class JoinButton extends Component {
   handleSubmit = e => {
-    const { id, pw, name, email, phoneNum, gender, foreign, birthday } =
-      this.props;
+    const {
+      account,
+      password,
+      mobile_number,
+      foreigner,
+      date_of_birth,
+      name,
+      email,
+      gender,
+      foreign,
+      birthday,
+      id,
+      pw,
+      phoneNum,
+    } = this.props;
 
     e.preventDefault();
-    fetch('http://10.58.6.202:8000/users/signup/', {
+    fetch('http://172.30.1.51:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        account: id,
-        password: pw,
-        name: name,
-        email: email,
-        phone_number: phoneNum,
-        gender: gender,
-        foreigner: foreign,
-        date_of_birth: birthday,
+        account,
+        password,
+        name,
+        email,
+        mobile_number,
+        gender,
+        foreigner,
+        date_of_birth,
       }),
     });
   };

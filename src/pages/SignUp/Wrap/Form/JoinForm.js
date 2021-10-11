@@ -25,11 +25,14 @@ class JoinForm extends Component {
             <span className="joinInfo">가입정보</span>
             <span className="requiredInfo">필수입력 항목</span>
             <div className="infoForm">
-              <Table>
-                <TableContent>
+              <Table
+                tableClassName={'JoinBasicTable'}
+                colClassName={'JoinBasicCol'}
+              >
+                <TableContent tableHead={'기본정보'}>
                   <ul>
                     <List data={JOIN_LIST.first} onChange={onChange} />
-                    <li>
+                    <li className="joinList">
                       {JOIN_LIST.sec.map(input =>
                         input.radio ? (
                           <label className="radioLabel">
@@ -55,7 +58,7 @@ class JoinForm extends Component {
                         )
                       )}
                     </li>
-                    <li>
+                    <li className="joinList">
                       {JOIN_LIST.third.map(input =>
                         input.radio ? (
                           <label className="radioLabel">

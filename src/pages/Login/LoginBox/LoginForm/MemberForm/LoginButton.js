@@ -68,7 +68,7 @@ class LoginButton extends Component {
   handleSubmit = e => {
     const { id, pw } = this.props;
     e.preventDefault();
-    fetch('http://10.58.6.202:8000/users/signin/', {
+    fetch('http://172.30.1.51:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         account: id,
@@ -79,7 +79,7 @@ class LoginButton extends Component {
 
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;
-
+    console.log('id', this.props.id, 'pw', this.props.pw);
     return (
       <div className="loginButton">
         <Button

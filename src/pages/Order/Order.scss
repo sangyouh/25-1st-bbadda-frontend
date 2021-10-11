@@ -1,3 +1,26 @@
 .Order {
+  width: 1200px;
   padding-top: 120px;
+  margin: auto;
+
+  .orderInfo {
+    position: relative;
+    overflow: hidden;
+    padding-right: 320px;
+    .orderWriteArea {
+      position: relative;
+      padding-bottom: 40px;
+
+      .orderInfoTitle {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+      // .JoinBasicTable {
+      //   width: 100%;
+      //   .JoinBasicCol {
+      //     width: 200px;
+      //   }
+      // }
+    }
+  }
 }

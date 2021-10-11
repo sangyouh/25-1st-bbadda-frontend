@@ -23,9 +23,9 @@
         margin-top: 20px;
         border-top: 1px solid #666;
         border-bottom: 1px solid #ddd;
-        table {
+        .JoinBasicTable {
           width: 100%;
-          colgroup {
+          .JoinBasicCol {
             width: 200px;
           }
           tbody {
@@ -37,59 +37,11 @@
                 ul {
                   .firstInput {
                     border: none;
+                    padding: 10px 0;
                   }
-                  li {
+                  .joinList {
                     padding: 10px 0;
                     border-top: 1px solid #dddddd;
-                  }
-                  .basicInput {
-                    @include inputs;
-                    width: 100%;
-                    padding: 0 15px;
-                  }
-                  .name {
-                    @include inputs;
-                    display: inline-block;
-                    width: 160px;
-                    padding: 0 15px;
-                    margin-right: 15px;
-                  }
-
-                  .year {
-                    @include inputs;
-                    display: inline-block;
-                    width: 80px;
-                    padding: 0 10px;
-                  }
-                  .month {
-                    @include inputs;
-                    display: inline-block;
-                    width: 80px;
-                    margin-left: 10px;
-                    padding: 0 10px;
-                  }
-                  .date {
-                    @include inputs;
-                    display: inline-block;
-                    width: 80px;
-                    padding: 0 10px;
-                    margin: 0 15px 0 10px;
-                  }
-                  .button1 {
-                    @include inputs;
-                    width: 20px;
-                    height: 20px;
-                    padding: 0px;
-                    margin: 0px 10px 0 0;
-                    border-radius: 50%;
-                  }
-                  .button2 {
-                    @include inputs;
-                    width: 20px;
-                    height: 20px;
-                    padding: 0px;
-                    margin: 0 10px 0 30px;
-                    border-radius: 50%;
                   }
 
                   .radioLabel {

@@ -6,7 +6,7 @@ class Wrap extends Component {
     const { children, title, className, titleClassName } = this.props;
     return (
       <div className={className}>
-        <h3>{title}</h3>
+        <h3 className={titleClassName}>{title}</h3>
         {children}
       </div>
     );

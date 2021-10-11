@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 class TableContent extends Component {
   render() {
-    const { children } = this.props;
+    const { tableHead, children } = this.props;
     return (
       <tr className="basicInfo">
-        <th>기본정보</th>
-        <td>{children}</td>
+        <th>
+          <label className="thLabel">{tableHead}</label>
+        </th>
+        <td className="tableContentTd">{children}</td>
       </tr>
     );
   }

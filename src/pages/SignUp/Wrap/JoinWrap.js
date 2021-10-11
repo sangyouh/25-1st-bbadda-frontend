@@ -7,19 +7,24 @@ class JoinWrap extends Component {
   constructor() {
     super();
     this.state = {
-      id: '',
-      pw: '',
+      account: '',
+      password: '',
       checkPw: '',
       name: '',
       email: '',
-      phoneNum: '',
+      mobile_number: '',
       gender: null,
-      foreign: null,
+      foreigner: null,
       year: '',
       month: '',
       date: '',
     };
   }
+  // account,
+  // password,
+  // mobile_number,
+  // foreigner,
+  // date_of_birth,
 
   handleInput = e => {
     const { name, value } = e.target;
@@ -36,36 +41,44 @@ class JoinWrap extends Component {
   render() {
     const { handleInput, handleRadio } = this;
     const {
-      id,
-      pw,
+      account,
+      password,
       name,
       email,
-      phoneNum,
+      mobile_number,
       gender,
-      foreign,
+      foreigner,
       year,
       month,
       date,
     } = this.state;
-    const info = { id, pw, name, email, phoneNum, gender, foreign };
-    const birthday = `${year}-${month}-${date}`;
+    const info = {
+      account,
+      password,
+      name,
+      email,
+      mobile_number,
+      gender,
+      foreigner,
+    };
+    const date_of_birth = `${year}-${month}-${date}`;
     console.log('input', this.state);
-    console.log('birthday', birthday);
+    console.log('birthday', date_of_birth);
 
     return (
       <div className="joinWrap">
         <div className="topInfo">F&F 통합회원 가입</div>
         <JoinForm onChange={handleInput} onClick={handleRadio} />
         <JoinButton
-          birthday={birthday}
+          date_of_birth={date_of_birth}
           info={info}
-          id={id}
-          pw={pw}
+          account={account}
+          password={password}
           name={name}
           email={email}
-          phoneNum={phoneNum}
+          mobile_number={mobile_number}
           gender={gender}
-          foreign={foreign}
+          foreigner={foreigner}
         />
         <section className="joinInfo">
           <div>
