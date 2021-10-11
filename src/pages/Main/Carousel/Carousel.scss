@@ -1,11 +1,11 @@
-.wapper {
+.MainCarouselWapper {
   position: relative;
   overflow: hidden;
 
-  .slide-container {
+  .slideContainer {
     transition: transform 500ms;
 
-    .slide-box {
+    .slideBox {
       width: 100vw;
       float: left;
 

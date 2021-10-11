@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Carousel.scss';
-import IMAGES_DATA from './Image_Data';
 
 export default class Carousel extends React.Component {
   constructor() {
     super();
     this.state = {
-      imageCurrentNo: 0,
+      currIndex: 0,
     };
   }
 
@@ -15,25 +13,25 @@ export default class Carousel extends React.Component {
     if (this.props.images.length <= index) index = 0;
     if (index < 0) index = this.props.images.length - 1;
 
-    this.setState({ imageCurrentNo: index });
+    this.setState({ currIndex: index });
   };
 
   render() {
-    console.log(this.state);
-    const { imageCurrentNo } = this.state;
+    const { currIndex } = this.state;
+    const { images } = this.props;
     return (
       <>
-        <div className="wapper">
+        <div className="MainCarouselWapper">
           <div
-            className="slide-container"
+            className="slideContainer"
             style={{
-              width: `${IMAGES_DATA.length * 100}vw`,
-              transform: `translate3d(${imageCurrentNo * -100}vw, 0vw, 0vw)`,
+              width: `${images.length * 100}vw`,
+              transform: `translate3d(${currIndex * -100}vw, 0vw, 0vw)`,
             }}
           >
-            {IMAGES_DATA.map(({ id, url }) => {
+            {images.map(({ id, url }) => {
               return (
-                <div className="slide-box">
+                <div className="slideBox">
                   <div
                     key={id}
                     className="img"
@@ -47,11 +45,11 @@ export default class Carousel extends React.Component {
             })}
           </div>
           <ul className="dots">
-            {IMAGES_DATA.map(({ id }) => {
+            {images.map(({ id }) => {
               return (
                 <li>
                   <button
-                    className={`${imageCurrentNo == id ? 'btnActive' : ''}`}
+                    className={`${currIndex == id ? 'btnActive' : ''}`}
                     onClick={() => this.onChangeImage(id)}
                   >
                     {id}
@@ -64,31 +62,31 @@ export default class Carousel extends React.Component {
             <button
               className="prevBtn"
               onClick={() => {
-                this.onChangeImage(imageCurrentNo - 1);
+                this.onChangeImage(currIndex - 1);
               }}
             >
               <span>
                 <i className="fas fa-chevron-left" />
               </span>
               <span className="count">
-                <span>{imageCurrentNo + 1}</span>
+                <span>{currIndex + 1}</span>
                 <span style={{ margin: '0 5px' }}>/</span>
-                <span>{IMAGES_DATA.length}</span>
+                <span>{images.length}</span>
               </span>
             </button>
             <button
               className="nextBtn"
               onClick={() => {
-                this.onChangeImage(imageCurrentNo + 1);
+                this.onChangeImage(currIndex + 1);
               }}
             >
               <span>
                 <i className="fas fa-chevron-right" />
               </span>
               <span className="count">
-                <span>{imageCurrentNo + 1}</span>
+                <span>{currIndex + 1}</span>
                 <span style={{ margin: '0 5px' }}>/</span>
-                <span>{IMAGES_DATA.length}</span>
+                <span>{images.length}</span>
               </span>
             </button>
           </div>
