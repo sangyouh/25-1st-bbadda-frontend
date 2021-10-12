@@ -55,8 +55,20 @@
   margin: 0 10px 0 30px;
   border-radius: 50%;
 }
-.order {
+.halfInput {
   @include inputs;
-  width: 225px;
+  width: 255px;
+  padding: 0 15px;
+}
+
+.mobileNumFirst {
+  @include inputs;
+  width: 71px;
+  padding: 0 15px;
+}
+
+.mobileNum {
+  @include inputs;
+  width: 75px;
   padding: 0 15px;
 }

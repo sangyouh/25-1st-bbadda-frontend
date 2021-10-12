@@ -3,25 +3,23 @@ import Input from '../Input/Input';
 import './List.scss';
 class List extends Component {
   render() {
-    const { data, onChange, onClick, onKeyUp } = this.props;
+    const { data, onChange, onClick } = this.props;
 
     const listA = data.map(input =>
       input.radio ? (
-        <li className="inputLi">
-          <label className="radioLabel">
-            <Input
-              key={input.id}
-              className={input.className}
-              placeholder={input.placeHolder}
-              type={input.type}
-              name={input.name}
-              value={input.value}
-              onChange={onChange}
-              onClick={onClick}
-            />
-            {input.radioName}
-          </label>
-        </li>
+        <label className="radioLabel">
+          <Input
+            key={input.id}
+            className={input.className}
+            placeholder={input.placeHolder}
+            type={input.type}
+            name={input.name}
+            value={input.value}
+            onChange={onChange}
+            onClick={onClick}
+          />
+          {input.radioName}
+        </label>
       ) : input.single ? (
         <li className={input.classNameA}>
           <Input
@@ -34,18 +32,18 @@ class List extends Component {
           />
         </li>
       ) : (
-        <li className="inputLi">
-          <Input
-            key={input.id}
-            className={input.className}
-            placeholder={input.placeHolder}
-            type={input.type}
-            name={input.name}
-            onChange={onChange}
-            onClick={onClick}
-            value={input.value}
-          />
-        </li>
+        // <li className="inputLi">
+        <Input
+          key={input.id}
+          className={input.className}
+          placeholder={input.placeHolder}
+          type={input.type}
+          name={input.name}
+          onChange={onChange}
+          onClick={onClick}
+          value={input.value}
+        />
+        // </li>
       )
     );
 

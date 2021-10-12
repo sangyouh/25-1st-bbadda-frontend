@@ -3,7 +3,7 @@ const JOIN_LIST = {
     {
       id: 1,
       classNameA: 'firstInput',
-      classNameB: 'basicInput',
+      classNameB: 'halfInput',
       placeHolder: '아이디 (6~15자 영문 소문자.숫자)',
       type: 'text',
       name: 'account',

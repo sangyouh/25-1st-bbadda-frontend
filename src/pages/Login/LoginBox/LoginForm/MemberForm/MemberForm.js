@@ -26,7 +26,7 @@ class MemberForm extends Component {
     });
   };
 
-  ToggleAutoLogin = e => {
+  handleToggle = e => {
     const { autoLogin } = this.state;
     this.setState({ autoLogin: !autoLogin });
   };
@@ -44,7 +44,7 @@ class MemberForm extends Component {
   // };
 
   render() {
-    const { handleInput, ToggleAutoLogin } = this;
+    const { handleInput, handleToggle } = this;
     const { account, password, isValid, autoLogin } = this.state;
     console.log('isValid', this.state.isValid);
     console.log('autoLogin', this.state.autoLogin);
@@ -55,9 +55,7 @@ class MemberForm extends Component {
           <List data={LOGIN_LIST.foo} onChange={handleInput} />
         </ul>
         <p>
-          <ul>
-            <List data={LOGIN_LIST.bar} onClick={ToggleAutoLogin} />
-          </ul>
+          <List data={LOGIN_LIST.bar} onClick={handleToggle} />
         </p>
         <p>{/* 오류 안내 문장 */}</p>
         <LoginButton

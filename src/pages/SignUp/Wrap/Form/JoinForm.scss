@@ -23,45 +23,13 @@
         margin-top: 20px;
         border-top: 1px solid #666;
         border-bottom: 1px solid #ddd;
-        .JoinBasicTable {
-          width: 100%;
-          .JoinBasicCol {
-            width: 200px;
-          }
-          tbody {
-            .basicInfo {
-              th {
-                padding: 18px 20px 10px 20px;
-              }
-              td {
-                ul {
-                  .firstInput {
-                    border: none;
-                    padding: 10px 0;
-                  }
-                  .joinList {
-                    padding: 10px 0;
-                    border-top: 1px solid #dddddd;
-                  }
-
-                  .radioLabel {
-                    margin-left: 5px;
-                    font-size: 13px;
-                  }
-                }
-              }
-            }
-          }
-        }
+        // .JoinBasicTable {
+        //   width: 100%;
+        //   .JoinBasicCol {
+        //     width: 200px;
+        //   }
+        // }
       }
     }
-  }
-
-  tr {
-    border-bottom: 1px solid #dddddd;
-  }
-
-  th {
-    padding: 18px 20px 10px 20px;
   }
 }
