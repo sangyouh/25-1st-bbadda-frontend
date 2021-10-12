@@ -9,7 +9,6 @@ export class ProductsList extends Component {
     super();
     this.state = {
       products: { content: [{}] },
-      clickBack: true,
     };
   }
 
@@ -37,10 +36,6 @@ export class ProductsList extends Component {
         data.content.sort((first, second) => first.price - second.price);
         this.setState({ products: data });
       });
-  };
-
-  close = () => {
-    this.setState({ clickBack: false });
   };
 
   render() {

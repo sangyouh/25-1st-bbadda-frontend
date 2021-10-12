@@ -28,18 +28,12 @@ export class DropdownMenu extends Component {
   };
 
   closeBar = e => {
-    if (!this.dropdown.contains(e.target)) {
+    if (!this.dropdown || !this.dropdown.contains(e.target)) {
       this.setState({ clicked: false, clicked2: false }, () => {
         document.body.removeEventListener('click', this.closeBar);
       });
     }
   };
-  // document.body => click
-
-  //event bubling =>
-
-  // if(click event menu1 안에 포함되있다면) RETURN => DOM.contain, ref
-  // closeBar
 
   render() {
     const { clicked, clicked2 } = this.state;
