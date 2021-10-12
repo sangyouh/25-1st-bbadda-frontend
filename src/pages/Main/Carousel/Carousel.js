@@ -10,8 +10,11 @@ export default class Carousel extends React.Component {
   }
 
   onChangeImage = index => {
-    if (this.props.images.length <= index) index = 0;
-    if (index < 0) index = this.props.images.length - 1;
+    if (this.props.images.length <= index) {
+      index = 0;
+    } else if (index < 0) {
+      index = this.props.images.length - 1;
+    }
 
     this.setState({ currIndex: index });
   };
@@ -26,7 +29,7 @@ export default class Carousel extends React.Component {
             className="slideContainer"
             style={{
               width: `${images.length * 100}vw`,
-              transform: `translate3d(${currIndex * -100}vw, 0vw, 0vw)`,
+              transform: `translateX(${currIndex * -100}vw)`,
             }}
           >
             {images.map(({ id, url }) => {
