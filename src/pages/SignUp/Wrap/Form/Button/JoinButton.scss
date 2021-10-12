@@ -1,0 +1,25 @@
+@mixin align2 {
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+
+@mixin native {
+  height: 45px;
+  padding: 0 20px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  line-height: 45px;
+}
+
+.joinBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  text-align: center;
+  .nativeLoginTag {
+    @include align2;
+    @include native;
+  }
+}

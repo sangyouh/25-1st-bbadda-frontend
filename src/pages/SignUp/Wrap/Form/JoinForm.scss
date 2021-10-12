@@ -1,0 +1,67 @@
+@mixin inputs {
+  height: 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.JoinForm {
+  section {
+    margin-top: 26px;
+    .header {
+      .joinInfo {
+        font-size: 16px;
+      }
+      .requiredInfo {
+        font-size: 14;
+        margin-left: 10px;
+        color: #666666;
+      }
+      .infoForm {
+        width: 100%;
+        margin-top: 20px;
+        border-top: 1px solid #666;
+        border-bottom: 1px solid #ddd;
+        .JoinBasicTable {
+          width: 100%;
+          .JoinBasicCol {
+            width: 200px;
+          }
+          tbody {
+            .basicInfo {
+              th {
+                padding: 18px 20px 10px 20px;
+              }
+              td {
+                ul {
+                  .firstInput {
+                    border: none;
+                    padding: 10px 0;
+                  }
+                  .joinList {
+                    padding: 10px 0;
+                    border-top: 1px solid #dddddd;
+                  }
+
+                  .radioLabel {
+                    margin-left: 5px;
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  th {
+    padding: 18px 20px 10px 20px;
+  }
+}
