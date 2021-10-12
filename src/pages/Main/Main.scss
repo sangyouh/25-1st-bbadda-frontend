@@ -1,0 +1,83 @@
+.MainWrapper {
+  .newArrival {
+    margin-top: 100px;
+
+    .wrapper {
+      width: 1264px;
+      margin: 0 auto;
+
+      .header {
+        font-size: 32px;
+        padding-bottom: 20px;
+      }
+      .content {
+        clear: both;
+        width: 1264px;
+        height: 100%;
+
+        .newArrivalBanner {
+          float: left;
+          width: 675px;
+          height: 873px;
+        }
+
+        .newArrivalList {
+          float: right;
+          width: 589px;
+          height: 873px;
+          background-color: #f3f3f3;
+
+          .itemsList {
+            clear: both;
+            padding: 24px 0 0 24px;
+
+            > li {
+              float: left;
+              padding: 7.5px;
+
+              .item {
+                width: 256px;
+                background-color: white;
+                padding-bottom: 27px;
+
+                > a {
+                  text-decoration: none;
+
+                  .itemImg {
+                    background-color: #f9f9f9;
+
+                    > img {
+                      width: 100%;
+                    }
+                  }
+
+                  .itemName {
+                    height: 40px;
+                    margin-top: 25px;
+                    padding: 0 9px;
+                    font-size: 14px;
+                    color: #666;
+                    font-weight: 500;
+                  }
+
+                  .itemPrice {
+                    margin-top: 10px;
+                    padding: 0 10px;
+                    color: #666;
+                    font-weight: 700;
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .ranking {
+    .wrapper {
+      margin-top: 100px;
+    }
+  }
+}
