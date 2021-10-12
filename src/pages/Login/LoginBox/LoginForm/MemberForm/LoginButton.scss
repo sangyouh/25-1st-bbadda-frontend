@@ -20,7 +20,7 @@
   line-height: 45px;
 }
 
-.loginButton {
+.LoginButton {
   display: flex;
   flex-wrap: wrap;
   margin: 30px auto 0;
@@ -44,12 +44,16 @@
     font-size: 14px;
     line-height: 43px;
   }
+  .basicSpan {
+    padding: 0;
+    color: #fff;
+  }
   .naverLogo {
-    background-image: url(./logoImg/naverlogo.png);
+    background-image: url(../../../Img/naverlogo.png);
     background-repeat: no-repeat;
   }
   .kakaoLogo {
-    background-image: url(./logoImg/kakaoLogo.png);
+    background-image: url(../../../Img/kakaoLogo.png);
     background-repeat: no-repeat;
   }
 }
