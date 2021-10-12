@@ -29,7 +29,7 @@ class JoinForm extends Component {
                 tableClassName={'JoinBasicTable'}
                 colClassName={'JoinBasicCol'}
               >
-                <TableContent tableHead={'기본정보'}>
+                <TableContent trClassName={'basicInfo'} tableHead={'기본정보'}>
                   <ul>
                     <List data={JOIN_LIST.first} onChange={onChange} />
                     <li className="joinList">

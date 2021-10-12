@@ -28,20 +28,20 @@ class Order extends Component {
             titleClassName={'orderInfoTitle'}
             title={'주문자정보'}
           >
-            <Table
-              tableClassName={'JoinBasicTable'}
-              colClassName={'JoinBasicCol'}
-            >
-              <TableContent tableHead={'주문하시는분'}>
-                <Input />
+            <Table tableClassName={'OrderTable'} colClassName={'JoinBasicCol'}>
+              <TableContent trClassName={'orderTr'} tableHead={'주문하시는분'}>
+                <Input className={'order'} />
                 {/* <Button /> */}
               </TableContent>
-              <TableContent>
-                <Input />
-                <Input />
+              <TableContent trClassName={'orderTr'} tableHead={'휴대전화번호'}>
+                <Input />-
+                <Input />-
                 <Input />
               </TableContent>
-              <TableContent></TableContent>
+              <TableContent
+                trClassName={'orderTr'}
+                tableHead={'이메일 주소'}
+              ></TableContent>
             </Table>
           </Wrap>
         </div>

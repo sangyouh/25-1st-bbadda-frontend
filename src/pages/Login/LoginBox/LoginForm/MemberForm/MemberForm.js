@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LoginButton from './LoginButton';
 import SignUp from './SignUp';
 import List from '../../../../../Components/List/List';
+
 import LOGIN_LIST from '../../../../../data/LoginInputList';
 import './MemberForm.scss';
 
@@ -9,17 +10,25 @@ class MemberForm extends Component {
   constructor() {
     super();
     this.state = {
-      id: '',
-      pw: '',
+      account: '',
+      password: '',
       isValid: false,
+      autoLogin: false,
     };
   }
 
   handleInput = e => {
     const { value, name } = e.target;
+    const { account, password } = this.state;
     this.setState({
       [name]: value,
+      isValid: account.length >= 6 && password.length >= 8,
     });
+  };
+
+  ToggleAutoLogin = e => {
+    const { autoLogin } = this.state;
+    this.setState({ autoLogin: !autoLogin });
   };
 
   // checkIdValid = () => {
@@ -35,21 +44,28 @@ class MemberForm extends Component {
   // };
 
   render() {
-    const { handleInput } = this;
-    const { id, pw } = this.state;
-    console.log('state', this.state);
+    const { handleInput, ToggleAutoLogin } = this;
+    const { account, password, isValid, autoLogin } = this.state;
+    console.log('isValid', this.state.isValid);
+    console.log('autoLogin', this.state.autoLogin);
+    console.log();
     return (
-      <form className="memberForm">
+      <form className="MemberForm">
         <ul>
           <List data={LOGIN_LIST.foo} onChange={handleInput} />
         </ul>
         <p>
           <ul>
-            <List data={LOGIN_LIST.bar} />
+            <List data={LOGIN_LIST.bar} onClick={ToggleAutoLogin} />
           </ul>
         </p>
         <p>{/* 오류 안내 문장 */}</p>
-        <LoginButton id={id} pw={pw} />
+        <LoginButton
+          account={account}
+          password={password}
+          isValid={isValid}
+          autoLogin={autoLogin}
+        />
         <SignUp />
       </form>
     );

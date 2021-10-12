@@ -55,3 +55,8 @@
   margin: 0 10px 0 30px;
   border-radius: 50%;
 }
+.order {
+  @include inputs;
+  width: 225px;
+  padding: 0 15px;
+}

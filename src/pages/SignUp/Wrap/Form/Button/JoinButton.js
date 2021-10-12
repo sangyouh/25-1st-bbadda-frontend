@@ -14,11 +14,6 @@ class JoinButton extends Component {
       name,
       email,
       gender,
-      foreign,
-      birthday,
-      id,
-      pw,
-      phoneNum,
     } = this.props;
 
     e.preventDefault();

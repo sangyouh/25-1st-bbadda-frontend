@@ -20,11 +20,6 @@ class JoinWrap extends Component {
       date: '',
     };
   }
-  // account,
-  // password,
-  // mobile_number,
-  // foreigner,
-  // date_of_birth,
 
   handleInput = e => {
     const { name, value } = e.target;
@@ -66,7 +61,7 @@ class JoinWrap extends Component {
     console.log('birthday', date_of_birth);
 
     return (
-      <div className="joinWrap">
+      <div className="JoinWrap">
         <div className="topInfo">F&F 통합회원 가입</div>
         <JoinForm onChange={handleInput} onClick={handleRadio} />
         <JoinButton

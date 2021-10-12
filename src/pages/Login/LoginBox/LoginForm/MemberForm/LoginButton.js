@@ -4,31 +4,9 @@ import Button from '../../../../../Components/Button/Button';
 import BUTTON_LIST from '../../../../../data/ButtonData';
 import './LoginButton.scss';
 class LoginButton extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLogin: false,
-    };
-  }
-
   componentDidMount() {
     Kakao.init('b1327feb427e9e06e46e01f7f3d0beee');
   }
-
-  // .then(res => res.json())
-  // .then(res => {
-  //   if (res.token) {
-  //     history.push('/Main-KyungHyun');
-  //     localStorage.setItem('kich-token', res.token);
-  //   } else {
-  //     this.setState({
-  //       id: '',
-  //       pw: '',
-  //       validFailAlert:
-  //         '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.',
-  //     });
-  //   }
-  // });
 
   loginWithKakao = () => {
     if (!Kakao) {
@@ -66,22 +44,52 @@ class LoginButton extends Component {
   };
 
   handleSubmit = e => {
-    const { id, pw } = this.props;
+    const { account, password, isValid, autoLogin } = this.props;
+    const { history } = this.props;
     e.preventDefault();
-    fetch('http://172.30.1.51:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        account: id,
-        password: pw,
-      }),
-    });
+    isValid
+      ? fetch('http://10.58.7.108:8000/users/signin', {
+          method: 'POST',
+          body: JSON.stringify({
+            account,
+            password,
+          }),
+        })
+          .then(res => res.json())
+          .then(res => {
+            if (res.token) {
+              autoLogin
+                ? localStorage.setItem('AccessToken', res.token)
+                : sessionStorage.setItem('AccessToken', res.token);
+              history.push('/main');
+              console.log('token');
+            } else {
+              console.log('test');
+            }
+          })
+      : console.log('failed');
   };
+
+  // .then(res => res.json())
+  // .then(res => {
+  //   if (res.token) {
+  //     history.push('/Main-KyungHyun');
+  //     localStorage.setItem('kich-token', res.token);
+  //   } else {
+  //     this.setState({
+  //       id: '',
+  //       pw: '',
+  //       validFailAlert:
+  //         '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.',
+  //     });
+  //   }
+  // });
 
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;
-    console.log('id', this.props.id, 'pw', this.props.pw);
+    console.log('id', this.props.account, 'pw', this.props.password);
     return (
-      <div className="loginButton">
+      <div className="LoginButton">
         <Button
           href={'/main'}
           data={BUTTON_LIST.signIn.Basic}

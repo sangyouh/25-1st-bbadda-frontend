@@ -13,7 +13,7 @@ class OrderItemInfo extends Component {
   render() {
     const { info, qty, discount, price, size, product, Img } = this.props;
     return (
-      <table className="OrderItemInfo">
+      <table className="OrderTable">
         <colgroup>
           <col />
           <col style={{ width: '110px' }} />

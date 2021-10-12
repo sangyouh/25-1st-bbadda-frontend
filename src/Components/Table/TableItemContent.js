@@ -11,9 +11,7 @@ class TableItemContent extends Component {
               <img
                 className="productInfoImgFile"
                 alt="상품이미지"
-                src=
-        //  {Img}
-                "https://static.mlb-korea.com/images/goods/thnail/m/20210111/32JB02111-50W-26348707389260177.png/dims/resize/100x100"
+                src="https://static.mlb-korea.com/images/goods/thnail/m/20210111/32JB02111-50W-26348707389260177.png/dims/resize/100x100"
               />
             </div>
             <div className="productInfoText">

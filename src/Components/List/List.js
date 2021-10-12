@@ -3,9 +3,9 @@ import Input from '../Input/Input';
 import './List.scss';
 class List extends Component {
   render() {
-    const { data, onChange, onClick } = this.props;
+    const { data, onChange, onClick, onKeyUp } = this.props;
 
-    const list = data.map(input =>
+    const listA = data.map(input =>
       input.radio ? (
         <li className="inputLi">
           <label className="radioLabel">
@@ -51,7 +51,7 @@ class List extends Component {
 
     // const list2 =
 
-    return <>{list}</>;
+    return <>{listA}</>;
   }
 }
 

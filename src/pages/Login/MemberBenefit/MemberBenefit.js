@@ -4,7 +4,7 @@ import './MemberBenefit.scss';
 class MemberBenefit extends Component {
   render() {
     return (
-      <ul className="memberBenefit">
+      <ul className="MemberBenefit">
         <li className="mileage">
           <div>
             <span>

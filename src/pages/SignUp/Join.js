@@ -6,7 +6,7 @@ import './Join.scss';
 class Join extends Component {
   render() {
     return (
-      <div className="join">
+      <div className="Join">
         <Location page="회원가입" />
         <JoinWrap />
       </div>

@@ -5,14 +5,14 @@ const LOGIN_LIST = {
       className: 'userInput',
       placeHolder: '아이디',
       type: 'text',
-      name: 'id',
+      name: 'account',
     },
     {
       id: 2,
       className: 'userInput',
       placeHolder: '비밀번호',
       type: 'password',
-      name: 'pw',
+      name: 'password',
     },
   ],
   bar: [

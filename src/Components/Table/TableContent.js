@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 class TableContent extends Component {
   render() {
-    const { tableHead, children } = this.props;
+    const { trClassName, tableHead, children } = this.props;
     return (
-      <tr className="basicInfo">
+      <tr className={trClassName}>
         <th>
           <label className="thLabel">{tableHead}</label>
         </th>
