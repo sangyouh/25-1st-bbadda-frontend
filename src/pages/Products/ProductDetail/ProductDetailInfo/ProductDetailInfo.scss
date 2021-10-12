@@ -1,0 +1,37 @@
+.ProductDetailInfo {
+  padding-bottom: 150px;
+  margin: 100px 0;
+
+  .detailMenu {
+    display: flex;
+
+    li {
+      width: 33.33%;
+
+      a {
+        display: block;
+        padding: 30px 0 28px;
+        border-top: 3px solid #000;
+        border-bottom: 1px solid #ddd;
+        color: #999;
+        text-align: center;
+        font-size: 17px;
+
+        &.current {
+          color: #000;
+          border-bottom: 1px solid #000;
+        }
+      }
+    }
+  }
+
+  section {
+    min-height: 200px;
+    margin-bottom: 40px;
+
+    h3 {
+      padding-top: 20px;
+      font-size: 20px;
+    }
+  }
+}
