@@ -1,0 +1,29 @@
+{
+  "product": {
+    "name": "\uadf8\ub798\ud53c\ud2f0 \ud0c0\uc774\ud3ec \uc804\ud310\ud504\ub9b0\ud2b8 \uc20f\ud328\ub529",
+    "color": "IVS",
+    "team": "\ub274\uc695 \uc591\ud0a4\uc2a4",
+    "product_code": "3ADJN0316-50IVS",
+    "information": "asdf",
+    "product_detail_info": "asdf",
+    "price": "309000.00",
+    "img": [
+      {
+        "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
+      },
+      {
+        "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
+      },
+      {
+        "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
+      },
+      {
+        "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
+      },
+      {
+        "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
+      }
+    ],
+    "size": { "value": ["XL", "XXL", "L", "M", "S", "XS"] }
+  }
+}
