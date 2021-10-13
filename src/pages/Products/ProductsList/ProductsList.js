@@ -9,16 +9,13 @@ export class ProductsList extends Component {
     super();
     this.state = {
       products: { content: [{}] },
+      isPriceHigh: false,
+      isPriceLow: false,
     };
   }
 
-  // props
-  // fetch
-  // lo search
-  //
   componentDidMount() {
-    //const id = this.props.match.params.id;
-    fetch(`http://10.58.7.108:8000/products/menu?id=1`)
+    fetch(`/data/productListData1.json`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -26,27 +23,47 @@ export class ProductsList extends Component {
         });
       });
   }
-  // componentWillUpdate() {
-  //   this.fetchData(this.queryString);
-  // }
-
-  // componentWillUnmount() {
-  //   this.fetchData();
-  // }
 
   fetchData = queryString => {
+    const { isPriceHigh, isPriceLow } = this.state;
     if (queryString === '?category=ballcap') {
-      fetch(`http://10.58.7.108:8000/products/menu?id=2`)
+      fetch(`/data/productListData2.json`)
         .then(res => res.json())
         .then(data => {
+          if (isPriceHigh === false && isPriceLow === false) {
+          } else if (isPriceHigh === true && isPriceLow === false) {
+            data.content.sort((a, b) => b.price - a.price);
+          } else if (isPriceLow === true && isPriceHigh === false) {
+            data.content.sort((a, b) => a.price - b.price);
+          }
           this.setState({
             products: data,
           });
         });
     } else if (queryString === '?category=apparel') {
-      fetch(`http://10.58.7.108:8000/products/menu?id=3`)
+      fetch(`/data/productListData1.json`)
         .then(res => res.json())
         .then(data => {
+          if (isPriceHigh === false && isPriceLow === false) {
+          } else if (isPriceHigh === true && isPriceLow === false) {
+            data.content.sort((a, b) => b.price - a.price);
+          } else if (isPriceLow === true && isPriceHigh === false) {
+            data.content.sort((a, b) => a.price - b.price);
+          }
+          this.setState({
+            products: data,
+          });
+        });
+    } else if (queryString === '') {
+      fetch(`/data/productListData3.json`)
+        .then(res => res.json())
+        .then(data => {
+          if (isPriceHigh === false && isPriceLow === false) {
+          } else if (isPriceHigh === true && isPriceLow === false) {
+            data.content.sort((a, b) => b.price - a.price);
+          } else if (isPriceLow === true && isPriceHigh === false) {
+            data.content.sort((a, b) => a.price - b.price);
+          }
           this.setState({
             products: data,
           });
@@ -55,20 +72,16 @@ export class ProductsList extends Component {
   };
 
   sortPriceHighest = () => {
-    fetch('/data/productListData1.json')
-      .then(res => res.json())
-      .then(data => {
-        data.content.sort((first, second) => second.price - first.price);
-        this.setState({ products: data });
-      });
+    this.setState({
+      isPriceHigh: true,
+      isPriceLow: false,
+    });
   };
   sortPriceLowest = () => {
-    fetch('/data/productListData1.json')
-      .then(res => res.json())
-      .then(data => {
-        data.content.sort((first, second) => first.price - second.price);
-        this.setState({ products: data });
-      });
+    this.setState({
+      isPriceLow: true,
+      isPriceHigh: false,
+    });
   };
 
   render() {
@@ -85,7 +98,6 @@ export class ProductsList extends Component {
             productsData={products}
             outCategoryName={products.name}
             categoryId={products.categoryId}
-            fetchData={this.fetchData}
           />
           <div>
             <button className="filterButton" onClick={sortPriceHighest}>

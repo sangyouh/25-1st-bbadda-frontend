@@ -41,6 +41,9 @@ export class DropdownMenu extends Component {
   goToApparel = () => {
     this.props.history.push(`/productsList?category=apparel`);
   };
+  goToAll = () => {
+    this.props.history.push(`/productsList`);
+  };
 
   // changeData = () => {
   //   const { productsData } = this.props;
@@ -77,9 +80,9 @@ export class DropdownMenu extends Component {
             <div className="menuLeft">
               <ul>
                 <li className="dropdownList">
-                  <Link className="linkBlur" to="#n">
+                  <button className="linkBlur" onClick={this.goToAll}>
                     전체보기
-                  </Link>
+                  </button>
                 </li>
                 <li className="dropdownList">
                   <button className="linkBlur" onClick={this.goToBallCap}>
