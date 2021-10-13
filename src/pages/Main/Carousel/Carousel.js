@@ -10,12 +10,12 @@ export default class Carousel extends React.Component {
   }
 
   onChangeImage = index => {
+    //if(index가 length의 마지막인데 버튼이 눌렸다면 -> )
     if (this.props.images.length <= index) {
       index = 0;
     } else if (index < 0) {
       index = this.props.images.length - 1;
     }
-
     this.setState({ currIndex: index });
   };
 

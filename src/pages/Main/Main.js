@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Nav from '../../Components/Nav/Nav';
 import Carousel from './Carousel/Carousel';
 import './Main.scss';
 import IMAGES_DATA from './Carousel/Image_Data';
@@ -21,9 +22,9 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.state.itemList);
     return (
       <>
+        <Nav />
         <main className="MainWrapper">
           <Carousel images={IMAGES_DATA} />
           <div className="newArrival">
@@ -63,18 +64,21 @@ class Main extends Component {
               <div className="content">
                 <div className="items">
                   <ul className="itemsList">
-                    {/* backend에서 데이터받아와서 map메소드 사용하자. */}
-                    <li>
-                      <div className="item">
-                        <Link to="#">
-                          <div className="itemImg">
-                            <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
+                    {this.state.itemList.map(({ id, link, name, price }) => {
+                      return (
+                        <li key={id}>
+                          <div className="item">
+                            <Link to={link}>
+                              <div className="itemImg">
+                                <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
+                              </div>
+                              <div className="itemName">{name}</div>
+                              <div className="itemPrice">{price}</div>
+                            </Link>
                           </div>
-                          <div className="itemName">루키 볼캡 뉴욕양키스</div>
-                          <div className="itemPrice">33,000원</div>
-                        </Link>
-                      </div>
-                    </li>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
