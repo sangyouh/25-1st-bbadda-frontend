@@ -12,7 +12,7 @@ class Nav extends Component {
           <div className="navWrap">
             <div className="logoWrap">
               <Link className="MLBlogo" to="#">
-                <h1>MLB</h1>
+                <h1>BBADDA</h1>
               </Link>
             </div>
             <div className="menuLists">
