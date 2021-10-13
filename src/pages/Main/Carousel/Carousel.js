@@ -15,6 +15,7 @@ export default class Carousel extends React.Component {
     } else if (index < 0) {
       index = this.props.images.length - 1;
     }
+
     this.setState({ currIndex: index });
   };
 

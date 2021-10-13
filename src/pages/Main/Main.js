@@ -38,8 +38,8 @@ class Main extends Component {
                   <ul className="itemsList">
                     {this.state.itemList.map(({ id, link, name, price }) => {
                       return (
-                        <li>
-                          <div className="item" key={id}>
+                        <li key={id}>
+                          <div className="item">
                             <Link to={link}>
                               <div className="itemImg">
                                 <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
