@@ -31,7 +31,10 @@ class Main extends Component {
               <div className="content">
                 <div className="newArrivalBanner">
                   <Link to="#">
-                    <img src="https://static.mlb-korea.com/images/display/category/MTP/A01/A01/contents/10113_6809_111_KOR_20211005143759.jpg" />
+                    <img
+                      alt="Banner"
+                      src="https://static.mlb-korea.com/images/display/category/MTP/A01/A01/contents/10113_6809_111_KOR_20211005143759.jpg"
+                    />
                   </Link>
                 </div>
                 <div className="newArrivalList">
@@ -42,7 +45,10 @@ class Main extends Component {
                           <div className="item">
                             <Link to={link}>
                               <div className="itemImg">
-                                <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
+                                <img
+                                  alt="itemImg"
+                                  src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414"
+                                />
                               </div>
                               <div className="itemName">{name}</div>
                               <div className="itemPrice">{price}</div>
@@ -68,7 +74,10 @@ class Main extends Component {
                           <div className="item">
                             <Link to={link}>
                               <div className="itemImg">
-                                <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
+                                <img
+                                  alt="itemImg"
+                                  src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414"
+                                />
                               </div>
                               <div className="itemName">{name}</div>
                               <div className="itemPrice">{price}</div>
