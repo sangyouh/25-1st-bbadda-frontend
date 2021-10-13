@@ -13,7 +13,7 @@ export class ProductsList extends Component {
   }
 
   componentDidMount() {
-    fetch('./data/productListData.json')
+    fetch('/data/productListData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -22,7 +22,7 @@ export class ProductsList extends Component {
       });
   }
   sortPriceHighest = () => {
-    fetch('./data/productListData.json')
+    fetch('/data/productListData.json')
       .then(res => res.json())
       .then(data => {
         data.content.sort((first, second) => second.price - first.price);
@@ -30,7 +30,7 @@ export class ProductsList extends Component {
       });
   };
   sortPriceLowest = () => {
-    fetch('./data/productListData.json')
+    fetch('/data/productListData.json')
       .then(res => res.json())
       .then(data => {
         data.content.sort((first, second) => first.price - second.price);
@@ -44,7 +44,6 @@ export class ProductsList extends Component {
 
     return (
       <div className="ProductsList">
-        <Nav />
         <div className="container">
           <DropdownMenu categoryName={products.name} />
           <div>
@@ -60,14 +59,14 @@ export class ProductsList extends Component {
           <div className="productsListContainer">
             <div className="prods">
               {products.content.map(item => {
-                const { id, name, price, img } = item;
+                const { id, name, price, image_url } = item;
                 return (
                   <SingleProduct
                     key={id}
                     id={id}
                     productName={name}
                     productPrice={price}
-                    imgURL={img}
+                    imgURL={image_url}
                   />
                 );
               })}

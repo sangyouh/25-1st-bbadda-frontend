@@ -13,7 +13,15 @@ export class SingleProduct extends Component {
       <div className="SingleProduct">
         <div className="product-container">
           <Link to="/product/productdetail">
-            <img src={`/images/doggo${id}.jpg`} alt={`${productName}`} />
+            <img
+              src={`/images/doggo${id}.jpg`}
+              alt={`${productName}`}
+              onMouseOver={e =>
+                (e.currentTarget.src = `/images/mouseover${id}.jpg`)
+              }
+              onMouseOut={e => (e.currentTarget.src = `/images/doggo${id}.jpg`)}
+            />
+            {/* <img src={imgURL} /> */}
           </Link>
           {/* <button onClick={this.goToPage}>
             <img src={`/images/ballcap${id}.jpg`} alt={`${productName}`} />
