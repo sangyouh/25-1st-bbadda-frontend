@@ -1,0 +1,52 @@
+.ProductsList {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 1480px;
+  }
+
+  .filterButton {
+    border: 0;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: white;
+  }
+  .buttonDivider {
+    font-size: 30px;
+  }
+
+  .buttonBorder {
+    border-right: 1px solid;
+  }
+
+  .prods {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 100px;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 400px;
+    height: 400px;
+  }
+
+  button:hover {
+    border-bottom: 1px solid;
+  }
+  .backgroundClick {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  .backgroundClick {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+}
