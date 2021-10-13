@@ -54,7 +54,7 @@ class MemberForm extends Component {
         <ul>
           <List data={LOGIN_LIST.foo} onChange={handleInput} />
         </ul>
-        <p>
+        <p className="memberFormP">
           <List data={LOGIN_LIST.bar} onClick={handleToggle} />
         </p>
         <p>{/* 오류 안내 문장 */}</p>

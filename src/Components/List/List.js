@@ -5,7 +5,7 @@ class List extends Component {
   render() {
     const { data, onChange, onClick } = this.props;
 
-    const listA = data.map(input =>
+    const list = data.map(input =>
       input.radio ? (
         <label className="radioLabel">
           <Input
@@ -31,8 +31,17 @@ class List extends Component {
             onChange={onChange}
           />
         </li>
+      ) : input.number ? (
+        <>
+          <Input
+            className={input.className}
+            key={input.id}
+            name={input.name}
+            onChange={onChange}
+          />
+          <span className="hyphen">-</span>
+        </>
       ) : (
-        // <li className="inputLi">
         <Input
           key={input.id}
           className={input.className}
@@ -43,13 +52,12 @@ class List extends Component {
           onClick={onClick}
           value={input.value}
         />
-        // </li>
       )
     );
 
     // const list2 =
 
-    return <>{listA}</>;
+    return <>{list}</>;
   }
 }
 

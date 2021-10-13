@@ -2,22 +2,27 @@ const LOGIN_LIST = {
   foo: [
     {
       id: 1,
-      className: 'userInput',
+      classNameA: '',
+      classNameB: 'userInput',
       placeHolder: '아이디',
       type: 'text',
       name: 'account',
+      single: true,
     },
     {
       id: 2,
-      className: 'userInput',
+      classNameA: '',
+      classNameB: 'userInput',
       placeHolder: '비밀번호',
       type: 'password',
       name: 'password',
+      single: true,
     },
   ],
   bar: [
     {
       type: 'checkbox',
+      className: 'check',
       radioName: '로그인 저장',
       radio: true,
     },
