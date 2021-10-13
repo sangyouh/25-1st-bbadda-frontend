@@ -9,12 +9,27 @@ class ProductDetail extends React.Component {
     super();
     this.state = {
       product: {
+        name: '',
+        color: '',
+        team: '',
+        information: '',
+        product_detail_info: '',
+        price: '',
         img: [{}],
+        size: [{}],
+      },
+      seleted: {
+        name: '',
+        color: '',
+        price: '',
+        img: [],
       },
     };
   }
 
   componentDidMount() {
+    //fetch('http://172.30.1.51:8000/products/product/32CP57111-50L')
+    //fetch('http://172.30.1.51:8000/products/product/${id}');
     fetch('/data/productDetailData.json')
       .then(res => res.json())
       .then(data => {
@@ -26,7 +41,8 @@ class ProductDetail extends React.Component {
 
   render() {
     const { product } = this.state;
-    console.log('state', product);
+    console.log('props', this.props);
+    console.log('디테일', this.state);
     return (
       <div className="ProductDetail">
         <div className="productVeiw">

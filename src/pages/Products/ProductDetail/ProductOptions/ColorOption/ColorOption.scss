@@ -1,11 +1,13 @@
 .ColorOption {
+  padding-top: 20px;
+
   .colorList {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
     .color {
-      margin: 0 0 5px 0;
+      margin: 0 5px 5px 0;
 
       a {
         width: 47px;

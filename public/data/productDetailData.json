@@ -22,8 +22,42 @@
       },
       {
         "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
+      },
+      {
+        "img_url": "https://cdn.pixabay.com/photo/2015/03/26/09/54/person-690547_960_720.jpg"
       }
     ],
-    "size": { "value": ["XL", "XXL", "L", "M", "S", "XS"] }
+    "size": [
+      {
+        "type": "APPAREL",
+        "value": "XXL",
+        "quantity": 100
+      },
+      {
+        "type": "APPAREL",
+        "value": "XL",
+        "quantity": 200
+      },
+      {
+        "type": "APPAREL",
+        "value": "L",
+        "quantity": 0
+      },
+      {
+        "type": "APPAREL",
+        "value": "M",
+        "quantity": 2
+      },
+      {
+        "type": "APPAREL",
+        "value": "S",
+        "quantity": 3
+      },
+      {
+        "type": "APPAREL",
+        "value": "XS",
+        "quantity": 4
+      }
+    ]
   }
 }

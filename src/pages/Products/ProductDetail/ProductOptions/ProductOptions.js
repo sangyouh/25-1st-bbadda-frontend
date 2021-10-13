@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import ProductInfos from './ProductInfos/ProductInfos';
 import ColorOption from './ColorOption/ColorOption';
 import SizeOption from './SizeOption/SizeOption';
@@ -8,6 +8,10 @@ import DeliverOption from './DeliverOption/DeliverOption';
 import './ProductOptions.scss';
 
 class ProductOptions extends React.Component {
+  goToBuy = () => {
+    this.props.history.push('/productsList');
+  };
+
   render() {
     const { product } = this.props;
     return (
@@ -18,16 +22,18 @@ class ProductOptions extends React.Component {
             productCode={product.product_code}
             productPrice={product.price}
           />
-          <ColorOption />
-          <SizeOption />
-          <QuantityOption />
+          <ColorOption color={product.img} />
+          <SizeOption size={product.size} />
+          <QuantityOption qantity={product.size} />
           <DeliverOption />
 
           <div className="btnBuy">
             <Link to="#n" className="alarm">
               상품입고알림 신청
             </Link>
-            <button className="buyNow">바로구매</button>
+            <button className="buyNow" onClick={this.goToBuy}>
+              바로구매
+            </button>
             <button className="cart">장바구니</button>
           </div>
 
@@ -37,7 +43,7 @@ class ProductOptions extends React.Component {
               <i className="fas fa-star" />
               <i className="fas fa-star-half" />
               <span className="blind">별점</span>
-              <span className="countGrade"> (5)</span>
+              <span className="countGrade"> (2.5)</span>
             </a>
             <div className="social">
               <Link to="#n" className="share">
@@ -58,4 +64,5 @@ class ProductOptions extends React.Component {
   }
 }
 
-export default ProductOptions;
+//export default ProductOptions;
+export default withRouter(ProductOptions);

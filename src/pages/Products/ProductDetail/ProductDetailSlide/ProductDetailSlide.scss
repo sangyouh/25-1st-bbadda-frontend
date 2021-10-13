@@ -14,13 +14,21 @@
     }
 
     .productImageList {
-      width: 4000px;
+      // width: 4000px;
       height: 100%;
+      transition: transform 500ms;
 
       .productImage {
-        float: left;
+        //float: left;
+        display: inline-block;
         width: 800px;
         height: 800px;
+
+        a {
+          display: flex;
+          align-items: center;
+          height: 100%;
+        }
 
         img {
           width: 100%;
@@ -54,7 +62,7 @@
     }
   }
 
-  .productSubSlide {
+  .slideBtn {
     position: relative;
     width: 570px;
     height: 70px;
@@ -62,25 +70,26 @@
 
     .carousel {
       display: flex;
-      justify-content: center;
-      li {
+      margin: 0 95px;
+
+      button {
         margin: 0 3px;
-        a {
-          img {
-            width: 70px;
-            height: 70px;
-          }
+
+        img {
+          width: 70px;
+          height: 70px;
         }
       }
     }
 
-    .currentImages {
+    .currentThumbsImage {
       position: absolute;
       top: 0;
-      left: 100px;
+      left: 98px;
       width: 70px;
       height: 70px;
       border: 2px solid #000;
+      cursor: pointer;
     }
 
     .btnControl {

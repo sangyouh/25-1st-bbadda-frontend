@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Nav from './Components/Nav/Nav';
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
 import MyPage from './pages/MyPage/MyPage';
@@ -11,6 +12,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/main" component={Main} />
