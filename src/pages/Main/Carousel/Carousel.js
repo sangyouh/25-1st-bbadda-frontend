@@ -34,9 +34,8 @@ export default class Carousel extends React.Component {
           >
             {images.map(({ id, url }) => {
               return (
-                <div className="slideBox">
+                <div className="slideBox" key={id}>
                   <div
-                    key={id}
                     className="img"
                     style={{
                       background: `url(${url}) no-repeat center`,
@@ -50,9 +49,9 @@ export default class Carousel extends React.Component {
           <ul className="dots">
             {images.map(({ id }) => {
               return (
-                <li>
+                <li key={id}>
                   <button
-                    className={`${currIndex == id ? 'btnActive' : ''}`}
+                    className={`${currIndex === id ? 'btnActive' : ''}`}
                     onClick={() => this.onChangeImage(id)}
                   >
                     {id}

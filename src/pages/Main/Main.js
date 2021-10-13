@@ -2,11 +2,26 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Carousel from './Carousel/Carousel';
 import './Main.scss';
-
 import IMAGES_DATA from './Carousel/Image_Data';
 
 class Main extends Component {
+  constructor() {
+    super();
+    this.state = {
+      itemList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/Main/itemList.json')
+      .then(result => result.json())
+      .then(data => {
+        this.setState({ itemList: data });
+      });
+  }
+
   render() {
+    console.log(this.state.itemList);
     return (
       <>
         <main className="MainWrapper">
@@ -22,18 +37,21 @@ class Main extends Component {
                 </div>
                 <div className="newArrivalList">
                   <ul className="itemsList">
-                    <li>
-                      {/* 이 부분 fetch와 map 메소드로 구현하자. */}
-                      <div className="item">
-                        <Link to="#">
-                          <div className="itemImg">
-                            <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
+                    {this.state.itemList.map(({ id, link, name, price }) => {
+                      return (
+                        <li>
+                          <div className="item" key={id}>
+                            <Link to={link}>
+                              <div className="itemImg">
+                                <img src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414" />
+                              </div>
+                              <div className="itemName">{name}</div>
+                              <div className="itemPrice">{price}</div>
+                            </Link>
                           </div>
-                          <div className="itemName">펠트 헌팅캡 LA다저스</div>
-                          <div className="itemPrice">79,000원</div>
-                        </Link>
-                      </div>
-                    </li>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
