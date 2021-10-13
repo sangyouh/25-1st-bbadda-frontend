@@ -22,22 +22,22 @@
 
   .menuLeft {
     position: absolute;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-right: 150px;
     background-color: white;
   }
 
   .menuRight {
     position: absolute;
-    margin-left: 400px;
-    margin-top: 50px;
+    margin-left: 150px;
+    margin-top: 20px;
     background-color: white;
   }
 
   .dropdownList {
     text-align: left;
-    margin-top: 15px;
-    font-size: 25px;
+    padding-top: 5px;
+    font-size: 20px;
   }
 
   .linkBlur {
@@ -52,13 +52,12 @@
 
   .arrow {
     margin-left: 30px;
-    font-size: 25px;
   }
   button {
     background-color: white;
     border-radius: 3px;
   }
   .fas {
-    font-size: 25px;
+    font-size: 20px;
   }
 }

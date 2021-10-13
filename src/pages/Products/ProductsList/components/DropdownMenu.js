@@ -35,33 +35,72 @@ export class DropdownMenu extends Component {
     }
   };
 
-  backToFalse = () => {
-    this.setState({ clicked: false });
+  goToBallCap = () => {
+    this.props.history.push(`/productsList?category=ballcap`);
   };
+  goToApparel = () => {
+    this.props.history.push(`/productsList?category=apparel`);
+  };
+
+  // changeData = () => {
+  //   const { productsData } = this.props;
+  //   fetch(`/data/productListData.json`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         productsData: data,
+  //       });
+  //     });
+  // };
 
   render() {
     const { clicked, clicked2 } = this.state;
-    const { categoryName } = this.props;
+    const { outCategoryName } = this.props;
 
     return (
-      <div
-        className="dropdownMenu"
-        ref={el => {
-          this.dropdown = el;
-        }}
-      >
-        <span className="categoryList">{this.props.categoryName}</span>
-        <button onClick={this.isClicked}>
-          <i class={`fas fa-angle-double-${clicked ? 'up' : 'down'}`}></i>
-        </button>
-        {clicked && !clicked2 ? (
-          <span className="arrow">
-            <i class="fas fa-chevron-right"></i>
-          </span>
-        ) : null}
-        {clicked ? (
-          <div className="menuLeft">
-            <ul className="alignLeft">
+      <div className="dropdownMenu">
+        <div
+          ref={el => {
+            this.dropdown = el;
+          }}
+        >
+          <span className="categoryList">{outCategoryName}</span>
+          <button onClick={this.isClicked}>
+            <i class={`fas fa-angle-double-${clicked ? 'up' : 'down'}`}></i>
+          </button>
+          {clicked && !clicked2 ? (
+            <span className="arrow">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          ) : null}
+          {clicked ? (
+            <div className="menuLeft">
+              <ul>
+                <li className="dropdownList">
+                  <Link className="linkBlur" to="#n">
+                    전체보기
+                  </Link>
+                </li>
+                <li className="dropdownList">
+                  <button className="linkBlur" onClick={this.goToBallCap}>
+                    Ballcap
+                  </button>
+                </li>
+                <li className="dropdownList">
+                  <button className="linkBlur" onClick={this.goToApparel}>
+                    Apparel
+                  </button>
+                </li>
+              </ul>
+            </div>
+          ) : null}
+
+          <span className="categoryList">IN CATEGORY ONE</span>
+          <button onClick={this.isClicked2}>
+            <i class={`fas fa-angle-double-${clicked2 ? 'up' : 'down'}`}></i>
+          </button>
+          {clicked2 ? (
+            <ul className="menuRight">
               <li className="dropdownList">
                 <Link className="linkBlur" to="#n">
                   전체보기
@@ -69,44 +108,20 @@ export class DropdownMenu extends Component {
               </li>
               <li className="dropdownList">
                 <Link className="linkBlur" to="#n">
-                  {categoryName}
+                  IN CATEGORY ONE
                 </Link>
               </li>
               <li className="dropdownList">
                 <Link className="linkBlur" to="#n">
-                  OUT CATEGORY TWO
+                  IN CATEGORY TWO
                 </Link>
               </li>
             </ul>
-          </div>
-        ) : null}
-
-        <span className="categoryList">CATEGORY ONE</span>
-        <button onClick={this.isClicked2}>
-          <i class={`fas fa-angle-double-${clicked2 ? 'up' : 'down'}`}></i>
-        </button>
-        {clicked2 ? (
-          <ul className="menuRight">
-            <li className="dropdownList">
-              <Link className="linkBlur" to="#n">
-                전체보기
-              </Link>
-            </li>
-            <li className="dropdownList">
-              <Link className="linkBlur" to="#n">
-                IN CATEGORY ONE
-              </Link>
-            </li>
-            <li className="dropdownList">
-              <Link className="linkBlur" to="#n">
-                IN CATEGORY TWO
-              </Link>
-            </li>
-          </ul>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     );
   }
 }
 
-export default DropdownMenu;
+export default withRouter(DropdownMenu);

@@ -8,12 +8,17 @@
 
   .filterButton {
     border: 0;
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
+    opacity: 60%;
     background-color: white;
   }
+  .filterButton:hover {
+    opacity: 100%;
+  }
   .buttonDivider {
-    font-size: 30px;
+    font-size: 20px;
+    padding: 0 20px;
   }
 
   .buttonBorder {
