@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../../../../../Components/Button/Button';
 import BUTTON_LIST from '../../../../../data/ButtonData';
-import './JoinButton.scss';
 
 class JoinButton extends Component {
   handleSubmit = e => {

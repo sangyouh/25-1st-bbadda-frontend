@@ -4,6 +4,12 @@
   text-align: center;
 }
 
+@mixin align2 {
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+
 @mixin external {
   flex: 1;
   height: 45px;
@@ -56,5 +62,40 @@
   .kakaoLogo {
     background-image: url(./Img/kakaoLogo.png);
     background-repeat: no-repeat;
+  }
+}
+
+.member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 62px;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+
+.nonMember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 62px;
+  border-bottom: 1px solid #ddd;
+}
+
+.onClick {
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+}
+
+.joinBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  text-align: center;
+  .nativeLoginTag {
+    @include align2;
+    @include native;
   }
 }

@@ -48,7 +48,7 @@ class LoginButton extends Component {
     const { history } = this.props;
     e.preventDefault();
     isValid
-      ? fetch('http://10.58.7.108:8000/users/signin', {
+      ? fetch('http://10.58.5.165:8000/users/signin', {
           method: 'POST',
           body: JSON.stringify({
             account,
@@ -57,33 +57,17 @@ class LoginButton extends Component {
         })
           .then(res => res.json())
           .then(res => {
-            if (res.token) {
+            if (res.access_token) {
               autoLogin
-                ? localStorage.setItem('AccessToken', res.token)
-                : sessionStorage.setItem('AccessToken', res.token);
+                ? localStorage.setItem('AccessToken', res.access_token)
+                : sessionStorage.setItem('AccessToken', res.access_token);
               history.push('/main');
-              console.log('token');
             } else {
               console.log('test');
             }
           })
       : console.log('failed');
   };
-
-  // .then(res => res.json())
-  // .then(res => {
-  //   if (res.token) {
-  //     history.push('/Main-KyungHyun');
-  //     localStorage.setItem('kich-token', res.token);
-  //   } else {
-  //     this.setState({
-  //       id: '',
-  //       pw: '',
-  //       validFailAlert:
-  //         '입력한 사용자 이름을 사용하는 계정을 찾을 수 없습니다. 사용자 이름을 확인하고 다시 시도하세요.',
-  //     });
-  //   }
-  // });
 
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;

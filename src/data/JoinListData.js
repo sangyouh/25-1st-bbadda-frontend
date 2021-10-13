@@ -2,7 +2,7 @@ const JOIN_LIST = {
   first: [
     {
       id: 1,
-      classNameA: 'firstInput',
+      classNameA: 'joinListFirst',
       classNameB: 'halfInput',
       placeHolder: '아이디 (6~15자 영문 소문자.숫자)',
       type: 'text',
@@ -104,15 +104,6 @@ const JOIN_LIST = {
       placeHolder: 'E-mail',
       type: 'email',
       name: 'email',
-      single: true,
-    },
-    {
-      id: 2,
-      classNameA: 'joinList',
-      classNameB: 'basicInput',
-      placeHolder: '전화번호',
-      type: 'tel',
-      name: 'mobile_number',
       single: true,
     },
   ],

@@ -4,6 +4,7 @@ import List from '../../../../Components/List/List';
 import Table from '../../../../Components/Table/Table';
 import TableContent from '../../../../Components/Table/TableContent';
 import JOIN_LIST from '../../../../data/JoinListData';
+import MOBILE_NUM from '../../../../data/MobileNumList';
 
 import './JoinForm.scss';
 class JoinForm extends Component {
@@ -21,8 +22,8 @@ class JoinForm extends Component {
     return (
       <form className="JoinForm">
         <section>
-          <div className="header">
-            <span className="joinInfo">가입정보</span>
+          <div>
+            <span>가입정보</span>
             <span className="requiredInfo">필수입력 항목</span>
             <div className="infoForm">
               <Table
@@ -85,6 +86,9 @@ class JoinForm extends Component {
                       )}
                     </li>
                     <List data={JOIN_LIST.fou} onChange={onChange} />
+                    <li className="joinListLast">
+                      <List data={MOBILE_NUM} />
+                    </li>
                   </ul>
                 </TableContent>
               </Table>

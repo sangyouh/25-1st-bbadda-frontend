@@ -1,9 +1,14 @@
-.firstInput {
+.joinListFirst {
   border: none;
   padding: 0 0 10px 0;
 }
 .joinList {
   padding: 10px 0;
+  border-top: 1px solid #dddddd;
+}
+
+.joinListLast {
+  padding-top: 10px;
   border-top: 1px solid #dddddd;
 }
 
