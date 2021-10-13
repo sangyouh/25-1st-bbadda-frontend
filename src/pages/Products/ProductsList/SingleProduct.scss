@@ -1,0 +1,19 @@
+.SingleProduct {
+  .product-container {
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}

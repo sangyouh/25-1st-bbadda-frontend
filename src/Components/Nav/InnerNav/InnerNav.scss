@@ -1,0 +1,82 @@
+@mixin atag {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navSubWrap {
+  a {
+    @include atag;
+  }
+
+  position: absolute;
+  display: none;
+  padding: 42px 20px;
+  left: 0;
+  right: 0;
+  background-color: white;
+
+  .innerWrap {
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    margin: 0 auto;
+
+    .specialProduct {
+      .lists {
+        li {
+          margin-bottom: 15px;
+          a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    .productLists {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+      .lists {
+        width: 450px;
+
+        > li {
+          float: left;
+          width: 140px;
+          padding-bottom: 30px;
+          margin-bottom: 15px;
+
+          &:nth-child(3n + 1) {
+            clear: left;
+          }
+          > a {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+
+          ul {
+            margin-top: 10px;
+
+            li {
+              font-size: 14px;
+              line-height: 27px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.active {
+  display: block;
+}
