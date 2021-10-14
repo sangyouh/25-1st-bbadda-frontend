@@ -1,0 +1,70 @@
+@mixin memberBenefit {
+  flex: 1 0 33.3%;
+  padding: 30px;
+  margin: 0 2.5px;
+  background-color: #f8f8f8;
+}
+
+.MemberBenefit {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 60px;
+  margin: 20px 0 30px 0;
+
+  .memberDiv {
+    padding-top: 51px;
+    background-repeat: no-repeat;
+
+    .memberSpan {
+      font-size: 13px;
+      line-height: 18px;
+      &::before {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 5px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .mileage {
+    @include memberBenefit;
+
+    .memberDiv {
+      background-image: url(../Img/mileage.png);
+
+      .memberSpan {
+        &::before {
+          background-color: #28abe3;
+        }
+      }
+    }
+  }
+  .coupon {
+    @include memberBenefit;
+
+    .memberDiv {
+      background-image: url(../Img/coupon.png);
+
+      .memberSpan {
+        &::before {
+          background-color: #ff4c65;
+        }
+      }
+    }
+  }
+  .percent {
+    @include memberBenefit;
+
+    .memberDiv {
+      background-image: url(../Img/percent.png);
+
+      .memberSpan {
+        &::before {
+          background-color: #8bad39;
+        }
+      }
+    }
+  }
+}

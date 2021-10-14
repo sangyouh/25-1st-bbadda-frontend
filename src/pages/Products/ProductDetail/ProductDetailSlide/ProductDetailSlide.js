@@ -11,25 +11,9 @@ class ProductDetailSlide extends React.Component {
   }
 
   onChangeImage = index => {
-    if (this.props.detailImgs.length <= index) index = 0;
-    if (index < 0) index = this.props.detailImgs.length - 1;
-
     this.setState({
       currentIndex: index,
     });
-  };
-  onChangeCurrent = index => {
-    this.setState({
-      currentIndex: index,
-    });
-  };
-
-  slideImagePrev = () => {
-    console.log('click prev');
-  };
-
-  slideImageNext = () => {
-    console.log('click next');
   };
 
   render() {
@@ -60,20 +44,30 @@ class ProductDetailSlide extends React.Component {
           </div>
           <button
             className="btnControl btnPrev"
+            disabled={currentIndex === 0}
             onClick={() => {
               this.onChangeImage(currentIndex - 1);
             }}
           >
-            <i className="fas fa-chevron-left" />
+            <i
+              className={`fas fa-chevron-left ${
+                currentIndex === 0 ? 'inactiveArrow' : ''
+              }`}
+            />
             <span className="blind">이전</span>
           </button>
           <button
             className="btnControl btnNext"
+            disabled={currentIndex === detailImgs.length - 1}
             onClick={() => {
               this.onChangeImage(currentIndex + 1);
             }}
           >
-            <i className="fas fa-chevron-right" />
+            <i
+              className={`fas fa-chevron-right ${
+                currentIndex === detailImgs.length - 1 ? 'inactiveArrow' : ''
+              }`}
+            />
             <span className="blind">다음</span>
           </button>
         </div>
@@ -86,29 +80,46 @@ class ProductDetailSlide extends React.Component {
                 </button>
               );
             })}
+            <div
+              className="thumBox"
+              style={{
+                left: `${98 + currentIndex * 76}px`,
+              }}
+            ></div>
+            <div
+              className="currentThumbsImage"
+              onChangeImage={this.onChangeImage}
+            ></div>
           </ul>
-          <div
-            className="currentThumbsImage"
-            onChangeImage={this.onChangeImage}
-          ></div>
+
           <button
             href="#n"
             className="btnControl btnPrev"
+            disabled={currentIndex === 0}
             onClick={() => {
               this.onChangeImage(currentIndex - 1);
             }}
           >
-            <i className="fas fa-chevron-left" />
+            <i
+              className={`fas fa-chevron-left ${
+                currentIndex === 0 ? 'inactiveArrow' : ''
+              }`}
+            />
             <span className="blind">이전</span>
           </button>
           <button
             href="#n"
             className="btnControl btnNext"
+            disabled={currentIndex === detailImgs.length - 1}
             onClick={() => {
               this.onChangeImage(currentIndex + 1);
             }}
           >
-            <i className="fas fa-chevron-right" />
+            <i
+              className={`fas fa-chevron-right ${
+                currentIndex === detailImgs.length - 1 ? 'inactiveArrow' : ''
+              }`}
+            />
           </button>
         </div>
       </div>
