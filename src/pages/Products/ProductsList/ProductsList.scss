@@ -8,12 +8,17 @@
 
   .filterButton {
     border: 0;
-    font-size: 25px;
+    font-size: 15px;
     margin-bottom: 10px;
+    opacity: 60%;
     background-color: white;
   }
+  .filterButton:hover {
+    opacity: 100%;
+  }
   .buttonDivider {
-    font-size: 30px;
+    font-size: 20px;
+    padding: 0 20px;
   }
 
   .buttonBorder {
@@ -35,18 +40,9 @@
   button:hover {
     border-bottom: 1px solid;
   }
-  .backgroundClick {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-  }
-  .backgroundClick {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
+  .pageNation {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }

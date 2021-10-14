@@ -1,0 +1,41 @@
+{
+  "name": "BALL CAP",
+  "categoryId": 2,
+  "content": [
+    {
+      "id": 6,
+      "name": "AAAAAA",
+      "price": 100000
+    },
+    {
+      "id": 7,
+      "name": "BBBBB",
+      "price": 26000
+    },
+    {
+      "id": 8,
+      "name": "CCCCC",
+      "price": 345021
+    },
+    {
+      "id": 9,
+      "name": "DDDDDDDD",
+      "price": 25000
+    },
+    {
+      "id": 10,
+      "name": "EEEEEEE",
+      "price": 100000
+    },
+    {
+      "id": 11,
+      "name": "FFFFFFF",
+      "price": 67000
+    },
+    {
+      "id": 12,
+      "name": "GGGGG",
+      "price": 59000
+    }
+  ]
+}
