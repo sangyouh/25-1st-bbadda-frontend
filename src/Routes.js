@@ -1,10 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
-<<<<<<< HEAD
-=======
 import Footer from './Components/Footer/Footer';
->>>>>>> 3e2a35eb54be81a89f2195647618dafeb2c77870
 import Login from './pages/Login/Login';
 import Join from './pages/SignUp/Join';
 import Order from './pages/Order/Order';
