@@ -54,7 +54,10 @@ class Main extends Component {
                             <div className="item">
                               <Link to={url}>
                                 <div className="itemImg">
-                                  <img alt="itemImg" src={{ image_url }} />
+                                  <img
+                                    alt="itemImg"
+                                    src={image_url['image_url1']}
+                                  />
                                 </div>
                                 <div className="itemName">{name}</div>
                                 <div className="itemPrice">
@@ -81,13 +84,17 @@ class Main extends Component {
                 <div className="items">
                   <ul className="itemsList">
                     {this.state.rankingItemList.map(
-                      ({ id, url, image_url, name, price }) => {
+                      ({ id, url, image_url, name, price }, idx) => {
                         return (
                           <li key={id}>
                             <div className="item">
                               <Link to={url}>
                                 <div className="itemImg">
-                                  <img alt="itemImg" src={image_url} />
+                                  <img
+                                    alt="itemImg"
+                                    src={image_url['image_url1']}
+                                  />
+                                  <span className="number">{idx + 1}</span>
                                 </div>
                                 <div className="itemName">{name}</div>
                                 <div className="itemPrice">
