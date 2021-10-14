@@ -15,8 +15,8 @@ const NAV_DATA = [
         link: '#',
         items: [
           { id: 0, name: '숏패딩', link: '#' },
-          { id: 2, name: '야구점퍼', link: '#' },
-          { id: 1, name: '후리스', link: '#' },
+          { id: 1, name: '야구점퍼', link: '#' },
+          // { id: 2, name: '후리스', link: '#' },
         ],
       },
       {
@@ -26,16 +26,7 @@ const NAV_DATA = [
         items: [
           { id: 0, name: '티셔츠', link: '#' },
           { id: 1, name: '맨투맨', link: '#' },
-          { id: 2, name: '후드티', link: '#' },
-        ],
-      },
-      {
-        id: 2,
-        name: '하의',
-        link: '#',
-        items: [
-          { id: 0, name: '팬츠', link: '#' },
-          { id: 1, name: '트레이닝팬츠', link: '#' },
+          // { id: 2, name: '후드티', link: '#' },
         ],
       },
     ],
@@ -48,7 +39,6 @@ const NAV_DATA = [
       },
     ],
   },
-
   {
     id: 1,
     name: 'CAP',
@@ -65,7 +55,6 @@ const NAV_DATA = [
         items: [
           { id: 0, name: '언스트럭쳐볼캡', link: '#' },
           { id: 1, name: '스트럭쳐볼캡', link: '#' },
-          { id: 2, name: '야구점퍼', link: '#' },
         ],
       },
       {
@@ -73,12 +62,6 @@ const NAV_DATA = [
         name: '스냅백',
         link: '#',
         items: [{ id: 0, name: '스냅백', link: '#' }],
-      },
-      {
-        id: 2,
-        name: '비니',
-        link: '#',
-        items: [{ id: 0, name: '비니', link: '#' }],
       },
     ],
     banner: [
@@ -90,98 +73,108 @@ const NAV_DATA = [
       },
     ],
   },
-
   {
     id: 2,
     name: 'SHOES',
     link: '#',
-    cate: [{ id: 0, name: '', link: '' }],
+    cate: [
+      { id: 0, name: 'MLB 셋업', link: '#' },
+      { id: 1, name: 'MLB x DISNEY', link: '#' },
+    ],
     depth: [
       {
         id: 0,
-        name: '',
+        name: '운동화',
         link: '#',
-        items: [{ id: 0, name: '', link: '' }],
+        items: [
+          { id: 0, name: '빅볼청키', link: '#' },
+          { id: 1, name: '청키하이', link: '#' },
+        ],
+      },
+      {
+        id: 1,
+        name: '샌들/슬리퍼',
+        link: '#',
+        items: [{ id: 0, name: '슬리퍼', link: '#' }],
       },
     ],
     banner: [
       {
         id: 0,
-        name: '',
-        bannerLink: '',
-        link: '',
+        name: 'CAP banner',
+        bannerLink: './images/Nav/400x268.png',
+        link: '#',
       },
     ],
   },
+  // {
+  //   id: 3,
+  //   name: 'BAG',
+  //   link: '#',
+  //   cate: [{ id: 0, name: '', link: '' }],
+  //   depth: [
+  //     {
+  //       id: 0,
+  //       name: '',
+  //       link: '#',
+  //       items: [{ id: 0, name: '', link: '' }],
+  //     },
+  //   ],
+  //   banner: [
+  //     {
+  //       id: 0,
+  //       name: '',
+  //       bannerLink: '',
+  //       link: '',
+  //     },
+  //   ],
+  // },
 
-  {
-    id: 3,
-    name: 'BAG',
-    link: '#',
-    cate: [{ id: 0, name: '', link: '' }],
-    depth: [
-      {
-        id: 0,
-        name: '',
-        link: '#',
-        items: [{ id: 0, name: '', link: '' }],
-      },
-    ],
-    banner: [
-      {
-        id: 0,
-        name: '',
-        bannerLink: '',
-        link: '',
-      },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   name: 'ACC',
+  //   link: '#',
+  //   cate: [{ id: 0, name: '', link: '' }],
+  //   depth: [
+  //     {
+  //       id: 0,
+  //       name: '',
+  //       link: '#',
+  //       items: [{ id: 0, name: '', link: '' }],
+  //     },
+  //   ],
+  //   banner: [
+  //     {
+  //       id: 0,
+  //       name: '',
+  //       bannerLink: '',
+  //       link: '',
+  //     },
+  //   ],
+  // },
 
-  {
-    id: 4,
-    name: 'ACC',
-    link: '#',
-    cate: [{ id: 0, name: '', link: '' }],
-    depth: [
-      {
-        id: 0,
-        name: '',
-        link: '#',
-        items: [{ id: 0, name: '', link: '' }],
-      },
-    ],
-    banner: [
-      {
-        id: 0,
-        name: '',
-        bannerLink: '',
-        link: '',
-      },
-    ],
-  },
-
-  {
-    id: 5,
-    name: 'KIDS',
-    link: '#',
-    cate: [{ id: 0, name: '', link: '' }],
-    depth: [
-      {
-        id: 0,
-        name: '',
-        link: '#',
-        items: [{ id: 0, name: '', link: '' }],
-      },
-    ],
-    banner: [
-      {
-        id: 0,
-        name: '',
-        bannerLink: '',
-        link: '',
-      },
-    ],
-  },
+  // {
+  //   id: 5,
+  //   name: 'KIDS',
+  //   link: '#',
+  //   cate: [{ id: 0, name: '', link: '' }],
+  //   depth: [
+  //     {
+  //       id: 0,
+  //       name: '',
+  //       link: '#',
+  //       items: [{ id: 0, name: '', link: '' }],
+  //     },
+  //   ],
+  //   banner: [
+  //     {
+  //       id: 0,
+  //       name: '',
+  //       bannerLink: '',
+  //       link: '',
+  //     },
+  //   ],
+  // },
 ];
 
 export default NAV_DATA;
