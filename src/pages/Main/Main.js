@@ -9,15 +9,22 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      itemList: [],
+      newItemList: [],
+      rankingItemList: [],
     };
   }
 
   componentDidMount() {
-    fetch('/data/Main/itemList.json')
+    fetch('http://10.58.0.118:8000/products/menu?sort=-created_at')
       .then(result => result.json())
       .then(data => {
-        this.setState({ itemList: data });
+        this.setState({ newItemList: data.content });
+      });
+
+    fetch('http://10.58.0.118:8000/products/menu?sort=number_of_selling')
+      .then(result => result.json())
+      .then(data => {
+        this.setState({ rankingItemList: data.content });
       });
   }
 
@@ -40,24 +47,28 @@ class Main extends Component {
                 </div>
                 <div className="newArrivalList">
                   <ul className="itemsList">
-                    {this.state.itemList.map(({ id, link, name, price }) => {
-                      return (
-                        <li key={id}>
-                          <div className="item">
-                            <Link to={link}>
-                              <div className="itemImg">
-                                <img
-                                  alt="itemImg"
-                                  src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414"
-                                />
-                              </div>
-                              <div className="itemName">{name}</div>
-                              <div className="itemPrice">{price}</div>
-                            </Link>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {this.state.newItemList.map(
+                      ({ id, url, image_url, name, price }) => {
+                        return (
+                          <li key={id}>
+                            <div className="item">
+                              <Link to={url}>
+                                <div className="itemImg">
+                                  <img alt="itemImg" src={{ image_url }} />
+                                </div>
+                                <div className="itemName">{name}</div>
+                                <div className="itemPrice">
+                                  {parseInt(price)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                  원
+                                </div>
+                              </Link>
+                            </div>
+                          </li>
+                        );
+                      }
+                    )}
                   </ul>
                 </div>
               </div>
@@ -69,24 +80,28 @@ class Main extends Component {
               <div className="content">
                 <div className="items">
                   <ul className="itemsList">
-                    {this.state.itemList.map(({ id, link, name, price }) => {
-                      return (
-                        <li key={id}>
-                          <div className="item">
-                            <Link to={link}>
-                              <div className="itemImg">
-                                <img
-                                  alt="itemImg"
-                                  src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414"
-                                />
-                              </div>
-                              <div className="itemName">{name}</div>
-                              <div className="itemPrice">{price}</div>
-                            </Link>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {this.state.rankingItemList.map(
+                      ({ id, url, image_url, name, price }) => {
+                        return (
+                          <li key={id}>
+                            <div className="item">
+                              <Link to={url}>
+                                <div className="itemImg">
+                                  <img alt="itemImg" src={image_url} />
+                                </div>
+                                <div className="itemName">{name}</div>
+                                <div className="itemPrice">
+                                  {parseInt(price)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                  원
+                                </div>
+                              </Link>
+                            </div>
+                          </li>
+                        );
+                      }
+                    )}
                   </ul>
                 </div>
               </div>
