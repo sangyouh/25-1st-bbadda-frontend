@@ -24,6 +24,8 @@ class QuantityOption extends React.Component {
   checkNumber = e => {
     if (0 <= e.key && e.key <= 9) {
       this.quantityValue(e);
+      if (this.state.amount) {
+      }
     } else {
       alert('숫자만 입력해주세요');
       this.setState({

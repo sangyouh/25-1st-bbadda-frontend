@@ -13,7 +13,7 @@ class ProductOptions extends React.Component {
     this.state = {
       selected_size_type: '',
       selected_size_value: '',
-      selected_quantity: 0,
+      selected_quantity: 1,
     };
   }
 
@@ -25,10 +25,10 @@ class ProductOptions extends React.Component {
           'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.M8Tll95oC5RoAnS4u-61z6hDLuI8YuPKR5FWRkwP6tE',
       },
       body: JSON.stringify({
-        // product_code: this.props.product.product_code,
-        // size_type: this.props.product.size[0].type,
-        // selected_size_value: this.state.selected_size_value,
-        // selectedQuantity: this.state.selected_quantity,
+        product_code: this.props.product.product_code,
+        size_type: this.props.product.size[0].type,
+        selected_size_value: this.state.selected_size_value,
+        selectedQuantity: this.state.selected_quantity,
       }),
     });
     // 주문 페이지 :
@@ -43,7 +43,7 @@ class ProductOptions extends React.Component {
 
   setSelectedSizeQuantity = amount => {
     this.setState({
-      selected_quantity: amount,
+      selected_quantity: amount + 1,
     });
   };
 
