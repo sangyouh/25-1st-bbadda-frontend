@@ -80,23 +80,15 @@ class LoginButton extends Component {
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;
     return (
-      <div className="LoginButton">
+      <form className="LoginButton" onSubmit={console.log('test')}>
         <Button
           href={'/main'}
           data={BUTTON_LIST.signIn.Basic}
           onClick={handleSubmit}
         />
-        <Button
-          href={'/main'}
-          data={BUTTON_LIST.signIn.Naver}
-          onClick={handleSubmit}
-        />
-        <Button
-          href={'/main'}
-          data={BUTTON_LIST.signIn.Kakao}
-          onClick={loginWithKakao}
-        />
-      </div>
+        <Button href={'/main'} data={BUTTON_LIST.signIn.Naver} />
+        <Button href={'/main'} data={BUTTON_LIST.signIn.Kakao} />
+      </form>
     );
   }
 }

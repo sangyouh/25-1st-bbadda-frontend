@@ -9,7 +9,7 @@ import MyPage from './pages/MyPage/MyPage';
 import Product from './pages/Products/Product';
 import ProductsList from './pages/Products/ProductsList/ProductsList';
 import ProductDetail from './pages/Products/ProductDetail/ProductDetail';
-import Nav from './Components/Nav/Nav';
+
 class Routes extends React.Component {
   render() {
     return (
