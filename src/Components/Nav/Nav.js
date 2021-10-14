@@ -1,17 +1,46 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import InnerNav from './InnerNav/InnerNav';
 import NAV_DATA from './navData';
 import './Nav.scss';
 
 class Nav extends Component {
+  constructor() {
+    super();
+    this.state = {
+      hasToken: false,
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      if (
+        window.sessionStorage.AccessToken ||
+        window.localStorage.AccessToken
+      ) {
+        this.setState({
+          hasToken: true,
+        });
+      }
+    }
+  }
+
+  setLogout = () => {
+    window.sessionStorage.removeItem('accessToken');
+
+    this.setState({
+      hasToken: false,
+    });
+  };
+
   render() {
+    const { hasToken } = this.state;
     return (
       <header className="NavHeader">
         <nav className="nav">
           <div className="navWrap">
             <div className="logoWrap">
-              <Link className="MLBlogo" to="#">
+              <Link className="MLBlogo" to="/main">
                 <h1>BBADDA</h1>
               </Link>
             </div>
@@ -21,11 +50,13 @@ class Nav extends Component {
                   return (
                     <InnerNav
                       key={id}
+                      id={id}
                       name={name}
                       link={link}
                       cate={cate}
                       depth={depth}
                       banner={banner}
+                      moveToPage={this.moveToPage}
                     />
                   );
                 })}
@@ -55,12 +86,17 @@ class Nav extends Component {
                   <i className="far fa-user" />
                 </Link>
                 <div className="loginMenu">
-                  <ul>
-                    <li>
-                      <Link to="#">로그인</Link>
+                  <ul className={hasToken ? 'beSmall' : ''}>
+                    <li className={hasToken ? 'inactive' : ''}>
+                      <Link to="/signin">로그인</Link>
                     </li>
-                    <li>
-                      <Link to="#">회원가입</Link>
+                    <li className={hasToken ? 'inactive' : ''}>
+                      <Link to="/signup">회원가입</Link>
+                    </li>
+                    <li className={hasToken ? '' : 'inactive'}>
+                      <Link to="/main" onClick={this.setLogout}>
+                        로그아웃
+                      </Link>
                     </li>
                     <li>
                       <Link to="#">마이페이지</Link>
@@ -76,4 +112,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
