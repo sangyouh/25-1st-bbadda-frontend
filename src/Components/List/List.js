@@ -7,21 +7,7 @@ class List extends Component {
     const { data, onChange, onClick } = this.props;
 
     const list = data.map(input =>
-      input.radio ? (
-        <label className="radioLabel">
-          <Input
-            key={input.id}
-            className={input.className}
-            placeholder={input.placeHolder}
-            type={input.type}
-            name={input.name}
-            value={input.value}
-            onChange={onChange}
-            onClick={onClick}
-          />
-          {input.radioName}
-        </label>
-      ) : input.single ? (
+      input.single ? (
         <li className={input.classNameA}>
           <Input
             className={input.classNameB}
