@@ -24,8 +24,9 @@ class Order extends Component {
       price: '200,000',
       address: '',
       orderer: '',
-      receiver: '',
+      receiver_name: '',
       email: '',
+      request: '',
       userFirstNum: '010',
       userSecondNum: '',
       userThirdNum: '',
@@ -120,9 +121,9 @@ class Order extends Component {
     // quantity = { quantity };
     // onClick = { handleCheck };
     // payAgree = { payAgree };
-
+    console.log('receiver_name', receiver_name);
     console.log(this.state.userData);
-    console.log(this.state);
+    // console.log(this);
 
     return (
       <div className="Order">
@@ -225,7 +226,7 @@ class Order extends Component {
                 <TableContent tableHead={'받는분'}>
                   <Input
                     className="halfInput"
-                    name="receiver"
+                    name="receiver_name"
                     onChange={handleInput}
                   />
                   <CheckBox

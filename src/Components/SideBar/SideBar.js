@@ -55,9 +55,15 @@ class SideBar extends Component {
   };
 
   // componentWillUnmount() {
-  //   fetch('http://10.58.0.165:8000/orders/order', {
-  //     method: 'DELETE',
-  //   });
+  //   const { history } = this.props;
+  //   if (history.action) {
+  //     fetch('http://10.58.0.165:8000/orders/order', {
+  //       method: 'DELETE',
+  //       headers: {
+  //         Authorization: localStorage.getItem('AccessToken'),
+  //       },
+  //     });
+  //   }
   // }
 
   render() {
