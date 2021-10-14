@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
+import Footer from './Components/Footer/Footer';
 import Login from './pages/Login/Login';
 import Join from './pages/SignUp/Join';
 import Order from './pages/Order/Order';
@@ -9,7 +10,7 @@ import MyPage from './pages/MyPage/MyPage';
 import Product from './pages/Products/Product';
 import ProductsList from './pages/Products/ProductsList/ProductsList';
 import ProductDetail from './pages/Products/ProductDetail/ProductDetail';
-import Nav from './Components/Nav/Nav';
+
 class Routes extends React.Component {
   render() {
     return (
@@ -29,6 +30,7 @@ class Routes extends React.Component {
             component={ProductDetail}
           />
         </Switch>
+        <Footer />
       </Router>
     );
   }

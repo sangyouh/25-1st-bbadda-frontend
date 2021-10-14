@@ -21,6 +21,13 @@
           float: left;
           width: 675px;
           height: 873px;
+
+          > a {
+            > img {
+              width: 100%;
+              height: 100%;
+            }
+          }
         }
 
         .newArrivalList {
