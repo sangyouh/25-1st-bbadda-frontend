@@ -15,7 +15,7 @@ export class ProductsList extends Component {
   }
 
   componentDidMount() {
-    fetch(`/data/productListData1.json`)
+    fetch(`http://10.58.0.118:8000/products/menu?id=1`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -26,8 +26,8 @@ export class ProductsList extends Component {
 
   fetchData = queryString => {
     const { isPriceHigh, isPriceLow } = this.state;
-    if (queryString === '?category=ballcap') {
-      fetch(`/data/productListData2.json`)
+    if (queryString === '?category=아우터') {
+      fetch(`http://10.58.0.118:8000/products/category?id=1`)
         .then(res => res.json())
         .then(data => {
           if (isPriceHigh === false && isPriceLow === false) {
@@ -40,8 +40,8 @@ export class ProductsList extends Component {
             products: data,
           });
         });
-    } else if (queryString === '?category=apparel') {
-      fetch(`/data/productListData1.json`)
+    } else if (queryString === '?category=상의') {
+      fetch(`http://10.58.0.118:8000/products/category?id=2`)
         .then(res => res.json())
         .then(data => {
           if (isPriceHigh === false && isPriceLow === false) {
@@ -55,7 +55,7 @@ export class ProductsList extends Component {
           });
         });
     } else if (queryString === '') {
-      fetch(`/data/productListData3.json`)
+      fetch(`http://10.58.0.118:8000/products/menu?id=1`)
         .then(res => res.json())
         .then(data => {
           if (isPriceHigh === false && isPriceLow === false) {
@@ -88,15 +88,16 @@ export class ProductsList extends Component {
     const { products } = this.state;
     const { sortPriceHighest, sortPriceLowest } = this;
     const queryString = this.props.location.search;
-    console.log(queryString);
     this.fetchData(queryString);
 
     return (
       <div className="ProductsList">
         <div className="container">
           <DropdownMenu
-            productsData={products}
-            outCategoryName={products.name}
+            // productsData={products}
+            menuName={products.name}
+            categoryName={products.content[0].category_name}
+            subCategoryName={products.content[0].sub_category_name}
             categoryId={products.categoryId}
           />
           <div>

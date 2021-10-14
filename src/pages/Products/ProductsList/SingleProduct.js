@@ -16,15 +16,15 @@ export class SingleProduct extends Component {
             to="/product/productdetail/1"
             // onClick={this.goToPage}
           >
-            <img
+            {/* <img
               src={`/images/doggo${id}.jpg`}
               alt={`${productName}`}
               onMouseOver={e =>
                 (e.currentTarget.src = `/images/mouseover${id}.jpg`)
               }
               onMouseOut={e => (e.currentTarget.src = `/images/doggo${id}.jpg`)}
-            />
-            {/* <img src={imgURL} /> */}
+            /> */}
+            <img src={imgURL} />
           </Link>
           {/* <button onClick={this.goToPage}>
             <img src={`/images/ballcap${id}.jpg`} alt={`${productName}`} />

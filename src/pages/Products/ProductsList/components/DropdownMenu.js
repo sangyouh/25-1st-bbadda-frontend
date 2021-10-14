@@ -35,26 +35,15 @@ export class DropdownMenu extends Component {
     }
   };
 
-  goToBallCap = () => {
-    this.props.history.push(`/productsList?category=ballcap`);
+  goToOutCategoryOne = () => {
+    this.props.history.push(`/productsList?category=아우터`);
   };
-  goToApparel = () => {
-    this.props.history.push(`/productsList?category=apparel`);
+  goToOutCategoryTwo = () => {
+    this.props.history.push(`/productsList?category=상의`);
   };
   goToAll = () => {
     this.props.history.push(`/productsList`);
   };
-
-  // changeData = () => {
-  //   const { productsData } = this.props;
-  //   fetch(`/data/productListData.json`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         productsData: data,
-  //       });
-  //     });
-  // };
 
   render() {
     const { clicked, clicked2 } = this.state;
@@ -67,7 +56,7 @@ export class DropdownMenu extends Component {
             this.dropdown = el;
           }}
         >
-          <span className="categoryList">{outCategoryName}</span>
+          <span className="categoryList">{this.props.menuName}</span>
           <button onClick={this.isClicked}>
             <i class={`fas fa-angle-double-${clicked ? 'up' : 'down'}`}></i>
           </button>
@@ -85,12 +74,18 @@ export class DropdownMenu extends Component {
                   </button>
                 </li>
                 <li className="dropdownList">
-                  <button className="linkBlur" onClick={this.goToBallCap}>
-                    Ballcap
+                  <button
+                    className="linkBlur"
+                    onClick={this.goToOutCategoryOne}
+                  >
+                    {this.props.categoryName}
                   </button>
                 </li>
                 <li className="dropdownList">
-                  <button className="linkBlur" onClick={this.goToApparel}>
+                  <button
+                    className="linkBlur"
+                    onClick={this.goToOutCategoryTwo}
+                  >
                     Apparel
                   </button>
                 </li>
@@ -105,19 +100,19 @@ export class DropdownMenu extends Component {
           {clicked2 ? (
             <ul className="menuRight">
               <li className="dropdownList">
-                <Link className="linkBlur" to="#n">
+                <button className="linkBlur" to="#n">
                   전체보기
-                </Link>
+                </button>
               </li>
               <li className="dropdownList">
-                <Link className="linkBlur" to="#n">
-                  IN CATEGORY ONE
-                </Link>
+                <button className="linkBlur" to="#n">
+                  {this.props.subCategoryName}
+                </button>
               </li>
               <li className="dropdownList">
-                <Link className="linkBlur" to="#n">
+                <button className="linkBlur" to="#n">
                   IN CATEGORY TWO
-                </Link>
+                </button>
               </li>
             </ul>
           ) : null}
