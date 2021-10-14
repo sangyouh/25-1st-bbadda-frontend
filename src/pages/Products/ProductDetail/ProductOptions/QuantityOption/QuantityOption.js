@@ -11,14 +11,17 @@ class QuantityOption extends React.Component {
 
   quantityValue = e => {
     const { setSelectedSizeQuantity } = this.props;
-    this.setState({
-      amount: parseInt(e.target.value),
-    });
+    const { amount } = this.state;
+    if (amount > 1) {
+      this.setState({
+        amount: parseInt(e.target.value),
+      });
+    }
     setSelectedSizeQuantity(this.state.amount);
   };
 
   checkNumber = e => {
-    if (0 <= e.key && e.key <= 9) {
+    if ((0 <= e.key && e.key <= 9) || e.keyCode === 8) {
       this.quantityValue(e);
     } else {
       alert('숫자만 입력해주세요');
@@ -27,16 +30,21 @@ class QuantityOption extends React.Component {
       });
       return;
     }
+    console.log(this.state.amount);
   };
 
   plusCount = e => {
+    const { amount } = this.state;
     this.quantityValue(e);
-    this.setState({ amount: this.state.amount + 1 });
+    this.setState({ amount: amount + 1 });
   };
 
   minusCount = e => {
+    const { amount } = this.state;
     this.quantityValue(e);
-    this.setState({ amount: this.state.amount - 1 });
+    if (amount > 1) {
+      this.setState({ amount: amount - 1 });
+    }
   };
 
   render() {
