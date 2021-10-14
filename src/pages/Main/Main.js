@@ -1,3 +1,4 @@
+/*global Kakao*/
 import React, { Component } from 'react';
 import Nav from '../../Components/Nav/Nav';
 import './Main.scss';
