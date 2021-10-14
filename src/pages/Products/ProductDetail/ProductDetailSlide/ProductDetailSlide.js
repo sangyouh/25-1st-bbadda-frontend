@@ -17,7 +17,6 @@ class ProductDetailSlide extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     const { detailImgs } = this.props;
     const { currentIndex } = this.state;
     return (
