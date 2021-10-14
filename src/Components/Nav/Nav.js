@@ -46,11 +46,6 @@ class Nav extends Component {
             <div className="icons">
               <button className="iconBox">
                 <Link to="#">
-                  <i className="fas fa-search" />
-                </Link>
-              </button>
-              <button className="iconBox">
-                <Link to="#">
                   <i className="fas fa-shopping-bag" />
                 </Link>
               </button>
@@ -61,16 +56,17 @@ class Nav extends Component {
                 <div className="loginMenu">
                   <ul className={hasToken ? 'beSmall' : ''}>
                     <li className={hasToken ? 'inactive' : ''}>
-                      <Link to="/signin">로그인</Link>
+                      <Link to="/login">로그인</Link>
                     </li>
                     <li className={hasToken ? 'inactive' : ''}>
-                      <Link to="/signup">회원가입</Link>
+                      <Link to="/join">회원가입</Link>
                     </li>
                     <li className={hasToken ? '' : 'inactive'}>
                       <Link
                         to="/main"
                         onClick={() => {
                           window.sessionStorage.removeItem('AccessToken');
+                          window.localStorage.removeItem('AccessToken');
                         }}
                       >
                         로그아웃

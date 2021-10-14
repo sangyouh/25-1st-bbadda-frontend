@@ -15,8 +15,7 @@ const NAV_DATA = [
         link: '#',
         items: [
           { id: 0, name: '숏패딩', link: '#' },
-          { id: 1, name: '야구점퍼', link: '#' },
-          // { id: 2, name: '후리스', link: '#' },
+          { id: 1, name: '후리스', link: '#' },
         ],
       },
       {
@@ -26,7 +25,6 @@ const NAV_DATA = [
         items: [
           { id: 0, name: '티셔츠', link: '#' },
           { id: 1, name: '맨투맨', link: '#' },
-          // { id: 2, name: '후드티', link: '#' },
         ],
       },
     ],
