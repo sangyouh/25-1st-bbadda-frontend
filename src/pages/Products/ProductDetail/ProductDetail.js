@@ -22,23 +22,18 @@ class ProductDetail extends React.Component {
   }
 
   componentDidMount() {
-    //fetch('http://172.30.1.51:8000/products/product/32CP57111-50L')
-    //fetch('http://172.30.1.51:8000/products/product/${id}');
     const productId = this.props.match.params.id;
-    console.log(productId);
-    fetch('/data/productDetailData.json')
+    fetch(`http://10.58.0.118:8000/products/product?id=${productId}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          product: data.product,
+          product: data.result,
         });
       });
   }
 
   render() {
     const { product } = this.state;
-    // console.log('props', this.props);
-    // console.log('디테일', this.state);
     return (
       <div className="ProductDetail">
         <div className="productVeiw">

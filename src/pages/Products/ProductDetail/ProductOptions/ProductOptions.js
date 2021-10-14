@@ -31,8 +31,7 @@ class ProductOptions extends React.Component {
         selectedQuantity: this.state.selected_quantity,
       }),
     });
-    // 주문 페이지 :
-    //this.props.history.push('/productsList');
+    this.props.history.push('/order');
   };
 
   setSelectedSizeValue = sizeInfo => {
@@ -49,16 +48,6 @@ class ProductOptions extends React.Component {
 
   render() {
     const { product } = this.props;
-    console.log(
-      '제품 정보 : ',
-      product.product_code,
-      '제품타입 : ',
-      product.size[0].type,
-      '선택한 사이즈 : ',
-      this.state.selected_size_value,
-      '선택한 수량 : ',
-      this.state.selected_quantity
-    );
     return (
       <div className="ProductOptions">
         <div className="productOptionWrap">

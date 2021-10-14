@@ -15,17 +15,11 @@ class QuantityOption extends React.Component {
       amount: parseInt(e.target.value),
     });
     setSelectedSizeQuantity(this.state.amount);
-    // console.log('나는 수량', this.state.amount);
-    // if (this.amount) {
-    //   console.log(this.amount);
-    // }
   };
 
   checkNumber = e => {
     if (0 <= e.key && e.key <= 9) {
       this.quantityValue(e);
-      if (this.state.amount) {
-      }
     } else {
       alert('숫자만 입력해주세요');
       this.setState({

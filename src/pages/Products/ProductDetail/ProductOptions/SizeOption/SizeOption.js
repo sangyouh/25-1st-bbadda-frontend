@@ -21,8 +21,7 @@ class SizeOption extends Component {
             size.map((sizeInfo, i) => {
               return (
                 <li className="size" key={i}>
-                  <Link
-                    to="#n"
+                  <button
                     className={
                       this.state.index === i && this.state.clicked
                         ? 'current'
@@ -39,7 +38,7 @@ class SizeOption extends Component {
                     }}
                   >
                     {sizeInfo.value}
-                  </Link>
+                  </button>
                 </li>
               );
             })}
