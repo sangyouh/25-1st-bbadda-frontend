@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import ProductInfos from './ProductInfos/ProductInfos';
 import ColorOption from './ColorOption/ColorOption';
 import SizeOption from './SizeOption/SizeOption';
@@ -8,6 +8,44 @@ import DeliverOption from './DeliverOption/DeliverOption';
 import './ProductOptions.scss';
 
 class ProductOptions extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selected_size_type: '',
+      selected_size_value: '',
+      selected_quantity: 1,
+    };
+  }
+
+  goToBuy = () => {
+    fetch('http://10.58.0.165:8000/orders/orderitem', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.M8Tll95oC5RoAnS4u-61z6hDLuI8YuPKR5FWRkwP6tE',
+      },
+      body: JSON.stringify({
+        product_code: this.props.product.product_code,
+        size_type: this.props.product.size[0].type,
+        selected_size_value: this.state.selected_size_value,
+        selectedQuantity: this.state.selected_quantity,
+      }),
+    });
+    this.props.history.push('/order');
+  };
+
+  setSelectedSizeValue = sizeInfo => {
+    this.setState({
+      selected_size_value: sizeInfo.value,
+    });
+  };
+
+  setSelectedSizeQuantity = amount => {
+    this.setState({
+      selected_quantity: amount + 1,
+    });
+  };
+
   render() {
     const { product } = this.props;
     return (
@@ -18,16 +56,24 @@ class ProductOptions extends React.Component {
             productCode={product.product_code}
             productPrice={product.price}
           />
-          <ColorOption />
-          <SizeOption />
-          <QuantityOption />
+          <ColorOption color={product.img} />
+          <SizeOption
+            size={product.size}
+            setSelectedSizeValue={this.setSelectedSizeValue}
+          />
+          <QuantityOption
+            qantity={product.size}
+            setSelectedSizeQuantity={this.setSelectedSizeQuantity}
+          />
           <DeliverOption />
 
           <div className="btnBuy">
             <Link to="#n" className="alarm">
               상품입고알림 신청
             </Link>
-            <button className="buyNow">바로구매</button>
+            <button className="buyNow" onClick={this.goToBuy}>
+              바로구매
+            </button>
             <button className="cart">장바구니</button>
           </div>
 
@@ -37,7 +83,7 @@ class ProductOptions extends React.Component {
               <i className="fas fa-star" />
               <i className="fas fa-star-half" />
               <span className="blind">별점</span>
-              <span className="countGrade"> (5)</span>
+              <span className="countGrade"> (2.5)</span>
             </a>
             <div className="social">
               <Link to="#n" className="share">
@@ -58,4 +104,4 @@ class ProductOptions extends React.Component {
   }
 }
 
-export default ProductOptions;
+export default withRouter(ProductOptions);

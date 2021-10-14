@@ -9,9 +9,9 @@
     .size {
       margin: 0 5px 2.5px 0;
 
-      a {
+      button {
         width: 45px;
-        padding: 3px 0 2px;
+        padding: 2px 0 0;
         border: 1px solid #ddd;
         font-size: 13px;
         color: #6c6c6c;
@@ -19,6 +19,10 @@
 
         &:hover {
           border: 1px solid #999;
+        }
+
+        &.current {
+          border: 1px solid #000;
         }
 
         &.soldOut {

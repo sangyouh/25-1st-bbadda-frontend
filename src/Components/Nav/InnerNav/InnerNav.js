@@ -18,36 +18,27 @@ class InnerNav extends React.Component {
 
   render() {
     const { isMenuHover } = this.state;
-    const { name, link, cate, depth, banner } = this.props;
+    const { id, name, depth, banner } = this.props;
 
     return (
       <li onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-        <Link to={link}>{name}</Link>
+        <Link to={`/productsList?name=${name}`}>{name}</Link>
         <div className={`navSubWrap  ${isMenuHover ? 'active' : ''}`}>
           <div className="innerWrap">
-            <div className="specialProduct">
-              <ul className="lists">
-                {cate.map(({ id, link, name }) => {
-                  return (
-                    <li key={id}>
-                      <Link to={link}>{name}</Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
             <div className="productLists">
               <ul className="lists">
                 {depth.map(item => {
-                  const { id, link, name } = item;
+                  const { id, name } = item;
                   return (
                     <li key={id}>
-                      <Link to={link}>{name}</Link>
+                      <Link to={`/productsList?name=${name}`}>{name}</Link>
                       <ul>
-                        {item.items.map(({ id, link, name }) => {
+                        {item.items.map(({ id, name }) => {
                           return (
                             <li key={id}>
-                              <Link to={link}>{name}</Link>
+                              <Link to={`/productsList?name=${name}`}>
+                                {name}
+                              </Link>
                             </li>
                           );
                         })}

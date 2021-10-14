@@ -2,7 +2,7 @@
   padding-bottom: 150px;
   margin: 100px 0;
 
-  .detailMenu {
+  .detailTab {
     display: flex;
 
     li {
@@ -32,6 +32,10 @@
     h3 {
       padding-top: 20px;
       font-size: 20px;
+    }
+
+    .detailImg {
+      width: 100%;
     }
   }
 }
