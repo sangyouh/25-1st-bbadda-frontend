@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Nav from './Components/Nav/Nav';
 import Login from './pages/Login/Login';
 import Join from './pages/SignUp/Join';
 import Order from './pages/Order/Order';
@@ -13,6 +14,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/join" component={Join} />
@@ -23,7 +25,7 @@ class Routes extends React.Component {
           <Route exact path="/productsList" component={ProductsList} />
           <Route
             exact
-            path="/product/productdetail"
+            path="/product/productdetail/:id"
             component={ProductDetail}
           />
         </Switch>

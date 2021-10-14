@@ -3,14 +3,45 @@ import { Link } from 'react-router-dom';
 import './SizeOption.scss';
 
 class SizeOption extends Component {
+  constructor() {
+    super();
+    this.state = {
+      clicked: true,
+      index: 0,
+    };
+  }
+
   render() {
+    const { size, setSelectedSizeValue } = this.props;
     return (
       <div className="SizeOption optionBox">
         <span className="optionTtl">사이즈</span>
         <ul className="sizeList">
-          <li className="size">
-            <Link to="#n">size1</Link>
-          </li>
+          {size &&
+            size.map((sizeInfo, i) => {
+              return (
+                <li className="size" key={i}>
+                  <button
+                    className={
+                      this.state.index === i && this.state.clicked
+                        ? 'current'
+                        : ''
+                    }
+                    onClick={() => {
+                      setSelectedSizeValue(sizeInfo);
+                      this.setState({
+                        clicked: true,
+                        index: i,
+                        value: sizeInfo.value,
+                        quantity: sizeInfo.quantity,
+                      });
+                    }}
+                  >
+                    {sizeInfo.value}
+                  </button>
+                </li>
+              );
+            })}
         </ul>
         <Link to="#n" className="sizeGuide">
           Size Guide

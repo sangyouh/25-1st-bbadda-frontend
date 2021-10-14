@@ -4,6 +4,7 @@ import './ProductDetailInfo.scss';
 
 class ProductDetailInfo extends React.Component {
   render() {
+    const { detailImgs } = this.props;
     return (
       <div className="ProductDetailInfo">
         <ul className="detailTab">
@@ -20,8 +21,16 @@ class ProductDetailInfo extends React.Component {
           </li>
         </ul>
         <section id="detailContents" className="detailContents">
-          <p>상품 상세 정보들</p>
-          <img alt="상세페이지" src="/images/productDetail/cap01.jpeg" />
+          {detailImgs.map((img, id) => {
+            return (
+              <img
+                className="detailImg"
+                alt="제품 사진"
+                src={img.img_url}
+                key={id}
+              />
+            );
+          })}
         </section>
         <section id="productReview" className="productReview">
           <h3>상품 리뷰</h3>
