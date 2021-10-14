@@ -1,0 +1,19 @@
+.LoginBox {
+  width: 400px;
+  margin: 78px auto 0;
+  .loginBoxUl {
+    display: flex;
+
+    .loginBoxLi {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 62px;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  .forms {
+    margin-top: 20px;
+  }
+}

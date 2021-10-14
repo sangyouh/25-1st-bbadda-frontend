@@ -1,0 +1,93 @@
+@mixin inputs {
+  height: 40px;
+  border: 1px solid #ddd;
+  // margin-bottom: 5px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.basicInput {
+  @include inputs;
+  width: 100%;
+  padding: 0 15px;
+}
+.userInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+.name {
+  @include inputs;
+  display: inline-block;
+  width: 160px;
+  padding: 0 15px;
+  margin-right: 15px;
+}
+
+.year {
+  @include inputs;
+  display: inline-block;
+  width: 80px;
+  padding: 0 10px;
+}
+.month {
+  @include inputs;
+  display: inline-block;
+  width: 80px;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+.date {
+  @include inputs;
+  display: inline-block;
+  width: 80px;
+  padding: 0 10px;
+  margin: 0 15px 0 10px;
+}
+.button1 {
+  @include inputs;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px 10px 0 0;
+  border-radius: 50%;
+}
+.button2 {
+  @include inputs;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0 10px 0 30px;
+  border-radius: 50%;
+}
+.halfInput {
+  @include inputs;
+  width: 255px;
+  padding: 0 15px;
+}
+
+.mobileNumFirst {
+  @include inputs;
+  width: 71px;
+  padding: 0 15px;
+}
+
+.mobileNum {
+  @include inputs;
+  width: 75px;
+  padding: 0 15px;
+}
+
+.check {
+  vertical-align: -1.6px;
+  margin-right: 5px;
+}
+
+.orderCheck {
+  vertical-align: -2.7px;
+  margin: 0 10px 0 5px;
+}

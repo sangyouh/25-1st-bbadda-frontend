@@ -1,0 +1,30 @@
+{
+  "User": {
+    "name": "김경현",
+    "mobile_number": "01041560647",
+    "point": "1,000,000",
+    "email": "kich555@gmail.com"
+  },
+  "ProductList": [
+    {
+      "name": "name",
+      "price": "이름(실명입력)",
+      "img": "text",
+      "size": "name",
+      "discount": 0,
+      "qty": 1
+    },
+    {
+      "className": "button1",
+      "value": "false",
+      "type": "radio",
+      "name": "foreign"
+    },
+    {
+      "className": "button2",
+      "value": "true",
+      "type": "radio",
+      "name": "foreign"
+    }
+  ]
+}
