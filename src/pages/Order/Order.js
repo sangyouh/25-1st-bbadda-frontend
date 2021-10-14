@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
+import Location from '../../Components/Location/Location';
 import OrderForm from './OrderForm/OrderForm';
 import OrderItemInfo from './OrderItemInfo/OrderItemInfo';
-import Location from '../../Components/Location/Location';
 import Wrap from '../../Components/Wrap/Wrap';
 import Table from '../../Components/Table/Table';
 import TableContent from '../../Components/Table/TableContent';
-import NumberInput from '../../Components/BirthdayInput/BirthdayInput';
 import Input from '../../Components/Input/Input';
-import CheckBox from '../../Components/CheckBox/CheckBox';
-import List from '../../Components/List/List';
-import SideBar from '../../Components/SideBar/SideBar';
-import ORDER_LIST from '../../data/OrderListData';
-import MOBILE_NUM from '../../data/MobileNumList';
-import './Order.scss';
 import PhoneInput from '../../Components/PhoneInput/PhoneInput';
+import CheckBox from '../../Components/CheckBox/CheckBox';
+import SideBar from '../../Components/SideBar/SideBar';
+import './Order.scss';
 
 class Order extends Component {
   constructor() {
@@ -22,19 +18,20 @@ class Order extends Component {
       userInfo: false,
       ordererInfo: false,
       payAgree: false,
-      userData: {
-        name: 'kich',
-        mobile_num: '01041560647',
-        email: 'kich555@kakao.com',
-      },
+      userData: {},
+      // product: {},
       point: '1,000,000',
-      adress: '',
+      price: '200,000',
+      address: '',
       orderer: '',
       receiver: '',
       email: '',
-      firstNum: '010',
-      secondNum: '',
-      thirdNum: '',
+      userFirstNum: '010',
+      userSecondNum: '',
+      userThirdNum: '',
+      receiverFirstNum: '010',
+      receiverSecondNum: '',
+      receiverThirdNum: '',
     };
   }
 
@@ -50,57 +47,83 @@ class Order extends Component {
     this.setState({ [propertyName]: !this.state[propertyName] });
   };
 
-  // checkUserInfo = e => {
-  //   const { userInfo, userData } = this.state;
-  //   this.setState({ userInfo: !userInfo }, () => {
-  //     userInfo
-  //       ? this.setState({ order: userData.name })
-  //       : this.setState({ order: '' });
-  //   });
-  // };
+  checkUserInfo = e => {
+    const { userInfo, userData } = this.state;
+    this.setState({ userInfo: !userInfo }, () => {
+      userInfo
+        ? this.setState({ order: userData.name })
+        : this.setState({ order: '' });
+    });
+  };
 
-  // componentDidMount() {
-  //   fetch('http://10.58.0.165:8000/orders/order?code=abv123', {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: localStorage.getItem('AccessToken'),
-  //     },
-  //   })
-  //     .then(res => res.json())
-  //     .then(({ User: userData }) => {
-  //       this.setState({
-  //         userData,
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    fetch('http://10.58.0.165:8000/orders/order', {
+      method: 'GET',
+      headers: {
+        Authorization: localStorage.getItem('AccessToken'),
+      },
+    })
+      .then(res => res.json())
+      .then(({ User: userData }) => {
+        this.setState({
+          userData,
+        });
+      });
+  }
 
   render() {
-    // const mobile_number = `${firstNum}-${secondNum}-${thirdNum}`;
     const { handleInput, handleCheck } = this;
     const {
-      point,
-      quantity,
-      price,
-      value,
-      product,
-      Img,
-      type,
+      orderer,
       request,
-      receiver_mobile_number,
       receiver_name,
       address,
-      email,
-      name,
-      firstNum,
-      secondNum,
-      thirdNum,
       payAgree,
-      userInfo,
+      userData,
+      userFirstNum,
+      userSecondNum,
+      userThirdNum,
+      receiverFirstNum,
+      receiverSecondNum,
+      receiverThirdNum,
     } = this.state;
 
-    console.log('mobile', firstNum);
-    console.log('mobile2', secondNum);
-    console.log('mobile3', thirdNum);
+    const {
+      Img,
+      email,
+      mobile_number,
+      name,
+      price,
+      point,
+      product,
+      quantity,
+      type,
+      value,
+      allprice,
+    } = this.state.userData;
+
+    const user_mobile_number = `${userFirstNum}-${userSecondNum}-${userThirdNum}`;
+
+    const receiver_mobile_number = `${receiverFirstNum}-${receiverSecondNum}-${receiverThirdNum}`;
+
+    // name = { orderer };
+    // price = { price };
+    // allprice = { allprice };
+    // mobile_number = { user_mobile_number };
+    // email = { email };
+    // address = { address };
+    // receiver_name = { receiver_name };
+    // receiver_mobile_number = { receiver_mobile_number };
+    // request = { request };
+    // type = { type };
+    // value = { value };
+    // quantity = { quantity };
+    // onClick = { handleCheck };
+    // payAgree = { payAgree };
+
+    console.log(this.state.userData);
+    console.log(this.state);
+
     return (
       <div className="Order">
         <Location page={'주문결제'} />
@@ -115,6 +138,7 @@ class Order extends Component {
               <OrderItemInfo
                 quantity={quantity}
                 price={price}
+                allprice={allprice}
                 value={value}
                 product={product}
                 Img={Img}
@@ -136,6 +160,12 @@ class Order extends Component {
                     value={point}
                     disabled
                   />
+                </TableContent>
+                <TableContent tableHead={'결제금액'} trClassName={'orderTr'}>
+                  <input className="halfInput" value={price} disabled />
+                </TableContent>
+                <TableContent tableHead={'남은 포인트'} trClassName={'orderTr'}>
+                  <input className="halfInput" value={point - price} disabled />
                 </TableContent>
               </Table>
             </Wrap>
@@ -167,10 +197,19 @@ class Order extends Component {
                   tableHead={'휴대전화번호'}
                   trClassName={'orderTr'}
                 >
-                  <PhoneInput onChange={handleInput} />
+                  <PhoneInput
+                    onChange={handleInput}
+                    firstInputName="userFirstNum"
+                    secondInputName="userSecondNum"
+                    thirdInputName="userThirdNum"
+                  />
                 </TableContent>
                 <TableContent tableHead={'이메일 주소'} trClassName={'orderTr'}>
-                  <Input className="halfInput" />
+                  <Input
+                    className="halfInput"
+                    name="email"
+                    onChange={handleInput}
+                  />
                 </TableContent>
               </Table>
             </Wrap>
@@ -196,17 +235,33 @@ class Order extends Component {
                   />
                 </TableContent>
                 <TableContent tableHead={'휴대전화번호'}>
-                  <PhoneInput onChange={handleInput} />
+                  <PhoneInput
+                    onChange={handleInput}
+                    firstInputName="receiverFirstNum"
+                    secondInputName="receiverSecondNum"
+                    thirdInputName="receiverThirdNum"
+                  />
                 </TableContent>
                 <TableContent tableHead={'배송지주소'}>
-                  <Input className="basicInput" name="address" />
+                  <Input
+                    className="basicInput"
+                    name="address"
+                    onChange={handleInput}
+                  />
+                </TableContent>
+                <TableContent tableHead={'배송요청사항'}>
+                  <Input
+                    className="basicInput"
+                    name="request"
+                    onChange={handleInput}
+                  />
                 </TableContent>
               </Table>
             </Wrap>
           </div>
           <SideBar
-            name={name}
-            // mobile_number={mobile_number}
+            name={orderer}
+            mobile_number={user_mobile_number}
             email={email}
             address={address}
             receiver_name={receiver_name}
@@ -215,8 +270,10 @@ class Order extends Component {
             type={type}
             value={value}
             quantity={quantity}
-            onClick={handleCheck}
+            price={price}
+            allprice={allprice}
             payAgree={payAgree}
+            onClick={handleCheck}
           />
         </div>
       </div>

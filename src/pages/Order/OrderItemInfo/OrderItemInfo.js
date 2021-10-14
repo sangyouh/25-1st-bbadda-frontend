@@ -4,7 +4,7 @@ import './OrderItemInfo.scss';
 
 class OrderItemInfo extends Component {
   render() {
-    const { quantity, price, value, product, Img } = this.props;
+    const { quantity, price, allprice, value, product, Img } = this.props;
     return (
       <table className="OrderTable">
         <colgroup>
@@ -33,6 +33,7 @@ class OrderItemInfo extends Component {
           <TableItemContent
             quantity={quantity}
             price={price}
+            allprice={allprice}
             value={value}
             product={product}
             Img={Img}

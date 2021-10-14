@@ -3,13 +3,14 @@ import './PhoneInput.scss';
 
 class PhoneInput extends Component {
   render() {
-    const { onChange } = this.props;
+    const { firstInputName, secondInputName, thirdInputName, onChange } =
+      this.props;
     return (
       <>
         <input
           className="firstNum"
           type="number"
-          name="firstNum"
+          name={firstInputName}
           onChange={onChange}
           defaultValue="010"
         />
@@ -17,14 +18,14 @@ class PhoneInput extends Component {
         <input
           className="mobileNum"
           type="number"
-          name="secondNum"
+          name={secondInputName}
           onChange={onChange}
         />
         <span className={'hyphen'}>-</span>
         <input
           className="mobileNum"
           type="number"
-          name="thirdNum"
+          name={thirdInputName}
           onChange={onChange}
         />
       </>
