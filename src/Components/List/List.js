@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from '../Input/Input';
 import './List.scss';
+
 class List extends Component {
   render() {
     const { data, onChange, onClick } = this.props;

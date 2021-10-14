@@ -3,17 +3,17 @@ import './Input.scss';
 
 class Input extends Component {
   render() {
-    const { className, type, name, value, placeholder, id } = this.props;
+    const { className, type, name, value, placeholder, onChange, onClick } =
+      this.props;
 
     return (
       <input
-        id={id}
         className={className}
         type={type}
         name={name}
         value={value}
-        onChange={this.props.onChange}
-        onClick={this.props.onClick}
+        onChange={onChange}
+        onClick={onClick}
         placeholder={placeholder}
       />
     );

@@ -21,3 +21,18 @@
     font-weight: 700;
   }
 }
+
+.orderWriteArea {
+  position: relative;
+  padding-bottom: 40px;
+
+  .orderInfoTitle {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .hyphen {
+    padding: 0 5px;
+    color: #ddd;
+  }
+}

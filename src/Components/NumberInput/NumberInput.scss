@@ -1,0 +1,34 @@
+@mixin inputs {
+  height: 40px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.firstNum {
+  @include inputs;
+  width: 71px;
+  padding: 0 15px;
+}
+
+.mobileNum {
+  @include inputs;
+  width: 75px;
+  padding: 0 15px;
+}
+
+.hyphen {
+  padding: 0 5px;
+  color: #ddd;
+}
+
+.hyphenNone {
+  padding: 0 5px;
+  color: white;
+}

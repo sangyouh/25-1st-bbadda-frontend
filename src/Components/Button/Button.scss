@@ -28,6 +28,14 @@
   cursor: pointer;
 }
 
+@mixin loginBtnSpan {
+  padding-left: 28px;
+  color: #666;
+  font-size: 14px;
+  line-height: 43px;
+  background-repeat: no-repeat;
+}
+
 .orderBtn {
   @include align;
   @include native;
@@ -49,8 +57,8 @@
   margin: 5px 2.5px 0 0;
 
   .naverLogo {
+    @include loginBtnSpan;
     background-image: url(./Img/naverlogo.png);
-    background-repeat: no-repeat;
   }
 }
 
@@ -60,8 +68,8 @@
   margin: 5px 0 0 2.5px;
 
   .kakaoLogo {
+    @include loginBtnSpan;
     background-image: url(./Img/kakaoLogo.png);
-    background-repeat: no-repeat;
   }
 }
 
@@ -82,11 +90,6 @@
   width: 50%;
   height: 62px;
   border-bottom: 1px solid #ddd;
-}
-
-.onClick {
-  border-bottom: 2px solid #000;
-  font-weight: bold;
 }
 
 .joinBtn {

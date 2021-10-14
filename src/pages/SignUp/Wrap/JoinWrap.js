@@ -18,6 +18,9 @@ class JoinWrap extends Component {
       year: '',
       month: '',
       date: '',
+      firstNum: '',
+      secondNum: '',
+      thirdNum: '',
     };
   }
 

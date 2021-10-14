@@ -1,11 +1,18 @@
+@mixin signUpA {
+  padding: 0 20px;
+  font-size: 13px;
+}
+
 .SignUp {
   margin-top: 27px;
   text-align: center;
-  a {
-    padding: 0 20px;
-    font-size: 13px;
+
+  .signUpA {
+    @include signUpA;
   }
-  .middle {
+
+  .middleA {
+    @include signUpA;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
   }

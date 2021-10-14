@@ -6,8 +6,8 @@ class MemberBenefit extends Component {
     return (
       <ul className="MemberBenefit">
         <li className="mileage">
-          <div>
-            <span>
+          <div className="memberDiv">
+            <span className="memberSpan">
               가입 마일리지
               <br />
               10,000원
@@ -15,8 +15,8 @@ class MemberBenefit extends Component {
           </div>
         </li>
         <li className="coupon">
-          <div>
-            <span>
+          <div className="memberDiv">
+            <span className="memberSpan">
               첫구매 감사
               <br />
               15% 쿠폰
@@ -26,8 +26,8 @@ class MemberBenefit extends Component {
           </div>
         </li>
         <li className="percent">
-          <div>
-            <span>
+          <div className="memberDiv">
+            <span className="memberSpan">
               등급별 마일리지
               <br />
               최대 6% 적립
