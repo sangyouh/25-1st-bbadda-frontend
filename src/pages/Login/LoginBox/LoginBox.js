@@ -5,27 +5,13 @@ import BUTTON_LIST from '../../../data/ButtonData';
 import './LoginBox.scss';
 
 class LoginBox extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isClick: false, // 아직 미구현
-    };
-  }
-
-  // changeLoginType = () => {
-  //   const
-  //   this.setState({})
-  // }
-
   render() {
-    const { isClick } = this.state;
-
     return (
       <div className="LoginBox">
-        <ul className="loginBoxUl">
-          <Button href={'#'} data={BUTTON_LIST.signInType.Member} onClick />
-          <Button href={'#'} data={BUTTON_LIST.signInType.NonMember} onClick />
-        </ul>
+        <div className="loginBoxDiv">
+          <Button href={'#'} data={BUTTON_LIST.signInType.Member} />
+          <Button href={'#'} data={BUTTON_LIST.signInType.NonMember} />
+        </div>
         <div className="forms">
           <MemberForm />
         </div>

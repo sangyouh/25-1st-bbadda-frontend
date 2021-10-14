@@ -31,18 +31,6 @@ class MemberForm extends Component {
     this.setState({ autoLogin: !autoLogin });
   };
 
-  // checkIdValid = () => {
-
-  // }
-
-  // checkPwValid = () => {
-
-  // }
-
-  // handleSubmit = e => {
-  //   c;
-  // };
-
   render() {
     const { handleInput, handleToggle } = this;
     const { account, password, isValid, autoLogin } = this.state;
@@ -50,7 +38,7 @@ class MemberForm extends Component {
     console.log('autoLogin', this.state.autoLogin);
     console.log();
     return (
-      <form className="MemberForm">
+      <form>
         <ul>
           <List data={LOGIN_LIST.foo} onChange={handleInput} />
         </ul>

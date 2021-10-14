@@ -5,11 +5,15 @@ class SignUp extends Component {
   render() {
     return (
       <div className="SignUp">
-        <a href="#">아이디 찾기</a>
-        <a className="middle" href="#">
+        <a className="signUpA" href="#">
+          아이디 찾기
+        </a>
+        <a className="middleA" href="#">
           비밀번호 찾기
         </a>
-        <a href="/join">회원가입</a>
+        <a className="signUpA" href="/join">
+          회원가입
+        </a>
       </div>
     );
   }

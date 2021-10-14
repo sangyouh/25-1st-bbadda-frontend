@@ -27,13 +27,13 @@ const BUTTON_LIST = {
 
   signInType: {
     Member: {
-      classNameA: 'loginBoxLi',
+      classNameA: 'member',
       classNameB: '',
       content: ' 회원',
     },
 
     NonMember: {
-      classNameA: 'loginBoxLi',
+      classNameA: 'nonMember',
       classNameB: '',
       content: '회원가입',
     },

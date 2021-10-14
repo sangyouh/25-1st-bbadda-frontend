@@ -18,6 +18,9 @@ class JoinWrap extends Component {
       year: '',
       month: '',
       date: '',
+      firstNum: '',
+      secondNum: '',
+      thirdNum: '',
     };
   }
 
@@ -75,7 +78,7 @@ class JoinWrap extends Component {
           gender={gender}
           foreigner={foreigner}
         />
-        <section className="joinInfo">
+        <section className="middleInfo">
           <div>
             F&F membership은 회원님의 소중한 개인정보를 안전하게 관리하고
             있습니다.
