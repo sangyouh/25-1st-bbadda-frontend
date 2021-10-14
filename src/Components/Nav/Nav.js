@@ -5,36 +5,9 @@ import NAV_DATA from './navData';
 import './Nav.scss';
 
 class Nav extends Component {
-  constructor() {
-    super();
-    this.state = {
-      hasToken: false,
-    };
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      if (
-        window.sessionStorage.AccessToken ||
-        window.localStorage.AccessToken
-      ) {
-        this.setState({
-          hasToken: true,
-        });
-      }
-    }
-  }
-
-  setLogout = () => {
-    window.sessionStorage.removeItem('accessToken');
-
-    this.setState({
-      hasToken: false,
-    });
-  };
-
   render() {
-    const { hasToken } = this.state;
+    const hasToken =
+      window.sessionStorage.AccessToken || window.localStorage.AccessToken;
     return (
       <header className="NavHeader">
         <nav className="nav">
@@ -94,7 +67,12 @@ class Nav extends Component {
                       <Link to="/signup">회원가입</Link>
                     </li>
                     <li className={hasToken ? '' : 'inactive'}>
-                      <Link to="/main" onClick={this.setLogout}>
+                      <Link
+                        to="/main"
+                        onClick={() => {
+                          window.sessionStorage.removeItem('AccessToken');
+                        }}
+                      >
                         로그아웃
                       </Link>
                     </li>
