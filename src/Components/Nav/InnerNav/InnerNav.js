@@ -22,7 +22,7 @@ class InnerNav extends React.Component {
 
     return (
       <li onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-        <Link to={`/products/menu?name=${name}`}>{name}</Link>
+        <Link to={`/productsList?name=${name}`}>{name}</Link>
         <div className={`navSubWrap  ${isMenuHover ? 'active' : ''}`}>
           <div className="innerWrap">
             <div className="productLists">
@@ -31,12 +31,12 @@ class InnerNav extends React.Component {
                   const { id, name } = item;
                   return (
                     <li key={id}>
-                      <Link to={`/products/menu?name=${name}`}>{name}</Link>
+                      <Link to={`/productsList?name=${name}`}>{name}</Link>
                       <ul>
                         {item.items.map(({ id, name }) => {
                           return (
                             <li key={id}>
-                              <Link to={`/products/menu?name=${name}`}>
+                              <Link to={`/productsList?name=${name}`}>
                                 {name}
                               </Link>
                             </li>
