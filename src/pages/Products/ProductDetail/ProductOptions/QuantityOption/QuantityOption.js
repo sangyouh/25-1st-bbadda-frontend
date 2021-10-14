@@ -44,8 +44,6 @@ class QuantityOption extends React.Component {
   };
 
   render() {
-    //const { qantity } = this.props;
-
     return (
       <div className="QuantityOption optionBox">
         <span className="optionTtl">수량</span>

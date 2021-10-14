@@ -24,6 +24,8 @@ class ProductDetail extends React.Component {
   componentDidMount() {
     //fetch('http://172.30.1.51:8000/products/product/32CP57111-50L')
     //fetch('http://172.30.1.51:8000/products/product/${id}');
+    const productId = this.props.match.params.id;
+    console.log(productId);
     fetch('/data/productDetailData.json')
       .then(res => res.json())
       .then(data => {
@@ -43,7 +45,7 @@ class ProductDetail extends React.Component {
           <ProductDetailSlide detailImgs={product.img} />
           <ProductOptions product={product} />
         </div>
-        <ProductDetailInfo />
+        <ProductDetailInfo detailImgs={product.img} />
       </div>
     );
   }
