@@ -8,12 +8,55 @@ import DeliverOption from './DeliverOption/DeliverOption';
 import './ProductOptions.scss';
 
 class ProductOptions extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selected_size_type: '',
+      selected_size_value: '',
+      selected_quantity: 0,
+    };
+  }
+
   goToBuy = () => {
-    this.props.history.push('/productsList');
+    fetch('http://10.58.0.165:8000/orders/orderitem', {
+      method: 'POST',
+      headers: {
+        Authorization:
+          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.M8Tll95oC5RoAnS4u-61z6hDLuI8YuPKR5FWRkwP6tE',
+      },
+      body: JSON.stringify({
+        // product_code: this.props.product.product_code,
+        // size_type: this.props.product.size[0].type,
+        // selected_size_value: this.state.selected_size_value,
+        // selectedQuantity: this.state.selected_quantity,
+      }),
+    });
+    // 주문 페이지 :
+    //this.props.history.push('/productsList');
+  };
+
+  setSelectedSizeValue = sizeInfo => {
+    this.setState({
+      selected_size_value: sizeInfo.value,
+    });
+  };
+
+  setSelectedSizeQuantity = amount => {
+    this.setState({
+      selected_quantity: amount,
+    });
   };
 
   render() {
     const { product } = this.props;
+    console.log(
+      '제품 정보',
+      product.product_code,
+      '제품타입',
+      product.size[0].type
+    );
+    console.log('사이즈 선택?', this.state.selected_size_value);
+    console.log('수량 선택?', this.state.selected_quantity);
     return (
       <div className="ProductOptions">
         <div className="productOptionWrap">
@@ -23,8 +66,14 @@ class ProductOptions extends React.Component {
             productPrice={product.price}
           />
           <ColorOption color={product.img} />
-          <SizeOption size={product.size} />
-          <QuantityOption qantity={product.size} />
+          <SizeOption
+            size={product.size}
+            setSelectedSizeValue={this.setSelectedSizeValue}
+          />
+          <QuantityOption
+            qantity={product.size}
+            setSelectedSizeQuantity={this.setSelectedSizeQuantity}
+          />
           <DeliverOption />
 
           <div className="btnBuy">

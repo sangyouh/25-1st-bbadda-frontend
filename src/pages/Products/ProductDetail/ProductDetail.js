@@ -12,17 +12,11 @@ class ProductDetail extends React.Component {
         name: '',
         color: '',
         team: '',
+        product_code: '',
         information: '',
         product_detail_info: '',
-        price: '',
         img: [{}],
         size: [{}],
-      },
-      seleted: {
-        name: '',
-        color: '',
-        price: '',
-        img: [],
       },
     };
   }
@@ -41,8 +35,8 @@ class ProductDetail extends React.Component {
 
   render() {
     const { product } = this.state;
-    console.log('props', this.props);
-    console.log('디테일', this.state);
+    // console.log('props', this.props);
+    // console.log('디테일', this.state);
     return (
       <div className="ProductDetail">
         <div className="productVeiw">

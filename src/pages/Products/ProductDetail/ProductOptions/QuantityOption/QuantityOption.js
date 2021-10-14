@@ -8,11 +8,17 @@ class QuantityOption extends React.Component {
       amount: 1,
     };
   }
+
   quantityValue = e => {
+    const { setSelectedSizeQuantity } = this.props;
     this.setState({
-      amount: e.target.value,
+      amount: parseInt(e.target.value),
     });
-    // console.log(this.state.amount);
+    setSelectedSizeQuantity(this.state.amount);
+    // console.log('나는 수량', this.state.amount);
+    // if (this.amount) {
+    //   console.log(this.amount);
+    // }
   };
 
   checkNumber = e => {
@@ -27,14 +33,24 @@ class QuantityOption extends React.Component {
     }
   };
 
+  plusCount = e => {
+    this.quantityValue(e);
+    this.setState({ amount: this.state.amount + 1 });
+  };
+
+  minusCount = e => {
+    this.quantityValue(e);
+    this.setState({ amount: this.state.amount - 1 });
+  };
+
   render() {
-    const { qantity } = this.props;
-    console.log('수량', qantity);
+    //const { qantity } = this.props;
+
     return (
       <div className="QuantityOption optionBox">
         <span className="optionTtl">수량</span>
         <div className="countQuantity">
-          <button className="countBtn" type="button">
+          <button className="countBtn" type="button" onClick={this.minusCount}>
             -
           </button>
           <input
@@ -44,7 +60,7 @@ class QuantityOption extends React.Component {
             onKeyUp={this.checkNumber}
             onChange={this.quantityValue}
           />
-          <button className="countBtn" type="button">
+          <button className="countBtn" type="button" onClick={this.plusCount}>
             +
           </button>
         </div>

@@ -12,7 +12,7 @@ class SizeOption extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, setSelectedSizeValue } = this.props;
     return (
       <div className="SizeOption optionBox">
         <span className="optionTtl">사이즈</span>
@@ -28,14 +28,15 @@ class SizeOption extends Component {
                         ? 'current'
                         : ''
                     }
-                    onClick={() =>
+                    onClick={() => {
+                      setSelectedSizeValue(sizeInfo);
                       this.setState({
                         clicked: true,
                         index: i,
                         value: sizeInfo.value,
                         quantity: sizeInfo.quantity,
-                      })
-                    }
+                      });
+                    }}
                   >
                     {sizeInfo.value}
                   </Link>
