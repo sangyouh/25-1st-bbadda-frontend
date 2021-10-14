@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import RadioInput from '../../../../Components/RadioInput/RadioInput';
-import NumberInput from '../../../../Components/NumberInput/NumberInput';
+import BirthdayInput from '../../../../Components/BirthdayInput/BirthdayInput';
+import PhoneInput from '../../../../Components/PhoneInput/PhoneInput';
 import Input from '../../../../Components/Input/Input';
 import List from '../../../../Components/List/List';
 import Table from '../../../../Components/Table/Table';
@@ -9,6 +10,7 @@ import JOIN_LIST from '../../../../data/JoinListData';
 import MOBILE_NUM from '../../../../data/MobileNumList';
 
 import './JoinForm.scss';
+
 class JoinForm extends Component {
   constructor() {
     super();
@@ -49,16 +51,7 @@ class JoinForm extends Component {
                       />
                     </li>
                     <li className="joinList">
-                      <NumberInput
-                        firstNum="year"
-                        secondNum="month"
-                        thirdNum="date"
-                        onChange={onChange}
-                        yearInfo="생년"
-                        monthInfo="월"
-                        dateInfo="일"
-                        None="None"
-                      />
+                      <BirthdayInput onChange={onChange} />
                       <RadioInput
                         name="gender"
                         onClick={onClick}
@@ -92,7 +85,7 @@ class JoinForm extends Component {
                     </li>
                     <List data={JOIN_LIST.fou} onChange={onChange} />
                     <li className="joinListLast">
-                      <NumberInput
+                      <PhoneInput
                         firstNum="firstNum"
                         secondNum="secondNum"
                         thirdNum="thirdNum"
