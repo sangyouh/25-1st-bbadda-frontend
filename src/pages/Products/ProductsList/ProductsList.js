@@ -15,7 +15,7 @@ export class ProductsList extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.0.118:8000/products/menu?name=APPAREL`)
+    fetch(`http://10.58.0.118:8000/products/menu${window.location.search}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -41,48 +41,55 @@ export class ProductsList extends Component {
   };
 
   newestProduct = () => {
-    this.props.history.push(`/productsList?name=APPAREL&sort=-created_at`);
+    this.props.history.push(
+      `/productsList${window.location.search}&sort=-created_at`
+    );
   };
   highestPrice = () => {
-    this.props.history.push(`/productsList?name=APPAREL&sort=-price`);
+    this.props.history.push(
+      `/productsList${window.location.search}&sort=-price`
+    );
   };
-  LowestPrice = () => {
-    this.props.history.push(`/productsList?name=APPAREL&sort=price`);
+  lowestPrice = () => {
+    this.props.history.push(
+      `/productsList${window.location.search}&sort=price`
+    );
   };
   salesProduct = () => {
     this.props.history.push(
-      '/productsList?name=APPAREL&sort=-number_of_selling'
+      `/productsList${window.location.search}&sort=-number_of_selling`
     );
   };
 
   nextPage = () => {
-    this.props.history.push(`/productsList?name=APPAREL&offset=8`);
+    this.props.history.push(`/productsList${window.location.search}&offset=8`);
   };
 
   prevPage = () => {
-    this.props.history.push(`/productsList?name=APPAREL&offset=0`);
+    this.props.history.push(`/productsList${window.location.search}&offset=0`);
   };
   render() {
     const { products } = this.state;
+    const { highestPrice, lowestPrice, newestProduct, salesProduct } = this;
 
     return (
       <div className="ProductsList">
         <div className="container">
           <DropdownMenu />
           <div>
-            <button className="filterButton" onClick={this.highestPrice}>
+            <button className="filterButton" onClick={highestPrice}>
               높은가격순
             </button>
             <span className="buttonDivider">|</span>
-            <button className="filterButton" onClick={this.LowestPrice}>
+            <button className="filterButton" onClick={lowestPrice}>
               낮은가격순
             </button>
             <span className="buttonDivider">|</span>
-            <button className="filterButton" onClick={this.newestProduct}>
+            <button className="filterButton" onClick={newestProduct}>
               최신상품순
             </button>
             <span className="buttonDivider">|</span>
-            <button className="filterButton" onClick={this.salesProduct}>
+            <button className="filterButton" onClick={salesProduct}>
               판매량순
             </button>
           </div>
