@@ -12,13 +12,12 @@ class JoinWrap extends Component {
       checkPw: '',
       name: '',
       email: '',
-      mobile_number: '',
       gender: null,
       foreigner: null,
       year: '',
       month: '',
       date: '',
-      firstNum: '',
+      firstNum: '010',
       secondNum: '',
       thirdNum: '',
     };
@@ -43,41 +42,34 @@ class JoinWrap extends Component {
       password,
       name,
       email,
-      mobile_number,
       gender,
       foreigner,
       year,
       month,
       date,
+      firstNum,
+      secondNum,
+      thirdNum,
     } = this.state;
+
+    const date_of_birth = `${year}-${month}-${date}`;
+    const mobile_number = `${firstNum}${secondNum}${thirdNum}`;
+
     const info = {
       account,
       password,
       name,
       email,
       mobile_number,
+      date_of_birth,
       gender,
       foreigner,
     };
-    const date_of_birth = `${year}-${month}-${date}`;
-    console.log('input', this.state);
-    console.log('birthday', date_of_birth);
-
     return (
       <div className="JoinWrap">
         <div className="topInfo">F&F 통합회원 가입</div>
         <JoinForm onChange={handleInput} onClick={handleRadio} />
-        <JoinButton
-          date_of_birth={date_of_birth}
-          info={info}
-          account={account}
-          password={password}
-          name={name}
-          email={email}
-          mobile_number={mobile_number}
-          gender={gender}
-          foreigner={foreigner}
-        />
+        <JoinButton info={info} />
         <section className="middleInfo">
           <div>
             F&F membership은 회원님의 소중한 개인정보를 안전하게 관리하고

@@ -4,7 +4,7 @@ import './List.scss';
 
 class List extends Component {
   render() {
-    const { data, onChange, onClick } = this.props;
+    const { data, onChange, onClick, errorMessage } = this.props;
 
     const list = data.map(input =>
       input.single ? (
@@ -17,18 +17,20 @@ class List extends Component {
             name={input.name}
             onChange={onChange}
           />
+          <p className="alertMessage">{errorMessage}</p>
         </li>
-      ) : input.number ? (
-        <>
-          <Input
-            className={input.className}
-            key={input.id}
-            name={input.name}
-            onChange={onChange}
-          />
-          <span className="hyphen">-</span>
-        </>
       ) : (
+        //  : input.number ? (
+        //   <>
+        //     <Input
+        //       className={input.className}
+        //       key={input.id}
+        //       name={input.name}
+        //       onChange={onChange}
+        //     />
+        //     <span className="hyphen">-</span>
+        //   </>
+        // )
         <Input
           key={input.id}
           className={input.className}
