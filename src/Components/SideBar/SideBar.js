@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Wrap from '../Wrap/Wrap';
-import List from '../List/List';
 import Button from '../Button/Button';
-import ORDER_LIST from '../../data/OrderListData';
 import BUTTON_LIST from '../../data/ButtonData';
 import './SideBar.scss';
 import CheckBox from '../CheckBox/CheckBox';
@@ -45,8 +43,9 @@ class SideBar extends Component {
             value,
             quantity,
           }),
-        }).then(alert('세션 ㅃ!'));
-        // .then(history.push('/main'));
+        })
+          .then(alert('구매가 완료되었습니다!'))
+          .then(history.push('/main'));
       } else if (localStorage.AccessToken) {
         fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
           method: 'POST',
@@ -65,8 +64,9 @@ class SideBar extends Component {
             value,
             quantity,
           }),
-        }).then(alert('로컬 ㅃ!'));
-        // .then(history.push('/main'));
+        })
+          .then(alert('구매가 완료되었습니다!'))
+          .then(history.push('/main'));
       }
     } else {
       alert(
