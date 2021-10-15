@@ -21,7 +21,7 @@ class Order extends Component {
       userData: {},
       address: '',
       orderer: '',
-      receiver: '',
+      receiver_name: '',
       userFirstNum: '010',
       userSecondNum: '',
       userThirdNum: '',
@@ -43,18 +43,9 @@ class Order extends Component {
     this.setState({ [propertyName]: !this.state[propertyName] });
   };
 
-  // checkUserInfo = e => {
-  //   const { userInfo, userData } = this.state;
-  //   this.setState({ userInfo: !userInfo }, () => {
-  //     userInfo
-  //       ? this.setState({ order: userData.name })
-  //       : this.setState({ order: '' });
-  //   });
-  // };
-
   componentDidMount() {
     if (sessionStorage.AccessToken) {
-      fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
+      fetch('http://10.58.0.118:8000/orders/order', {
         method: 'GET',
         headers: {
           Authorization: sessionStorage.getItem('AccessToken'),
@@ -67,7 +58,7 @@ class Order extends Component {
           });
         });
     } else if (localStorage.AccessToken) {
-      fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
+      fetch('http://10.58.0.165:8000/orders/order', {
         method: 'GET',
         headers: {
           Authorization: localStorage.getItem('AccessToken'),
@@ -111,7 +102,7 @@ class Order extends Component {
       allprice,
       point,
     } = this.state.userData;
-    console.log('tsae', this.state.userData);
+
     const user_mobile_number = `${userFirstNum}-${userSecondNum}-${userThirdNum}`;
 
     const receiver_mobile_number = `${receiverFirstNum}-${receiverSecondNum}-${receiverThirdNum}`;
@@ -217,7 +208,7 @@ class Order extends Component {
                 <TableContent tableHead={'받는분'}>
                   <Input
                     className="halfInput"
-                    name="receiver"
+                    name="receiver_name"
                     onChange={handleInput}
                   />
                   <CheckBox

@@ -23,10 +23,23 @@ class SideBar extends Component {
       history,
     } = this.props;
 
+    console.log(
+      name,
+      mobile_number,
+      email,
+      address,
+      receiver_name,
+      receiver_mobile_number,
+      request,
+      type,
+      value,
+      quantity
+    );
+
     e.preventDefault();
     if (payAgree) {
       if (sessionStorage.AccessToken) {
-        fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
+        fetch('http://10.58.0.118:8000/orders/order', {
           method: 'POST',
           headers: {
             Authorization: sessionStorage.getItem('AccessToken'),
@@ -44,10 +57,10 @@ class SideBar extends Component {
             quantity,
           }),
         })
-          .then(alert('구매가 완료되었습니다!'))
+          .then(alert('구매가 완료되었습니다 !'))
           .then(history.push('/main'));
       } else if (localStorage.AccessToken) {
-        fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
+        fetch('http://10.58.0.118:8000/orders/order', {
           method: 'POST',
           headers: {
             Authorization: localStorage.getItem('AccessToken'),
@@ -65,7 +78,7 @@ class SideBar extends Component {
             quantity,
           }),
         })
-          .then(alert('구매가 완료되었습니다!'))
+          .then(alert('구매가 완료되었습니다 !'))
           .then(history.push('/main'));
       }
     } else {
