@@ -21,8 +21,8 @@ class JoinForm extends Component {
   }
 
   render() {
-    const { onChange, onClick } = this.props;
-
+    const { errorMessage, onChange, onClick } = this.props;
+    console.log(this.state.inputList);
     return (
       <form className="JoinForm">
         <section>
@@ -36,12 +36,17 @@ class JoinForm extends Component {
               >
                 <TableContent trClassName={'basicInfo'} tableHead={'기본정보'}>
                   <ul>
-                    <List data={JOIN_LIST.first} onChange={onChange} />
+                    <List
+                      data={JOIN_LIST.first}
+                      onChange={onChange}
+                      errorMessage={errorMessage}
+                    />
                     <li className="joinList">
                       <Input
                         className="name"
                         placeholder="이름(실명입력)"
                         name="name"
+                        onChange={onChange}
                       />
                       <RadioInput
                         name="foreigner"
@@ -86,9 +91,9 @@ class JoinForm extends Component {
                     <List data={JOIN_LIST.fou} onChange={onChange} />
                     <li className="joinListLast">
                       <PhoneInput
-                        firstNum="firstNum"
-                        secondNum="secondNum"
-                        thirdNum="thirdNum"
+                        firstInputName="firstNum"
+                        secondInputName="secondNum"
+                        thirdInputName="thirdNum"
                         onChange={onChange}
                         None=""
                       />

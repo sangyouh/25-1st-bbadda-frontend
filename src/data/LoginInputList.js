@@ -7,6 +7,7 @@ const LOGIN_LIST = {
       placeHolder: '아이디',
       type: 'text',
       name: 'account',
+      alert: true,
       single: true,
     },
     {

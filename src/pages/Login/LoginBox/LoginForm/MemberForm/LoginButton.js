@@ -56,7 +56,7 @@ class LoginButton extends Component {
     const { history } = this.props;
     e.preventDefault();
     isValid
-      ? fetch('http://10.58.0.165:8000/users/signin', {
+      ? fetch('http://10.58.0.118:8000/users/signin', {
           method: 'POST',
           body: JSON.stringify({
             account,
@@ -69,6 +69,7 @@ class LoginButton extends Component {
               autoLogin
                 ? localStorage.setItem('AccessToken', res.access_token)
                 : sessionStorage.setItem('AccessToken', res.access_token);
+              alert('로그인 완료!');
               history.push('/main');
             } else {
               alertMessage();

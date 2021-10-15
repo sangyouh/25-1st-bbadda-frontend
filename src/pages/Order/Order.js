@@ -53,18 +53,33 @@ class Order extends Component {
   // };
 
   componentDidMount() {
-    fetch('http://10.58.0.165:8000/orders/order', {
-      method: 'GET',
-      headers: {
-        Authorization: localStorage.getItem('AccessToken'),
-      },
-    })
-      .then(res => res.json())
-      .then(({ User: userData }) => {
-        this.setState({
-          userData,
+    if (sessionStorage.AccessToken) {
+      fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
+        method: 'GET',
+        headers: {
+          Authorization: sessionStorage.getItem('AccessToken'),
+        },
+      })
+        .then(res => res.json())
+        .then(({ User: userData }) => {
+          this.setState({
+            userData,
+          });
         });
-      });
+    } else if (localStorage.AccessToken) {
+      fetch('http://10.58.0.118:8000/orders/order?code=3ADJN0316-50IVS', {
+        method: 'GET',
+        headers: {
+          Authorization: localStorage.getItem('AccessToken'),
+        },
+      })
+        .then(res => res.json())
+        .then(({ User: userData }) => {
+          this.setState({
+            userData,
+          });
+        });
+    }
   }
 
   render() {
@@ -96,7 +111,7 @@ class Order extends Component {
       allprice,
       point,
     } = this.state.userData;
-
+    console.log('tsae', this.state.userData);
     const user_mobile_number = `${userFirstNum}-${userSecondNum}-${userThirdNum}`;
 
     const receiver_mobile_number = `${receiverFirstNum}-${receiverSecondNum}-${receiverThirdNum}`;
