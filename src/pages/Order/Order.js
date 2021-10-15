@@ -145,7 +145,7 @@ class Order extends Component {
                   />
                 </TableContent>
                 <TableContent tableHead={'결제금액'} trClassName={'orderTr'}>
-                  <input className="halfInput" value={price} disabled />
+                  <input className="priceInput" value={allprice} disabled />
                 </TableContent>
                 <TableContent tableHead={'남은 포인트'} trClassName={'orderTr'}>
                   <input className="halfInput" value={point - price} disabled />

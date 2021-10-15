@@ -87,6 +87,14 @@
   font-size: 13px;
   text-align: left;
 }
+
+.priceInput {
+  @include inputs;
+  width: 255px;
+  padding: 0 15px;
+  font-weight: bold;
+}
+
 // .check {
 //   vertical-align: -1.6px;
 //   margin-right: 5px;

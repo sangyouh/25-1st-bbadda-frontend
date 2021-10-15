@@ -5,7 +5,7 @@ class TableContent extends Component {
   render() {
     const { trClassName, tableHead, children } = this.props;
     return (
-      <tr trClassName={trClassName}>
+      <tr ClassName={trClassName}>
         <th className="basicInfo">
           <label className="thLabel">{tableHead}</label>
         </th>
