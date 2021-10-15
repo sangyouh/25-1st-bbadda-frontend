@@ -18,20 +18,21 @@ class ProductOptions extends React.Component {
   }
 
   goToBuy = () => {
-    fetch('http://10.58.0.165:8000/orders/orderitem', {
+    fetch('http://10.58.0.118:8000/orders/orderitem', {
       method: 'POST',
       headers: {
-        Authorization:
-          'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.M8Tll95oC5RoAnS4u-61z6hDLuI8YuPKR5FWRkwP6tE',
+        Authorization: sessionStorage.getItem('AccessToken'),
       },
       body: JSON.stringify({
         product_code: this.props.product.product_code,
         size_type: this.props.product.size[0].type,
         selected_size_value: this.state.selected_size_value,
-        selectedQuantity: this.state.selected_quantity,
+        selected_quantity: this.state.selected_quantity,
       }),
     });
-    this.props.history.push('/order');
+    setTimeout(() => {
+      this.props.history.push('/order');
+    }, 500);
   };
 
   setSelectedSizeValue = sizeInfo => {
