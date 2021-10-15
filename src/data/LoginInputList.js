@@ -19,14 +19,6 @@ const LOGIN_LIST = {
       single: true,
     },
   ],
-  bar: [
-    {
-      type: 'checkbox',
-      className: 'check',
-      radioName: '로그인 저장',
-      radio: true,
-    },
-  ],
 };
 
 export default LOGIN_LIST;

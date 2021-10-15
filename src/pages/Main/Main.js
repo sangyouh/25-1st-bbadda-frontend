@@ -9,15 +9,22 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      itemList: [],
+      newItemList: [],
+      rankingItemList: [],
     };
   }
 
   componentDidMount() {
-    fetch('/data/Main/itemList.json')
+    fetch('http://10.58.0.118:8000/products/menu?sort=-created_at')
       .then(result => result.json())
       .then(data => {
-        this.setState({ itemList: data });
+        this.setState({ newItemList: data.content });
+      });
+
+    fetch('http://10.58.0.118:8000/products/menu?sort=number_of_selling')
+      .then(result => result.json())
+      .then(data => {
+        this.setState({ rankingItemList: data.content });
       });
   }
 
@@ -34,30 +41,37 @@ class Main extends Component {
                   <Link to="#">
                     <img
                       alt="Banner"
-                      src="https://static.mlb-korea.com/images/display/category/MTP/A01/A01/contents/10113_6809_111_KOR_20211005143759.jpg"
+                      src={`https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2124&q=80`}
                     />
                   </Link>
                 </div>
                 <div className="newArrivalList">
                   <ul className="itemsList">
-                    {this.state.itemList.map(({ id, link, name, price }) => {
-                      return (
-                        <li key={id}>
-                          <div className="item">
-                            <Link to={link}>
-                              <div className="itemImg">
-                                <img
-                                  alt="itemImg"
-                                  src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414"
-                                />
-                              </div>
-                              <div className="itemName">{name}</div>
-                              <div className="itemPrice">{price}</div>
-                            </Link>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {this.state.newItemList.map(
+                      ({ id, url, image_url, name, price }) => {
+                        return (
+                          <li key={id}>
+                            <div className="item">
+                              <Link to={url}>
+                                <div className="itemImg">
+                                  <img
+                                    alt="itemImg"
+                                    src={image_url['image_url1']}
+                                  />
+                                </div>
+                                <div className="itemName">{name}</div>
+                                <div className="itemPrice">
+                                  {parseInt(price)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                  원
+                                </div>
+                              </Link>
+                            </div>
+                          </li>
+                        );
+                      }
+                    )}
                   </ul>
                 </div>
               </div>
@@ -69,24 +83,32 @@ class Main extends Component {
               <div className="content">
                 <div className="items">
                   <ul className="itemsList">
-                    {this.state.itemList.map(({ id, link, name, price }) => {
-                      return (
-                        <li key={id}>
-                          <div className="item">
-                            <Link to={link}>
-                              <div className="itemImg">
-                                <img
-                                  alt="itemImg"
-                                  src="https://static.mlb-korea.com/images/goods/thnail/m/20210903/3ACBB0216-07CGS-46668835721737915.png/dims/resize/414x414"
-                                />
-                              </div>
-                              <div className="itemName">{name}</div>
-                              <div className="itemPrice">{price}</div>
-                            </Link>
-                          </div>
-                        </li>
-                      );
-                    })}
+                    {this.state.rankingItemList.map(
+                      ({ id, url, image_url, name, price }, idx) => {
+                        return (
+                          <li key={id}>
+                            <div className="item">
+                              <Link to={url}>
+                                <div className="itemImg">
+                                  <img
+                                    alt="itemImg"
+                                    src={image_url['image_url1']}
+                                  />
+                                  <span className="number">{idx + 1}</span>
+                                </div>
+                                <div className="itemName">{name}</div>
+                                <div className="itemPrice">
+                                  {parseInt(price)
+                                    .toString()
+                                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                                  원
+                                </div>
+                              </Link>
+                            </div>
+                          </li>
+                        );
+                      }
+                    )}
                   </ul>
                 </div>
               </div>

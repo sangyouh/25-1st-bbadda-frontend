@@ -1,0 +1,31 @@
+{
+  "name": "APPAREL",
+  "categoryId": 1,
+  "content": [
+    {
+      "id": 1,
+      "name": "NUMERO UNO",
+      "price": 10000
+    },
+    {
+      "id": 2,
+      "name": "NUMERO DOS",
+      "price": 20000
+    },
+    {
+      "id": 3,
+      "name": "NUMERO TRES",
+      "price": 309000
+    },
+    {
+      "id": 4,
+      "name": "NUMERO QUATRO",
+      "price": 40000
+    },
+    {
+      "id": 5,
+      "name": "NUMERO I DONT KNOW",
+      "price": 25000
+    }
+  ]
+}

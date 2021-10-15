@@ -15,8 +15,7 @@ const NAV_DATA = [
         link: '#',
         items: [
           { id: 0, name: '숏패딩', link: '#' },
-          { id: 1, name: '야구점퍼', link: '#' },
-          // { id: 2, name: '후리스', link: '#' },
+          { id: 1, name: '후리스', link: '#' },
         ],
       },
       {
@@ -26,7 +25,6 @@ const NAV_DATA = [
         items: [
           { id: 0, name: '티셔츠', link: '#' },
           { id: 1, name: '맨투맨', link: '#' },
-          // { id: 2, name: '후드티', link: '#' },
         ],
       },
     ],
@@ -34,7 +32,8 @@ const NAV_DATA = [
       {
         id: 0,
         name: 'APPAREL banner',
-        bannerLink: './images/Nav/400x268.png',
+        bannerLink:
+          'https://images.unsplash.com/photo-1479064555552-3ef4979f8908?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
         link: '#',
       },
     ],
@@ -68,7 +67,8 @@ const NAV_DATA = [
       {
         id: 0,
         name: 'CAP banner',
-        bannerLink: './images/Nav/400x268.png',
+        bannerLink:
+          'https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80',
         link: '#',
       },
     ],
@@ -102,7 +102,8 @@ const NAV_DATA = [
       {
         id: 0,
         name: 'CAP banner',
-        bannerLink: './images/Nav/400x268.png',
+        bannerLink:
+          'https://images.unsplash.com/photo-1506152983158-b4a74a01c721?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1773&q=80',
         link: '#',
       },
     ],

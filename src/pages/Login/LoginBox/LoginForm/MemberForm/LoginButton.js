@@ -1,5 +1,6 @@
 /*global Kakao*/
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Button from '../../../../../Components/Button/Button';
 import BUTTON_LIST from '../../../../../data/ButtonData';
 import './LoginButton.scss';
@@ -44,11 +45,18 @@ class LoginButton extends Component {
   // };
 
   handleSubmit = e => {
-    const { account, password, isValid, autoLogin } = this.props;
+    const {
+      account,
+      password,
+      isValid,
+      autoLogin,
+      validateAccount,
+      alertMessage,
+    } = this.props;
     const { history } = this.props;
     e.preventDefault();
     isValid
-      ? fetch('http://10.58.5.165:8000/users/signin', {
+      ? fetch('http://10.58.0.165:8000/users/signin', {
           method: 'POST',
           body: JSON.stringify({
             account,
@@ -63,15 +71,14 @@ class LoginButton extends Component {
                 : sessionStorage.setItem('AccessToken', res.access_token);
               history.push('/main');
             } else {
-              console.log('test');
+              alertMessage();
             }
           })
-      : console.log('failed');
+      : alertMessage();
   };
 
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;
-    console.log('id', this.props.account, 'pw', this.props.password);
     return (
       <div className="LoginButton">
         <Button
@@ -94,4 +101,4 @@ class LoginButton extends Component {
   }
 }
 
-export default LoginButton;
+export default withRouter(LoginButton);

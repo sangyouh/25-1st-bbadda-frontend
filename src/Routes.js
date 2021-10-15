@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
+import Footer from './Components/Footer/Footer';
 import Login from './pages/Login/Login';
 import Join from './pages/SignUp/Join';
 import Order from './pages/Order/Order';
@@ -29,6 +30,7 @@ class Routes extends React.Component {
             component={ProductDetail}
           />
         </Switch>
+        <Footer />
       </Router>
     );
   }

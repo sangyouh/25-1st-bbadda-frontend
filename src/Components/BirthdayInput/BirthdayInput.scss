@@ -1,0 +1,33 @@
+@mixin inputs {
+  height: 40px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.year {
+  @include inputs;
+  display: inline-block;
+  width: 80px;
+  padding: 0 10px;
+}
+.month {
+  @include inputs;
+  display: inline-block;
+  width: 80px;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+.date {
+  @include inputs;
+  display: inline-block;
+  width: 80px;
+  padding: 0 10px;
+  margin: 0 15px 0 10px;
+}

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding-top: 50px;
   margin-top: 60px;
   text-align: center;
@@ -11,7 +11,8 @@
   .categoryList {
     margin-right: 10px;
     padding-left: 10px;
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bolder;
   }
 
   .borderlessButton {
@@ -21,27 +22,28 @@
 
   .menuLeft {
     position: absolute;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-right: 150px;
     background-color: white;
   }
 
   .menuRight {
     position: absolute;
-    margin-left: 400px;
-    margin-top: 50px;
+    margin-left: 150px;
+    margin-top: 20px;
     background-color: white;
   }
 
   .dropdownList {
     text-align: left;
-    margin-top: 15px;
-    font-size: 30px;
+    padding-top: 5px;
+    // font-size: 20px;
   }
 
   .linkBlur {
     opacity: 40%;
     font-weight: bold;
+    font-size: 25px;
     color: black;
   }
 
@@ -51,13 +53,12 @@
 
   .arrow {
     margin-left: 30px;
-    font-size: 30px;
   }
-}
-.backgroundClick {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
+  button {
+    background-color: white;
+    border-radius: 3px;
+  }
+  .fas {
+    font-size: 20px;
+  }
 }

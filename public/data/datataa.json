@@ -1,0 +1,217 @@
+{
+  "result": [
+    {
+      "menu_id": 1,
+      "menu_name": "APPAREL",
+      "category_list": [
+        {
+          "category_id": 1,
+          "category_name": "\uc544\uc6b0\ud130",
+          "sub_category_list": [
+            { "sub_category_id": 1, "sub_category_name": "\uc20f\ud328\ub529" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 1,
+      "menu_name": "APPAREL",
+      "category_list": [
+        {
+          "category_id": 1,
+          "category_name": "\uc544\uc6b0\ud130",
+          "sub_category_list": [
+            { "sub_category_id": 2, "sub_category_name": "\ud6c4\ub9ac\uc2a4" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 1,
+      "menu_name": "APPAREL",
+      "category_list": [
+        {
+          "category_id": 2,
+          "category_name": "\uc0c1\uc758",
+          "sub_category_list": [
+            { "sub_category_id": 3, "sub_category_name": "\ud2f0\uc154\uce20" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 1,
+      "menu_name": "APPAREL",
+      "category_list": [
+        {
+          "category_id": 2,
+          "category_name": "\uc0c1\uc758",
+          "sub_category_list": [
+            { "sub_category_id": 4, "sub_category_name": "\ub9e8\ud22c\ub9e8" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 2,
+      "menu_name": "CAP",
+      "category_list": [
+        {
+          "category_id": 3,
+          "category_name": "\ubcfc\ucea1",
+          "sub_category_list": [
+            {
+              "sub_category_id": 5,
+              "sub_category_name": "\uc5b8\uc2a4\ud2b8\ub7ed\uccd0\ubcfc\ucea1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 2,
+      "menu_name": "CAP",
+      "category_list": [
+        {
+          "category_id": 3,
+          "category_name": "\ubcfc\ucea1",
+          "sub_category_list": [
+            {
+              "sub_category_id": 6,
+              "sub_category_name": "\uc2a4\ud2b8\ub7ed\uccd0\ubcfc\ucea1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 2,
+      "menu_name": "CAP",
+      "category_list": [
+        {
+          "category_id": 4,
+          "category_name": "\uc2a4\ub0c5\ubc31",
+          "sub_category_list": [
+            { "sub_category_id": 7, "sub_category_name": "\uc2a4\ub0c5\ubc31" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 3,
+      "menu_name": "SHOES",
+      "category_list": [
+        {
+          "category_id": 5,
+          "category_name": "\uc6b4\ub3d9\ud654",
+          "sub_category_list": [
+            {
+              "sub_category_id": 8,
+              "sub_category_name": "\ube45\ubcfc \uccad\ud0a4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 3,
+      "menu_name": "SHOES",
+      "category_list": [
+        {
+          "category_id": 5,
+          "category_name": "\uc6b4\ub3d9\ud654",
+          "sub_category_list": [
+            {
+              "sub_category_id": 9,
+              "sub_category_name": "\uccad\ud0a4 \ud558\uc774"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 3,
+      "menu_name": "SHOES",
+      "category_list": [
+        {
+          "category_id": 5,
+          "category_name": "\uc6b4\ub3d9\ud654",
+          "sub_category_list": [
+            {
+              "sub_category_id": 10,
+              "sub_category_name": "\uccad\ud0a4 \ub85c\uc6b0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 3,
+      "menu_name": "SHOES",
+      "category_list": [
+        {
+          "category_id": 6,
+          "category_name": "\uc0cc\ub4e4/\uc2ac\ub9ac\ud37c",
+          "sub_category_list": [
+            { "sub_category_id": 11, "sub_category_name": "\uc2ac\ub9ac\ud37c" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 4,
+      "menu_name": "BAG",
+      "category_list": [
+        {
+          "category_id": 7,
+          "category_name": "\ubc31\ud329",
+          "sub_category_list": [
+            { "sub_category_id": 12, "sub_category_name": "\ubc31\ud329" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 4,
+      "menu_name": "BAG",
+      "category_list": [
+        {
+          "category_id": 8,
+          "category_name": "\ud799\uc0c9",
+          "sub_category_list": [
+            { "sub_category_id": 13, "sub_category_name": "\ud799\uc0c9" }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 4,
+      "menu_name": "BAG",
+      "category_list": [
+        {
+          "category_id": 9,
+          "category_name": "\ud06c\ub85c\uc2a4\ubc31",
+          "sub_category_list": [
+            {
+              "sub_category_id": 14,
+              "sub_category_name": "\ud06c\ub85c\uc2a4\ubc31"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "menu_id": 4,
+      "menu_name": "BAG",
+      "category_list": [
+        {
+          "category_id": 10,
+          "category_name": "\ud1a0\ud2b8\ubc31",
+          "sub_category_list": [
+            { "sub_category_id": 15, "sub_category_name": "\ud1a0\ud2b8\ubc31" }
+          ]
+        }
+      ]
+    }
+  ]
+}

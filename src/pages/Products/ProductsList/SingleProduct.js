@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import './SingleProduct.scss';
-// import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 export class SingleProduct extends Component {
   goToPage = () => {
-    this.props.history.push('/product/productdetail');
+    this.props.history.push(`/product/productdetail/${this.props.productId}`);
   };
   render() {
-    const { productName, productPrice, imgURL, id } = this.props;
+    const { productName, productPrice, imgURL } = this.props;
     return (
       <div className="SingleProduct">
         <div className="product-container">
-          <Link to="/product/productdetail">
-            <img src={`/images/doggo${id}.jpg`} alt={`${productName}`} />
-          </Link>
-          {/* <button onClick={this.goToPage}>
-            <img src={`/images/ballcap${id}.jpg`} alt={`${productName}`} />
-          </button> */}
+          <button onClick={this.goToPage}>
+            <img
+              src={imgURL.image_url1}
+              alt={`${productName}`}
+              onMouseOver={e => (e.currentTarget.src = imgURL.image_url2)}
+              onMouseOut={e => (e.currentTarget.src = imgURL.image_url1)}
+            />
+          </button>
           <h2>{productName}</h2>
           <p>{productPrice} KRW</p>
         </div>
@@ -26,4 +27,4 @@ export class SingleProduct extends Component {
   }
 }
 
-export default SingleProduct;
+export default withRouter(SingleProduct);

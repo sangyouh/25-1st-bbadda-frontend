@@ -3,15 +3,8 @@ import TableItemContent from '../../../Components/Table/TableItemContent';
 import './OrderItemInfo.scss';
 
 class OrderItemInfo extends Component {
-  constructor() {
-    super();
-    this.state = {
-      User: {},
-      productList: [],
-    };
-  }
   render() {
-    const { info, qty, discount, price, size, product, Img } = this.props;
+    const { quantity, price, allprice, value, product, Img } = this.props;
     return (
       <table className="OrderTable">
         <colgroup>
@@ -38,10 +31,10 @@ class OrderItemInfo extends Component {
         </thead>
         <tbody className="ItemInfo">
           <TableItemContent
-            qty={qty}
-            discount={discount}
+            quantity={quantity}
             price={price}
-            size={size}
+            allprice={allprice}
+            value={value}
             product={product}
             Img={Img}
           />
