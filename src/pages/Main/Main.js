@@ -52,7 +52,7 @@ class Main extends Component {
                         return (
                           <li key={id}>
                             <div className="item">
-                              <Link to={url}>
+                              <Link to={`/product/productdetail/${id}`}>
                                 <div className="itemImg">
                                   <img
                                     alt="itemImg"
@@ -88,7 +88,7 @@ class Main extends Component {
                         return (
                           <li key={id}>
                             <div className="item">
-                              <Link to={url}>
+                              <Link to={`/product/productdetail/${id}`}>
                                 <div className="itemImg">
                                   <img
                                     alt="itemImg"
