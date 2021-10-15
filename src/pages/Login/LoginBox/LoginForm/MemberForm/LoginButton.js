@@ -56,7 +56,7 @@ class LoginButton extends Component {
     const { history } = this.props;
     e.preventDefault();
     isValid
-      ? fetch('http://10.58.0.165:8000/users/signin', {
+      ? fetch('http://10.58.0.118:8000/users/signin', {
           method: 'POST',
           body: JSON.stringify({
             account,
@@ -69,6 +69,7 @@ class LoginButton extends Component {
               autoLogin
                 ? localStorage.setItem('AccessToken', res.access_token)
                 : sessionStorage.setItem('AccessToken', res.access_token);
+              alert('로그인 완료!');
               history.push('/main');
             } else {
               alertMessage();
@@ -80,23 +81,15 @@ class LoginButton extends Component {
   render() {
     const { loginWithKakao, handleSubmit, logoutWithKakao } = this;
     return (
-      <div className="LoginButton">
+      <form className="LoginButton" onSubmit={console.log('test')}>
         <Button
           href={'/main'}
           data={BUTTON_LIST.signIn.Basic}
           onClick={handleSubmit}
         />
-        <Button
-          href={'/main'}
-          data={BUTTON_LIST.signIn.Naver}
-          onClick={handleSubmit}
-        />
-        <Button
-          href={'/main'}
-          data={BUTTON_LIST.signIn.Kakao}
-          onClick={loginWithKakao}
-        />
-      </div>
+        <Button href={'/main'} data={BUTTON_LIST.signIn.Naver} />
+        <Button href={'/main'} data={BUTTON_LIST.signIn.Kakao} />
+      </form>
     );
   }
 }

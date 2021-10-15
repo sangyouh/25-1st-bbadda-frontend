@@ -20,6 +20,7 @@ class Routes extends React.Component {
           <Route exact path="/login" component={Login} />
           <Route exact path="/join" component={Join} />
           <Route exact path="/order" component={Order} />
+          <Route exact path="/" component={Main} />
           <Route exact path="/main" component={Main} />
           <Route exact path="/mypage" component={MyPage} />
           <Route exact path="/product" component={Product} />

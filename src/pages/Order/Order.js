@@ -19,13 +19,9 @@ class Order extends Component {
       ordererInfo: false,
       payAgree: false,
       userData: {},
-      // product: {},
-      point: '1,000,000',
-      price: '200,000',
       address: '',
       orderer: '',
-      receiver: '',
-      email: '',
+      receiver_name: '',
       userFirstNum: '010',
       userSecondNum: '',
       userThirdNum: '',
@@ -47,39 +43,44 @@ class Order extends Component {
     this.setState({ [propertyName]: !this.state[propertyName] });
   };
 
-  checkUserInfo = e => {
-    const { userInfo, userData } = this.state;
-    this.setState({ userInfo: !userInfo }, () => {
-      userInfo
-        ? this.setState({ order: userData.name })
-        : this.setState({ order: '' });
-    });
-  };
-
   componentDidMount() {
-    fetch('http://10.58.0.165:8000/orders/order', {
-      method: 'GET',
-      headers: {
-        Authorization: localStorage.getItem('AccessToken'),
-      },
-    })
-      .then(res => res.json())
-      .then(({ User: userData }) => {
-        this.setState({
-          userData,
+    if (sessionStorage.AccessToken) {
+      fetch('http://10.58.0.118:8000/orders/order', {
+        method: 'GET',
+        headers: {
+          Authorization: sessionStorage.getItem('AccessToken'),
+        },
+      })
+        .then(res => res.json())
+        .then(({ User: userData }) => {
+          this.setState({
+            userData,
+          });
         });
-      });
+    } else if (localStorage.AccessToken) {
+      fetch('http://10.58.0.165:8000/orders/order', {
+        method: 'GET',
+        headers: {
+          Authorization: localStorage.getItem('AccessToken'),
+        },
+      })
+        .then(res => res.json())
+        .then(({ User: userData }) => {
+          this.setState({
+            userData,
+          });
+        });
+    }
   }
 
   render() {
     const { handleInput, handleCheck } = this;
     const {
+      payAgree,
       orderer,
       request,
       receiver_name,
       address,
-      payAgree,
-      userData,
       userFirstNum,
       userSecondNum,
       userThirdNum,
@@ -89,40 +90,22 @@ class Order extends Component {
     } = this.state;
 
     const {
-      Img,
-      email,
-      mobile_number,
       name,
-      price,
-      point,
+      mobile_number,
+      email,
       product,
+      price,
+      Img,
       quantity,
-      type,
       value,
+      type,
       allprice,
+      point,
     } = this.state.userData;
 
     const user_mobile_number = `${userFirstNum}-${userSecondNum}-${userThirdNum}`;
 
     const receiver_mobile_number = `${receiverFirstNum}-${receiverSecondNum}-${receiverThirdNum}`;
-
-    // name = { orderer };
-    // price = { price };
-    // allprice = { allprice };
-    // mobile_number = { user_mobile_number };
-    // email = { email };
-    // address = { address };
-    // receiver_name = { receiver_name };
-    // receiver_mobile_number = { receiver_mobile_number };
-    // request = { request };
-    // type = { type };
-    // value = { value };
-    // quantity = { quantity };
-    // onClick = { handleCheck };
-    // payAgree = { payAgree };
-
-    console.log(this.state.userData);
-    console.log(this.state);
 
     return (
       <div className="Order">
@@ -225,7 +208,7 @@ class Order extends Component {
                 <TableContent tableHead={'받는분'}>
                   <Input
                     className="halfInput"
-                    name="receiver"
+                    name="receiver_name"
                     onChange={handleInput}
                   />
                   <CheckBox

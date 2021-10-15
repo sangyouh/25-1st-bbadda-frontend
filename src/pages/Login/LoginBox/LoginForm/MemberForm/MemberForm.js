@@ -60,7 +60,11 @@ class MemberForm extends Component {
     return (
       <form>
         <ul>
-          <List data={LOGIN_LIST.foo} onChange={handleInput} />
+          <List
+            data={LOGIN_LIST.foo}
+            onChange={handleInput}
+            errorMessage={errorMessage}
+          />
         </ul>
         <p className="memberFormP">
           <CheckBox text="로그인 저장" onClick={handleToggle} />
