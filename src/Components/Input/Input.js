@@ -25,7 +25,7 @@ class Input extends Component {
           onClick={onClick}
           placeholder={placeholder}
         />
-        <p className="alertMessage">{errorMessage}</p>
+        {/* <p className="alertMessage">{errorMessage}</p> */}
       </>
     );
   }

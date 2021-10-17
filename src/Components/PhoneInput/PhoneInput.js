@@ -3,8 +3,15 @@ import './PhoneInput.scss';
 
 class PhoneInput extends Component {
   render() {
-    const { firstInputName, secondInputName, thirdInputName, onChange } =
-      this.props;
+    const {
+      firstInputName,
+      secondInputName,
+      thirdInputName,
+      onChange,
+      valueA,
+      valueB,
+      valueC,
+    } = this.props;
     return (
       <>
         <input
@@ -13,6 +20,7 @@ class PhoneInput extends Component {
           name={firstInputName}
           onChange={onChange}
           defaultValue="010"
+          value={valueA}
         />
         <span className={'hyphen'}>-</span>
         <input
@@ -20,6 +28,7 @@ class PhoneInput extends Component {
           type="number"
           name={secondInputName}
           onChange={onChange}
+          value={valueB}
         />
         <span className={'hyphen'}>-</span>
         <input
@@ -27,6 +36,7 @@ class PhoneInput extends Component {
           type="number"
           name={thirdInputName}
           onChange={onChange}
+          value={valueC}
         />
       </>
     );

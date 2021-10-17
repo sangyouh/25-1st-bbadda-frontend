@@ -18,21 +18,41 @@ class ProductOptions extends React.Component {
   }
 
   goToBuy = () => {
-    fetch('http://10.58.0.118:8000/orders/orderitem', {
-      method: 'POST',
-      headers: {
-        Authorization: sessionStorage.getItem('AccessToken'),
-      },
-      body: JSON.stringify({
-        product_code: this.props.product.product_code,
-        size_type: this.props.product.size[0].type,
-        selected_size_value: this.state.selected_size_value,
-        selected_quantity: this.state.selected_quantity,
-      }),
-    });
-    setTimeout(() => {
-      this.props.history.push('/order');
-    }, 500);
+    if (sessionStorage.AccessToken) {
+      fetch('http://10.58.0.118:8000/orders/orderitem', {
+        method: 'POST',
+        headers: {
+          Authorization: sessionStorage.getItem('AccessToken'),
+        },
+        body: JSON.stringify({
+          product_code: this.props.product.product_code,
+          size_type: this.props.product.size[0].type,
+          selected_size_value: this.state.selected_size_value,
+          selected_quantity: this.state.selected_quantity,
+        }),
+      });
+      setTimeout(() => {
+        this.props.history.push('/order');
+      }, 500);
+    } else if (localStorage.AccessToken) {
+      fetch('http://10.58.0.118:8000/orders/orderitem', {
+        method: 'POST',
+        headers: {
+          Authorization: localStorage.getItem('AccessToken'),
+        },
+        body: JSON.stringify({
+          product_code: this.props.product.product_code,
+          size_type: this.props.product.size[0].type,
+          selected_size_value: this.state.selected_size_value,
+          selected_quantity: this.state.selected_quantity,
+        }),
+      });
+      setTimeout(() => {
+        this.props.history.push('/order');
+      }, 500);
+    } else if (!sessionStorage.AccessToken || !localStorage.AccessToken) {
+      alert('로그인이 필요합니다.');
+    }
   };
 
   setSelectedSizeValue = sizeInfo => {

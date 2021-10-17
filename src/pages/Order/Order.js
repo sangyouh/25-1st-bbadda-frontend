@@ -70,6 +70,8 @@ class Order extends Component {
             userData,
           });
         });
+    } else if (!sessionStorage.AccessToken || !localStorage.AccessToken) {
+      alert('로그인이 필요합니다.');
     }
   }
 
@@ -77,6 +79,9 @@ class Order extends Component {
     const { handleInput, handleCheck } = this;
     const {
       payAgree,
+      userInfo,
+      ordererInfo,
+      userData,
       orderer,
       request,
       receiver_name,
@@ -106,7 +111,7 @@ class Order extends Component {
     const user_mobile_number = `${userFirstNum}-${userSecondNum}-${userThirdNum}`;
 
     const receiver_mobile_number = `${receiverFirstNum}-${receiverSecondNum}-${receiverThirdNum}`;
-
+    console.log('userData', userData);
     return (
       <div className="Order">
         <Location page={'주문결제'} />
@@ -169,6 +174,7 @@ class Order extends Component {
                     className="halfInput"
                     name="orderer"
                     onChange={handleInput}
+                    value={userInfo ? userData.name : ''}
                   ></Input>
                   <CheckBox
                     name="userInfo"
@@ -185,6 +191,9 @@ class Order extends Component {
                     firstInputName="userFirstNum"
                     secondInputName="userSecondNum"
                     thirdInputName="userThirdNum"
+                    valueA={userInfo ? '010' : ''}
+                    valueB={userInfo ? userData.mobile_number.slice(3, 7) : ''}
+                    valueC={userInfo ? userData.mobile_number.slice(7) : ''}
                   />
                 </TableContent>
                 <TableContent tableHead={'이메일 주소'} trClassName={'orderTr'}>
@@ -192,6 +201,7 @@ class Order extends Component {
                     className="halfInput"
                     name="email"
                     onChange={handleInput}
+                    value={userInfo ? userData.email : ''}
                   />
                 </TableContent>
               </Table>
@@ -210,9 +220,10 @@ class Order extends Component {
                     className="halfInput"
                     name="receiver_name"
                     onChange={handleInput}
+                    value={ordererInfo ? userData.name : ''}
                   />
                   <CheckBox
-                    name="userInfo"
+                    name="ordererInfo"
                     onClick={handleCheck}
                     text="주문 정보와 동일"
                   />
@@ -223,6 +234,11 @@ class Order extends Component {
                     firstInputName="receiverFirstNum"
                     secondInputName="receiverSecondNum"
                     thirdInputName="receiverThirdNum"
+                    valueA={ordererInfo ? '010' : ''}
+                    valueB={
+                      ordererInfo ? userData.mobile_number.slice(3, 7) : ''
+                    }
+                    valueC={ordererInfo ? userData.mobile_number.slice(7) : ''}
                   />
                 </TableContent>
                 <TableContent tableHead={'배송지주소'}>
