@@ -37,69 +37,72 @@ class SideBar extends Component {
     );
 
     e.preventDefault();
-    if (payAgree) {
-      if (sessionStorage.AccessToken) {
-        fetch('http://10.58.0.118:8000/orders/order', {
-          method: 'POST',
-          headers: {
-            Authorization: sessionStorage.getItem('AccessToken'),
-          },
-          body: JSON.stringify({
-            name,
-            mobile_number,
-            email,
-            address,
-            receiver_name,
-            receiver_mobile_number,
-            request,
-            type,
-            value,
-            quantity,
-          }),
-        })
-          .then(alert('구매가 완료되었습니다 !'))
-          .then(history.push('/main'));
-      } else if (localStorage.AccessToken) {
-        fetch('http://10.58.0.118:8000/orders/order', {
-          method: 'POST',
-          headers: {
-            Authorization: localStorage.getItem('AccessToken'),
-          },
-          body: JSON.stringify({
-            name,
-            mobile_number,
-            email,
-            address,
-            receiver_name,
-            receiver_mobile_number,
-            request,
-            type,
-            value,
-            quantity,
-          }),
-        })
-          .then(alert('구매가 완료되었습니다 !'))
-          .then(history.push('/main'));
-      }
-    } else {
-      alert(
-        '주문하실 상품, 가격, 배송정보, 할인정보 등을 확인하였으며, 구매에 동의하시겠습니까? (전자상거래법 제 8조 제2항)(을)를 선택해주세요.'
-      );
-    }
+    // if (payAgree) {
+    //   if (sessionStorage.AccessToken) {
+    //     fetch('http://10.58.0.118:8000/orders/order', {
+    //       method: 'POST',
+    //       headers: {
+    //         Authorization: sessionStorage.getItem('AccessToken'),
+    //       },
+    //       body: JSON.stringify({
+    //         name,
+    //         mobile_number,
+    //         email,
+    //         address,
+    //         receiver_name,
+    //         receiver_mobile_number,
+    //         request,
+    //         type,
+    //         value,
+    //         quantity,
+    //       }),
+    //     })
+    //       .then(alert('구매가 완료되었습니다 !'))
+    //       .then(history.push('/main'));
+    //   } else if (localStorage.AccessToken) {
+    //     fetch('http://10.58.0.118:8000/orders/order', {
+    //       method: 'POST',
+    //       headers: {
+    //         Authorization: localStorage.getItem('AccessToken'),
+    //       },
+    //       body: JSON.stringify({
+    //         name,
+    //         mobile_number,
+    //         email,
+    //         address,
+    //         receiver_name,
+    //         receiver_mobile_number,
+    //         request,
+    //         type,
+    //         value,
+    //         quantity,
+    //       }),
+    //     })
+    //       .then(alert('구매가 완료되었습니다 !'))
+    //       .then(history.push('/main'));
+    //   }
+    // } else {
+    //   alert(
+    //     '주문하실 상품, 가격, 배송정보, 할인정보 등을 확인하였으며, 구매에 동의하시겠습니까? (전자상거래법 제 8조 제2항)(을)를 선택해주세요.'
+    //   );
+    // }
+    history.push('/main');
   };
 
   componentWillUnmount() {
-    fetch('http://10.58.0.118:8000/orders/order', {
-      method: 'DELETE',
-      headers: {
-        Authorization: sessionStorage.getItem('AccessToken'),
-      },
-    });
+    // fetch('http://10.58.0.118:8000/orders/order', {
+    //   method: 'DELETE',
+    //   headers: {
+    //     Authorization: sessionStorage.getItem('AccessToken'),
+    //   },
+    // });
+    console.log('it works!');
+    alert('it works!');
   }
 
   render() {
     const { allprice, price, discount, onClick, payAgree } = this.props;
-
+    console.log('type', typeof allprice);
     const { handleSubmit } = this;
     return (
       <div className="SideBar">

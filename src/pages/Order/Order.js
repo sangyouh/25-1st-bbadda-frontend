@@ -43,37 +43,37 @@ class Order extends Component {
     this.setState({ [propertyName]: !this.state[propertyName] });
   };
 
-  componentDidMount() {
-    if (sessionStorage.AccessToken) {
-      fetch('http://10.58.0.118:8000/orders/order', {
-        method: 'GET',
-        headers: {
-          Authorization: sessionStorage.getItem('AccessToken'),
-        },
-      })
-        .then(res => res.json())
-        .then(({ User: userData }) => {
-          this.setState({
-            userData,
-          });
-        });
-    } else if (localStorage.AccessToken) {
-      fetch('http://10.58.0.165:8000/orders/order', {
-        method: 'GET',
-        headers: {
-          Authorization: localStorage.getItem('AccessToken'),
-        },
-      })
-        .then(res => res.json())
-        .then(({ User: userData }) => {
-          this.setState({
-            userData,
-          });
-        });
-    } else if (!sessionStorage.AccessToken || !localStorage.AccessToken) {
-      alert('로그인이 필요합니다.');
-    }
-  }
+  // componentDidMount() {
+  //   if (sessionStorage.AccessToken) {
+  //     fetch('http://10.58.0.118:8000/orders/order', {
+  //       method: 'GET',
+  //       headers: {
+  //         Authorization: sessionStorage.getItem('AccessToken'),
+  //       },
+  //     })
+  //       .then(res => res.json())
+  //       .then(({ User: userData }) => {
+  //         this.setState({
+  //           userData,
+  //         });
+  //       });
+  //   } else if (localStorage.AccessToken) {
+  //     fetch('http://10.58.0.165:8000/orders/order', {
+  //       method: 'GET',
+  //       headers: {
+  //         Authorization: localStorage.getItem('AccessToken'),
+  //       },
+  //     })
+  //       .then(res => res.json())
+  //       .then(({ User: userData }) => {
+  //         this.setState({
+  //           userData,
+  //         });
+  //       });
+  //   } else if (!sessionStorage.AccessToken || !localStorage.AccessToken) {
+  //     alert('로그인이 필요합니다.');
+  //   }
+  // }
 
   render() {
     const { handleInput, handleCheck } = this;

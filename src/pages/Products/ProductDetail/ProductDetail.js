@@ -21,16 +21,16 @@ class ProductDetail extends React.Component {
     };
   }
 
-  componentDidMount() {
-    const productId = this.props.match.params.id;
-    fetch(`http://10.58.0.118:8000/products/product?id=${productId}`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          product: data.result,
-        });
-      });
-  }
+  // componentDidMount() {
+  //   const productId = this.props.match.params.id;
+  //   fetch(`http://10.58.0.118:8000/products/product?id=${productId}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState({
+  //         product: data.result,
+  //       });
+  //     });
+  // }
 
   render() {
     const { product } = this.state;
