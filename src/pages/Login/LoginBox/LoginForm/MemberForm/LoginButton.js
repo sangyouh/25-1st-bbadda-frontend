@@ -20,7 +20,7 @@ class LoginButton extends Component {
   //       this.setState({
   //         isLogin: true,
   //       });
-  //       this.props.history.push('/main');
+  //       // this.props.history.push('/main');
   //     },
   //     fail: err => {
   //       console.error(err);
@@ -88,7 +88,11 @@ class LoginButton extends Component {
           onClick={handleSubmit}
         />
         <Button href={'/main'} data={BUTTON_LIST.signIn.Naver} />
-        <Button href={'/main'} data={BUTTON_LIST.signIn.Kakao} />
+        <Button
+          href={'/main'}
+          data={BUTTON_LIST.signIn.Kakao}
+          onClick={loginWithKakao}
+        />
       </form>
     );
   }
